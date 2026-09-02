@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Security advisories and research from our engagements: recurring bug classes, written up so you can check your own systems.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Advisories &mdash; VAPT Security">
+  <meta property="og:description" content="Security advisories and research from our engagements: recurring bug classes, written up so you can check your own systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Advisories &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link" aria-current="page">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>advisories
+        </p>
+        <h1 class="animate-on-scroll">Patterns we keep finding.</h1>
+        <p class="page-standfirst animate-on-scroll">Bug classes that turn up often enough to be worth writing down. No client is identified, and nothing is published before the affected parties have shipped a fix.</p>
+        <p class="page-meta animate-on-scroll">[+] 8 published &nbsp; [+] 90-day vendor disclosure window &nbsp; [+] Monthly digest</p>
+      </div>
+    </section>
+
+    <section id="archive">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Archive</h2>
+        <p class="section-intro animate-on-scroll">
+          Patterns we keep finding, written up once so you can check your own
+          systems without hiring us. Nothing here identifies a client, and
+          nothing is published before the affected parties have shipped a fix.
+        </p>
+
+        <div class="faq animate-on-scroll" data-faq>
+          <div class="faq-row post-row-faq" id="vapt-2026-0188">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-08-14</span>
+              <span class="post-id">VAPT-2026-0188</span>
+              <span class="post-headline">[advisory] JWT audience checks are still optional in three major frameworks</span>
+            </button>
+            <div class="faq-answer">Six of the last twenty API engagements accepted a token minted for a different service in the same estate. The signature verified, the issuer matched, and nothing checked that the token was meant for this audience. In two cases that turned a low-privilege analytics token into a valid session on the billing service. The defaults are the problem: all three frameworks treat <code>aud</code> validation as opt-in, and the quickstart in each one omits it. Check that your verifier is passed an expected audience explicitly, and that it fails closed when the claim is absent.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0181">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-07-02</span>
+              <span class="post-id">VAPT-2026-0181</span>
+              <span class="post-headline">[advisory] Presigned URLs with no expiry are the new public bucket</span>
+            </button>
+            <div class="faq-answer">Teams closed their open buckets, then replaced them with seven-day presigned links pasted into support tickets, Slack channels and email threads. We found roughly 11,000 live ones across four engagements, a third of them still valid and several granting write access. A presigned URL is a bearer credential: anywhere it is logged, forwarded or indexed, it is an unauthenticated grant. Cap expiry in minutes rather than days, scope to a single object and verb, and log issuance so you can revoke.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0176">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-06-18</span>
+              <span class="post-id">VAPT-2026-0176</span>
+              <span class="post-headline">[research] Racing the checkout: logic flaws no scanner will ever find</span>
+            </button>
+            <div class="faq-answer">Three of five e-commerce engagements this quarter allowed a single-use discount code to be applied several times through concurrent requests. The check and the write were separated by enough milliseconds to fit ten more requests in between. The same pattern showed up in loyalty point redemption and in one refund flow. No scanner finds this, because nothing in the response looks wrong &mdash; each request is individually valid. The fix is a database-level constraint or a lock, not an application check.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0170">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-05-27</span>
+              <span class="post-id">VAPT-2026-0170</span>
+              <span class="post-headline">[advisory] GraphQL introspection is disabled. Your schema is still public.</span>
+            </button>
+            <div class="faq-answer">Field suggestion in error messages reconstructs most of a schema in under an hour. Ask for <code>usr</code> and the server helpfully replies <code>did you mean user</code>. Combine that with a wordlist and you have the type graph, including the admin mutations nobody meant to expose. Disabling introspection raises the cost of enumeration; it is not an access control. Turn off suggestions in production, and authorise each field on the resolver rather than relying on obscurity.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0163">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-04-09</span>
+              <span class="post-id">VAPT-2026-0163</span>
+              <span class="post-headline">[note] What OWASP Top 10 (2025) changes for your next engagement</span>
+            </button>
+            <div class="faq-answer">The reshuffle matters less than the shift in emphasis toward supply chain and misconfiguration. We have added dependency provenance and build pipeline review to the standard web profile, and expanded configuration coverage on the cloud side. If your last report referenced the 2021 categories, the mapping is included as an appendix in every report we issue this year so your historical tracking does not break.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0155">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-03-21</span>
+              <span class="post-id">VAPT-2026-0155</span>
+              <span class="post-headline">[research] Certificate pinning bypass in under five minutes, on a stock device</span>
+            </button>
+            <div class="faq-answer">Pinning still helps. It does not help as much as the architecture diagrams that depend on it seem to assume. On a rooted test device with off-the-shelf tooling, the median time to intercept across nine apps this quarter was four minutes. Treat pinning as friction against bulk interception, not as a control that lets you move a secret into the client. Anything the app can decrypt, a determined analyst can too.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0149">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-02-14</span>
+              <span class="post-id">VAPT-2026-0149</span>
+              <span class="post-headline">[advisory] IDOR is still the most common critical we report</span>
+            </button>
+            <div class="faq-answer">Forty per cent of the criticals we raised in 2025 were object references with no ownership check. It has been the top category for four years running. It survives because it is invisible in code review &mdash; the line that fetches by id looks exactly like the line that fetches by id safely. The structural fix is to make the unsafe version impossible to write: scope every query through the authenticated principal, so there is no unscoped finder to reach for in the first place.</div>
+          </div>
+          <div class="faq-row post-row-faq" id="vapt-2026-0141">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-toggle">+</span>
+              <span class="post-date">2026-01-08</span>
+              <span class="post-id">VAPT-2026-0141</span>
+              <span class="post-headline">[note] 2025 in findings: what 150 engagements actually turned up</span>
+            </button>
+            <div class="faq-answer">Median distribution was 2 critical, 8 high, 15 medium and 10 low per web engagement. Broken access control led by a wide margin, followed by authentication weaknesses and injection. Five fixes would have prevented most of the criticals we saw: scope queries to the principal, validate the JWT audience, enforce authorisation at the resolver, expire presigned URLs in minutes, and put a constraint behind every single-use token.</div>
+          </div>
+        </div>
+
+        <p class="meta animate-on-scroll" style="margin-top: var(--space-lg);">
+          [-] Older advisories are available on request &mdash;
+          <a href="mailto:hello@vapt-security.com">ask us</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="disclosure-policy">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">How we publish</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Everything on this page describes a class of issue, never a specific
+            client. Where an advisory came out of an engagement, it is published
+            only after the client has remediated and given written consent, with
+            identifying detail removed.
+          </p>
+
+          <h3>For vendor issues</h3>
+          <ul>
+            <li>We notify the vendor privately and give 90 days before publication</li>
+            <li>The window extends if a fix is in progress and communication is active</li>
+            <li>We publish earlier only if the issue is already being exploited</li>
+            <li>Credit goes to whoever found it, including your team if it was yours</li>
+          </ul>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[+]</span>
+          <p>
+            Found something in one of our own systems? Our
+            <a href="disclosure.html">responsible disclosure policy</a> sets out
+            safe harbour and how to reach us over PGP.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Want these in your inbox?</h2>
+          <p>One mail a month. New bug classes we are seeing in the field, written for engineers. No product news, no sales sequence, one-click unsubscribe.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="advisories-cta">Request an assessment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="reports.html"><span class="label">[&lt;] previous</span>What a report looks like</a>
+          <a href="about.html" style="text-align:right"><span class="label">next [&gt;]</span>About us</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

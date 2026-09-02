@@ -1,0 +1,104 @@
+/* =====================================
+   ANIMATIONS.CSS
+   Restraint matches the rest of the system: a short fade-up on scroll and a
+   terminal caret. No parallax, no scale, no easing theatrics.
+   ===================================== */
+
+/* Scoped to .js so the page is fully readable without JavaScript — otherwise
+   everything below the fold would sit at opacity 0 forever. */
+.js .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 320ms linear, transform 320ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger children of a group by index (set via --i in markup or JS). */
+.animate-stagger > .animate-on-scroll {
+  transition-delay: calc(var(--i, 0) * 40ms);
+}
+
+/* --- Terminal caret in the TUI prompt row --- */
+.caret {
+  display: inline-block;
+  width: 1ch;
+  background: var(--on-dark);
+  color: transparent;
+  animation: caret-blink 1.06s steps(1, end) infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --- Typed line reveal inside the TUI mockup --- */
+.tui-body .tui-line {
+  opacity: 0;
+  animation: line-in 240ms linear forwards;
+}
+
+.tui-body .tui-line:nth-child(1) { animation-delay: 120ms; }
+.tui-body .tui-line:nth-child(2) { animation-delay: 260ms; }
+.tui-body .tui-line:nth-child(3) { animation-delay: 400ms; }
+.tui-body .tui-line:nth-child(4) { animation-delay: 540ms; }
+.tui-body .tui-line:nth-child(5) { animation-delay: 680ms; }
+.tui-body .tui-line:nth-child(6) { animation-delay: 820ms; }
+.tui-body .tui-line:nth-child(7) { animation-delay: 960ms; }
+.tui-body .tui-line:nth-child(8) { animation-delay: 1100ms; }
+.tui-body .tui-line:nth-child(9) { animation-delay: 1240ms; }
+.tui-body .tui-line:nth-child(10) { animation-delay: 1380ms; }
+.tui-body .tui-line:nth-child(11) { animation-delay: 1520ms; }
+.tui-body .tui-line:nth-child(12) { animation-delay: 1660ms; }
+
+@keyframes line-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- Copy-confirmation flash on the install snippet --- */
+.snippet-copy.copied {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* --- Respect the user's motion preference --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .tui-body .tui-line {
+    opacity: 1;
+    animation: none;
+  }
+
+  .caret {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

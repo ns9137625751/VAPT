@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Penetration testing for web applications, APIs, mobile apps, networks and cloud, plus compliance evidence for OWASP, PCI-DSS, GDPR and HIPAA.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Services &mdash; VAPT Security">
+  <meta property="og:description" content="Penetration testing for web applications, APIs, mobile apps, networks and cloud, plus compliance evidence for OWASP, PCI-DSS, GDPR and HIPAA.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Services &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link" aria-current="page">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>services
+        </p>
+        <h1 class="animate-on-scroll">What we test, and how deeply.</h1>
+        <p class="page-standfirst animate-on-scroll">Six service lines, one methodology. Every engagement is fixed-scope, manually tested, and ends with a report your engineers can act on plus a free retest once they have.</p>
+        <p class="page-meta animate-on-scroll">[+] 6 service lines &nbsp; [+] 4&ndash;15 day engagements &nbsp; [+] Free retest within 30 days</p>
+      </div>
+    </section>
+
+    <section id="web">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[01] Web application testing</h2>
+            <p class="meta">SPA, server-rendered, legacy &middot; 5&ndash;10 days</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-web.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">Every authenticated role is tested by hand against every other role. Scanners establish the baseline; the findings that matter come from someone reasoning about your business logic.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Injection</span>
+            <span class="list-row-desc">SQL, NoSQL, command, template and LDAP injection across every sink the application reaches, including second-order paths.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Cross-site scripting</span>
+            <span class="list-row-desc">Stored, reflected and DOM-based XSS, plus the CSP and sanitiser gaps that let them through.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Access control</span>
+            <span class="list-row-desc">Horizontal and vertical privilege escalation, IDOR on every object reference, forced browsing and function-level gaps.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Authentication</span>
+            <span class="list-row-desc">Credential handling, session fixation, MFA bypass, password reset flows and account-recovery abuse.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Business logic</span>
+            <span class="list-row-desc">Race conditions, workflow skipping, price and quantity tampering, and abuse of your own rules against you.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Client-side</span>
+            <span class="list-row-desc">CSRF, clickjacking, postMessage handling, prototype pollution and dependency risk in the bundle you actually ship.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Report with reproduction steps per finding, a remediation per issue, and a retest within 30 days.</p>
+        </div>
+      </div>
+    </section>
+    <section id="api">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[02] API security testing</h2>
+            <p class="meta">REST, GraphQL, gRPC &middot; 4&ndash;8 days</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-api.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">We test every documented path and then go looking for the ones that are not documented. Your spec is a starting point, not the boundary of the assessment.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Object-level authz</span>
+            <span class="list-row-desc">Every identifier in every response probed against every other account. This is where most real breaches start.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Token security</span>
+            <span class="list-row-desc">JWT algorithm confusion, weak signing keys, missing audience and expiry checks, refresh-token replay.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">OAuth and OIDC</span>
+            <span class="list-row-desc">Redirect-URI validation, PKCE, scope escalation and consent handling across your flows.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Mass assignment</span>
+            <span class="list-row-desc">Fields the client should never be able to set, found by diffing your models against what the endpoint accepts.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Rate and quota</span>
+            <span class="list-row-desc">Enumeration, credential stuffing and cost-amplification resistance, including GraphQL query depth and aliasing.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Spec drift</span>
+            <span class="list-row-desc">Endpoints that exist but are not in the schema, deprecated versions still answering, and debug routes left live.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Findings exported as JSON or SARIF alongside the written report, so they load straight into your tracker.</p>
+        </div>
+      </div>
+    </section>
+    <section id="mobile">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[03] Mobile application security</h2>
+            <p class="meta">Android, iOS &middot; 5&ndash;10 days</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-mobile.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">Static and dynamic analysis on real devices, plus the backend the app talks to. Most findings in a mobile engagement turn out to live server-side.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Local storage</span>
+            <span class="list-row-desc">Credentials, tokens and PII in preferences, SQLite, keychain and cache, including what survives a backup.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Transport</span>
+            <span class="list-row-desc">Certificate pinning strength, TLS configuration, and what the app does when pinning is stripped.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Binary hardening</span>
+            <span class="list-row-desc">Root and jailbreak detection, anti-tamper, debuggable builds and exported components.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Secrets</span>
+            <span class="list-row-desc">Hardcoded keys, API credentials and endpoints recovered from the shipped binary and its resources.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">IPC and deep links</span>
+            <span class="list-row-desc">Exported activities, intent handling, universal links and custom URL schemes abused from another app.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Backend</span>
+            <span class="list-row-desc">The full API assessment above, run against the endpoints the app actually calls.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Device-level evidence, decompiled excerpts where relevant, and platform specific remediation for each finding.</p>
+        </div>
+      </div>
+    </section>
+    <section id="network">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[04] Network penetration testing</h2>
+            <p class="meta">Internal and external &middot; 5&ndash;15 days</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-network.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">Discovery, enumeration and exploitation across your perimeter and, where authorised, lateral movement from an assumed-breach foothold inside the network.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">External perimeter</span>
+            <span class="list-row-desc">Everything reachable from the internet, including the hosts nobody remembers standing up.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Service exploitation</span>
+            <span class="list-row-desc">Known-vulnerable versions, misconfiguration and unauthenticated interfaces, confirmed by exploitation.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Credential attacks</span>
+            <span class="list-row-desc">Default and reused credentials, password spraying within agreed lockout limits, and credential reuse across tiers.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Active Directory</span>
+            <span class="list-row-desc">Kerberoasting, delegation abuse, ACL paths and privilege escalation routes to Domain Admin.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Segmentation</span>
+            <span class="list-row-desc">Whether your network zones hold, tested by attempting to cross them from each side.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Egress</span>
+            <span class="list-row-desc">What data can leave, and over which protocols, once an attacker is already inside.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Attack-path narrative alongside the finding list, so leadership can see how one weak host became domain compromise.</p>
+        </div>
+      </div>
+    </section>
+    <section id="cloud">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[05] Cloud security assessment</h2>
+            <p class="meta">AWS, Azure, GCP &middot; 4&ndash;10 days</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-cloud.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">Configuration reviewed against the provider benchmark, then tested rather than assumed. A policy that looks correct and a policy that holds are different things.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Identity</span>
+            <span class="list-row-desc">Over-permissive roles, wildcard policies, unused privileged principals and the escalation paths between them.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Storage</span>
+            <span class="list-row-desc">Public buckets, over-shared snapshots, unencrypted volumes and presigned URLs with no expiry.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Network</span>
+            <span class="list-row-desc">Security groups, peering, exposed management planes and services listening wider than intended.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Secrets</span>
+            <span class="list-row-desc">Keys in environment variables, build logs, images and repositories, plus rotation practice.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Workloads</span>
+            <span class="list-row-desc">Container and serverless configuration, image provenance and runtime privileges.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Logging</span>
+            <span class="list-row-desc">Whether the trail needed to investigate an incident actually exists and is retained.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Benchmark mapping (CIS or provider equivalent) with each deviation rated by real exploitability, not just compliance status.</p>
+        </div>
+      </div>
+    </section>
+    <section id="compliance">
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">[06] Compliance and audit support</h2>
+            <p class="meta">Evidence, not checkboxes &middot; runs alongside any engagement</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-compliance.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <p class="section-intro animate-on-scroll">Findings mapped to the control set your auditor asks about, with the artefacts they need attached to each one. This runs as an overlay on a technical engagement, not instead of it.</p>
+
+        <div class="list-rows animate-on-scroll">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">OWASP</span>
+            <span class="list-row-desc">Top 10 (2025) and ASVS levels 1&ndash;3, with per-requirement coverage stated explicitly.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">PCI-DSS</span>
+            <span class="list-row-desc">Requirement 11.3 penetration testing, including segmentation validation and the retest evidence assessors expect.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">GDPR</span>
+            <span class="list-row-desc">Article 32 technical measures, with findings framed in terms of risk to data subjects.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">HIPAA</span>
+            <span class="list-row-desc">Security Rule technical safeguards for systems handling PHI.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">SOC 2</span>
+            <span class="list-row-desc">Evidence packs for the security criteria your auditor samples.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Attestation</span>
+            <span class="list-row-desc">A signed letter you can send to customers and prospects without handing over the full technical report.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> A control-mapped evidence pack in addition to the standard report.</p>
+        </div>
+      </div>
+    </section>
+    <section id="engagement-shapes">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">How engagements are shaped</h2>
+        <p class="section-intro animate-on-scroll">
+          Three formats cover almost everything. If none of them fit, say so on
+          the scoping call and we will build one that does.
+        </p>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Black box</span>
+            <span class="defdesc">No credentials, no source, no documentation. Mirrors what an
+              unauthenticated attacker sees. Fastest to scope, narrowest coverage.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Grey box</span>
+            <span class="defdesc">Credentials for each role plus architecture notes. The default,
+              and the best value &mdash; typically surfaces 30&ndash;40% more than black box,
+              concentrated in authorisation logic.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] White box</span>
+            <span class="defdesc">Full source and infrastructure access. Deepest coverage,
+              suited to pre-launch reviews and high-assurance systems.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[-] Continuous</span>
+            <span class="defdesc">A retainer with quarterly full assessments and unlimited
+              retests between them. Only worth it once you are shipping weekly.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope-example">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">What a scope sheet looks like</h2>
+        <p class="section-intro animate-on-scroll">
+          Scope is agreed in writing before day one and does not move without a
+          signed change. Anything not on this sheet is not touched.
+        </p>
+        <figure class="figure-wide animate-on-scroll" style="margin: 0;">
+          <img src="images/diagram-attack-surface.svg"
+               alt="Scope sheet listing web, API, mobile, network and cloud targets marked in scope, with third-party SaaS marked excluded."
+               width="430" height="200" loading="lazy">
+          <figcaption class="chart-caption">
+            <strong>Fig 0.</strong> A typical scope sheet, agreed before day one.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Not sure which one you need?</h2>
+          <p>Send us what you have &mdash; a URL, a repo, an architecture diagram, or just a deadline. We will tell you what is worth testing and what is not.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="services-cta">Get a fixed quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          
+          <a href="methodology.html" style="text-align:right"><span class="label">next [&gt;]</span>How an engagement runs</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+/* =====================================
+   NAVBAR.CSS — PRIMARY NAV
+   56px cream bar, ASCII block-pixel wordmark at left, hairline bottom rule.
+   The Download/Request CTA stays visible at every breakpoint.
+   ===================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  height: 56px;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* --- Wordmark: block-pixel ASCII, never a vector logo --- */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.navbar-brand img {
+  height: 20px;
+  width: auto;
+}
+
+.navbar-brand-suffix {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-tight);
+}
+
+/* --- Link cluster --- */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  margin: 0 0 0 auto;
+}
+
+.nav-link {
+  color: var(--ink);
+  font-size: var(--fs-body-md);
+  font-weight: 500;
+  line-height: var(--lh-body);
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.nav-link .count {
+  color: var(--mute);
+  font-weight: 400;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex: 0 0 auto;
+}
+
+.navbar-actions .btn {
+  height: 36px;
+}
+
+/* --- Hamburger: appears at tablet-narrow (768px) --- */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--rounded-sm);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-tight);
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-toggle:hover {
+  background: var(--surface-card);
+}
+
+/* --- News strip: sits directly under the nav, above the hero --- */
+.news-strip {
+  background: var(--canvas);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.news-strip-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+  color: var(--mute);
+}
+
+.news-strip-inner a {
+  color: var(--ink);
+}
+
+/* Current page in a multi-page nav — same affordance as the in-page active
+   state, so the bar reads identically on every page. */
+.nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}

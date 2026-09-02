@@ -1,0 +1,833 @@
+/* =====================================
+   SECTIONS.CSS — PAGE BLOCKS
+   Every section is a hairline-bordered text block on cream. No shadows,
+   no gradients, no surface alternation. The dark TUI mockup appears once.
+   ===================================== */
+
+/* ===============================
+   HERO
+   =============================== */
+
+.hero {
+  padding: var(--space-section) 0 0;
+}
+
+.hero-text {
+  max-width: 62ch;
+  margin-bottom: var(--space-xxl);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.hero-subtitle {
+  color: var(--body);
+  margin-bottom: var(--space-xl);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* Each claim wraps as a whole rather than breaking across its bracket. */
+.hero-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-xl);
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+/* ===============================
+   HERO TUI MOCKUP
+   The system's only elevated surface — color, not shadow.
+   =============================== */
+
+.tui-mockup {
+  background: var(--surface-dark);
+  color: var(--on-dark);
+  border-radius: var(--rounded-none);
+  padding: 64px var(--space-xxl);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body);
+  overflow-x: auto;
+}
+
+.tui-wordmark {
+  display: block;
+  margin: 0 auto var(--space-xxl);
+  height: 72px;
+  width: auto;
+}
+
+.tui-body {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* pre goes on the line, not the container — on the container it would also
+   preserve the newlines between the line elements and double the leading. */
+.tui-line {
+  color: var(--on-dark-mute);
+  white-space: pre;
+  min-height: 1.5em;
+}
+
+.tui-line .pipe {
+  color: var(--ash);
+}
+
+/* Semantic ramp lives here and nowhere else on the page. */
+.tui-keyword { color: var(--accent); }
+.tui-success { color: var(--success); }
+.tui-warning { color: var(--warning); }
+.tui-danger  { color: var(--danger); }
+.tui-dim     { color: var(--ash); }
+
+.tui-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--surface-dark-elevated);
+  color: var(--on-dark);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-xl) auto 0;
+  max-width: 720px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.tui-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+  max-width: 720px;
+  margin: var(--space-lg) auto 0;
+  color: var(--ash);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+/* ===============================
+   INSTALL / QUICK-START BLOCK
+   =============================== */
+
+.install-block {
+  max-width: 640px;
+}
+
+/* ===============================
+   LIST ROWS — the ASCII bullet pattern
+   =============================== */
+
+.list-rows {
+  border-top: 1px solid var(--hairline);
+}
+
+.list-row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: baseline;
+  background: var(--canvas);
+  color: var(--body);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.list-row-label {
+  flex: 0 0 22ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.list-row-desc {
+  flex: 1 1 auto;
+  color: var(--body);
+}
+
+/* Two-up list grid for longer checklists */
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-xxl);
+}
+
+/* ===============================
+   SCOPE / SERVICE BLOCKS
+   =============================== */
+
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xxl);
+}
+
+.scope-block {
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--space-lg);
+}
+
+.scope-block-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.scope-block h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.scope-glyph {
+  flex: 0 0 auto;
+  width: 96px;
+  height: auto;
+  opacity: 0.85;
+}
+
+.scope-block p {
+  color: var(--body);
+  margin-bottom: var(--space-md);
+}
+
+.scope-checks {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+/* ===============================
+   METHODOLOGY — numbered manpage rows
+   =============================== */
+
+.steps {
+  border-top: 1px solid var(--hairline);
+}
+
+.step {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: baseline;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.step-number {
+  flex: 0 0 4ch;
+  color: var(--ash);
+  font-weight: 500;
+}
+
+.step-title {
+  flex: 0 0 22ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.step-description {
+  flex: 1 1 auto;
+  color: var(--body);
+  margin: 0;
+}
+
+.step-day {
+  flex: 0 0 8ch;
+  text-align: right;
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+}
+
+/* ===============================
+   FIGURES — chart tiles and inline diagrams
+   =============================== */
+
+.figures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-xxl);
+}
+
+.chart-tile {
+  background: var(--canvas);
+  border-radius: var(--rounded-none);
+  padding: var(--space-lg) 0;
+}
+
+.chart-tile img {
+  width: 100%;
+  height: auto;
+}
+
+.chart-caption {
+  margin-top: var(--space-md);
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+.chart-caption strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.figure-wide {
+  padding: var(--space-lg) 0;
+}
+
+/* ASCII art renders at its natural size — upscaling would push the character
+   cells above body size and break the typographic rhythm. */
+.figure-wide img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===============================
+   STAT ROWS
+   =============================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-xl);
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--space-lg);
+}
+
+.stat {
+  border-left: 1px solid var(--hairline);
+  padding-left: var(--space-lg);
+}
+
+.stat:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.stat-number {
+  color: var(--ink);
+  font-size: var(--fs-display-xl);
+  font-weight: 700;
+  line-height: var(--lh-body);
+}
+
+.stat-label {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+/* ===============================
+   SEVERITY TABLE
+   =============================== */
+
+.severity-table {
+  border-top: 1px solid var(--hairline);
+}
+
+.severity-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.severity-name {
+  flex: 0 0 12ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.severity-count {
+  flex: 0 0 4ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.severity-desc {
+  flex: 1 1 auto;
+  color: var(--body);
+}
+
+.severity-sla {
+  flex: 0 0 12ch;
+  text-align: right;
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+}
+
+/* ===============================
+   DELIVERABLES / TESTIMONIAL ROWS
+   =============================== */
+
+.testimonial-row {
+  display: flex;
+  gap: var(--space-lg);
+  background: var(--surface-soft);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-lg) 20px;
+  margin-bottom: var(--space-md);
+}
+
+.avatar {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--rounded-full);
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: 30px;
+  text-align: center;
+}
+
+.testimonial-meta {
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.testimonial-meta .role {
+  color: var(--mute);
+  font-weight: 400;
+}
+
+.testimonial-quote {
+  color: var(--body);
+  margin: 0;
+}
+
+/* ===============================
+   FAQ — bracket toggle rows, no chevrons
+   =============================== */
+
+.faq {
+  border-top: 1px solid var(--hairline);
+}
+
+.faq-row {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.faq-question {
+  display: flex;
+  gap: var(--space-md);
+  width: 100%;
+  background: var(--canvas);
+  border: 0;
+  border-radius: var(--rounded-none);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-md);
+  font-weight: 500;
+  line-height: var(--lh-body);
+  text-align: left;
+  padding: var(--space-md) 0;
+  cursor: pointer;
+}
+
+.faq-toggle {
+  flex: 0 0 2ch;
+  color: var(--mute);
+}
+
+.faq-answer {
+  display: none;
+  color: var(--body);
+  padding: 0 0 var(--space-md) calc(2ch + var(--space-md));
+  max-width: 72ch;
+}
+
+.faq-row.open .faq-answer {
+  display: block;
+}
+
+/* ===============================
+   CTA BAND — dark pill, used once near the page foot
+   =============================== */
+
+.cta-band {
+  background: var(--surface-dark);
+  color: var(--on-dark);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-xxl);
+}
+
+.cta-band h2 {
+  color: var(--on-dark);
+  margin-bottom: var(--space-md);
+}
+
+.cta-band p {
+  color: var(--on-dark-mute);
+  max-width: 62ch;
+}
+
+.cta-band .btn-primary {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.cta-band .btn-primary:hover {
+  background: var(--surface-card);
+}
+
+/* ===============================
+   CONTACT — two-column split
+   =============================== */
+
+.contact-split {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 480px);
+  gap: var(--space-section);
+  align-items: start;
+}
+
+.contact-facts {
+  border-top: 1px solid var(--hairline);
+}
+
+.contact-fact {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.contact-fact-label {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+.contact-fact-value {
+  color: var(--ink);
+}
+
+/* ===============================
+   INTERIOR PAGE CHROME
+   Patterns the sub-pages need, built from the same vocabulary: hairline rules,
+   bracket markers, 4px on interactive things and 0px on everything else.
+   =============================== */
+
+.page-head {
+  padding: var(--space-section) 0 0;
+}
+
+.breadcrumb {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+  margin-bottom: var(--space-md);
+}
+
+.breadcrumb a {
+  color: var(--mute);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.breadcrumb .sep {
+  color: var(--ash);
+  padding: 0 var(--space-xs);
+}
+
+.page-head h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.page-standfirst {
+  color: var(--body);
+  max-width: 68ch;
+  margin-bottom: var(--space-xl);
+}
+
+.page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-xl);
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--hairline);
+}
+
+/* ===============================
+   PROSE — long-form policy and article text
+   =============================== */
+
+.prose {
+  max-width: 72ch;
+}
+
+.prose h3 {
+  margin: var(--space-xxl) 0 var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.prose h3:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  color: var(--body);
+}
+
+.prose ul {
+  margin: 0 0 var(--space-lg);
+}
+
+.prose li {
+  display: flex;
+  gap: var(--space-md);
+  color: var(--body);
+  padding: var(--space-xs) 0;
+}
+
+.prose li::before {
+  content: "[-]";
+  flex: 0 0 3ch;
+  color: var(--ash);
+}
+
+/* ===============================
+   TABLE OF CONTENTS
+   =============================== */
+
+.toc {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: var(--space-md) 0;
+  margin-bottom: var(--space-xxl);
+  max-width: 72ch;
+}
+
+.toc-label {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+.toc ol {
+  counter-reset: toc;
+}
+
+.toc li {
+  counter-increment: toc;
+  padding: var(--space-xxs) 0;
+}
+
+.toc li::before {
+  content: counter(toc, decimal-leading-zero) "  ";
+  color: var(--ash);
+}
+
+.toc a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===============================
+   CALLOUT — a bracketed note, never a coloured banner
+   =============================== */
+
+.callout {
+  display: flex;
+  gap: var(--space-md);
+  background: var(--surface-soft);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-lg) 20px;
+  margin: var(--space-xl) 0;
+  max-width: 72ch;
+}
+
+.callout-marker {
+  flex: 0 0 3ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.callout p {
+  color: var(--body);
+  margin: 0;
+}
+
+/* ===============================
+   DEFINITION ROWS — term on the left, detail on the right
+   =============================== */
+
+.deflist {
+  border-top: 1px solid var(--hairline);
+}
+
+.defrow {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: baseline;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.defterm {
+  flex: 0 0 26ch;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.defdesc {
+  flex: 1 1 auto;
+  color: var(--body);
+}
+
+/* ===============================
+   CODE BLOCK — security.txt, PGP keys, sample findings
+   =============================== */
+
+.code-block {
+  background: var(--surface-card);
+  color: var(--ink);
+  border-radius: var(--rounded-sm);
+  padding: var(--space-md) var(--space-lg);
+  margin: 0 0 var(--space-lg);
+  overflow-x: auto;
+  white-space: pre;
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-body);
+}
+
+.code-block-dark {
+  background: var(--surface-dark);
+  color: var(--on-dark);
+}
+
+.code-block-dark .tui-dim { color: var(--ash); }
+
+/* ===============================
+   POST LIST — advisories index
+   =============================== */
+
+.post-list {
+  border-top: 1px solid var(--hairline);
+}
+
+.post-row {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: baseline;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.post-date {
+  flex: 0 0 12ch;
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+}
+
+.post-id {
+  flex: 0 0 16ch;
+  color: var(--ash);
+  font-size: var(--fs-caption-md);
+}
+
+.post-body {
+  flex: 1 1 auto;
+}
+
+.post-title {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.post-excerpt {
+  color: var(--body);
+  margin: var(--space-xxs) 0 0;
+}
+
+/* ===============================
+   NEXT/PREV — page-foot navigation between sub-pages
+   =============================== */
+
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-section);
+}
+
+.page-nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.page-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-nav .label {
+  display: block;
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+/* Advisory rows reuse the FAQ toggle, with the date and id carried inline as a
+   fixed-width prefix. The headline takes the remaining column and wraps inside
+   it, so every row starts at the same place however long the title is. */
+.post-row-faq .faq-question {
+  align-items: baseline;
+  flex-wrap: nowrap;
+}
+
+.post-headline {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.post-row-faq .post-date,
+.post-row-faq .post-id {
+  font-weight: 400;
+}
+
+.post-row-faq .faq-answer {
+  max-width: 76ch;
+}
+
+/* Inline code inside prose and advisory bodies. */
+.faq-answer code,
+.prose code,
+.defdesc code {
+  background: var(--surface-card);
+  border-radius: var(--rounded-sm);
+  padding: 0 var(--space-xs);
+  font-size: var(--fs-caption-md);
+}

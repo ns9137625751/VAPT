@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="What a VAPT report contains: executive summary, per-finding technical detail with CVSS ratings and reproduction steps, remediation plan, and exports in PDF, Markdown, JSON and SARIF.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Reports &mdash; VAPT Security">
+  <meta property="og:description" content="What a VAPT report contains: executive summary, per-finding technical detail with CVSS ratings and reproduction steps, remediation plan, and exports in PDF, Markdown, JSON and SARIF.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Reports &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link" aria-current="page">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>reports
+        </p>
+        <h1 class="animate-on-scroll">What you actually get at the end.</h1>
+        <p class="page-standfirst animate-on-scroll">A report with two audiences: an executive summary a board can read, and a technical body an engineer can work straight from. Every finding reproduced, rated against CVSS v3.1, and paired with a specific fix.</p>
+        <p class="page-meta animate-on-scroll">[+] PDF, Markdown, JSON, SARIF &nbsp; [+] Signed attestation letter &nbsp; [+] Retested in 30 days</p>
+      </div>
+    </section>
+
+    <section id="contents">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">What is in the document</h2>
+        <p class="section-intro animate-on-scroll">
+          One report, two audiences. The first ten pages are written for people
+          who will never open a terminal; everything after that is written for
+          the engineer who has to fix it.
+        </p>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Executive summary</span>
+            <span class="defdesc">Two pages. What we tested, what we found, what it means
+              commercially, and what to do first. No jargon, no CVSS vectors.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Risk overview</span>
+            <span class="defdesc">Findings by severity, by asset and by category, with the
+              trend against your previous engagement if there was one.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Scope and method</span>
+            <span class="defdesc">Exactly what was in scope, what was excluded, which
+              standards were applied and where coverage was limited.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Technical findings</span>
+            <span class="defdesc">One entry per finding: summary, affected asset, CVSS vector,
+              reproduction steps, evidence, impact and a specific fix.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Remediation plan</span>
+            <span class="defdesc">Findings ordered by severity and effort, so you can decide
+              what ships this sprint and what waits.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Observations</span>
+            <span class="defdesc">Things that are not vulnerabilities but are worth knowing:
+              hardening gaps, deprecated components, architectural risk.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Appendices</span>
+            <span class="defdesc">Full endpoint and host inventory, tooling and versions used,
+              and the raw evidence index.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Attestation letter</span>
+            <span class="defdesc">A one-page signed summary you can send to customers and
+              auditors without disclosing the technical detail.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sample">
+      <div class="container-wide">
+        <h2 class="section-label animate-on-scroll">A real finding, redacted</h2>
+
+        <div class="tui-mockup animate-on-scroll">
+          <div class="tui-body">
+<div class="tui-line"><span class="tui-danger">[!] CRITICAL</span>  <span class="tui-dim">VAPT-2026-0142</span></div>
+<div class="tui-line"><span class="tui-dim">--------------------------------------------------------------</span></div>
+<div class="tui-line">Title      Insecure direct object reference on invoice retrieval</div>
+<div class="tui-line">Asset      api.example.com  <span class="tui-dim">GET /api/v2/invoices/:id</span></div>
+<div class="tui-line">CVSS 3.1   9.1  <span class="tui-dim">AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H</span></div>
+<div class="tui-line">Status     <span class="tui-success">[x] reproduced</span>  <span class="tui-dim">evidence attached</span></div>
+<div class="tui-line"></div>
+<div class="tui-line"><span class="tui-dim">SUMMARY</span></div>
+<div class="tui-line">An authenticated user of any tenant can retrieve invoices belonging</div>
+<div class="tui-line">to any other tenant by incrementing the numeric identifier. No</div>
+<div class="tui-line">authorisation check ties :id to the caller's organisation.</div>
+<div class="tui-line"></div>
+<div class="tui-line"><span class="tui-dim">REPRODUCTION</span></div>
+<div class="tui-line">  1. Authenticate as user-a@tenant-one (role: viewer)</div>
+<div class="tui-line">  2. GET /api/v2/invoices/10231  -&gt; 200, own invoice</div>
+<div class="tui-line">  3. GET /api/v2/invoices/10232  -&gt; 200, tenant-two invoice</div>
+<div class="tui-line">  4. Enumerated 1,000 ids in 41s; 994 returned foreign records</div>
+<div class="tui-line"></div>
+<div class="tui-line"><span class="tui-dim">IMPACT</span></div>
+<div class="tui-line">Full read access to billing records across all tenants, including</div>
+<div class="tui-line">customer names, addresses and payment amounts. Reportable under</div>
+<div class="tui-line">GDPR Art. 33 if exploited.</div>
+<div class="tui-line"></div>
+<div class="tui-line"><span class="tui-dim">REMEDIATION</span></div>
+<div class="tui-line">Scope the query to the caller's organisation rather than filtering</div>
+<div class="tui-line">after retrieval:</div>
+<div class="tui-line"></div>
+<div class="tui-line">  <span class="tui-keyword">-</span> invoice = Invoice.find(params[:id])</div>
+<div class="tui-line">  <span class="tui-keyword">+</span> invoice = current_user.organisation.invoices.find(params[:id])</div>
+<div class="tui-line"></div>
+<div class="tui-line">Apply the same pattern to the 6 sibling endpoints listed in App. B.</div>
+<div class="tui-line"></div>
+<div class="tui-line"><span class="tui-dim">RETEST</span>  <span class="tui-success">[x] closed 2026-03-14</span>  verified against all 7 endpoints</div>
+          </div>
+        </div>
+
+        <p class="chart-caption animate-on-scroll" style="margin-top: var(--space-md);">
+          <strong>Fig 6.</strong> One finding as it appears in the technical body,
+          taken from a 2026 engagement with identifiers changed.
+        </p>
+      </div>
+    </section>
+
+    <section id="severity">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">How we rate severity</h2>
+        <p class="section-intro animate-on-scroll">
+          Every finding carries a CVSS v3.1 base vector so you can compare it
+          against anything else in your tracker. We also give our own rating,
+          because CVSS does not know what your application is for.
+        </p>
+
+        <div class="severity-table animate-stagger">
+          <div class="severity-row animate-on-scroll">
+            <span class="severity-name">[!] Critical</span>
+            <span class="severity-count">9.0+</span>
+            <span class="severity-desc">Direct path to data loss or account takeover, exploitable
+              now, no meaningful precondition. Reported the day we confirm it.</span>
+            <span class="severity-sla">fix in 24h</span>
+          </div>
+          <div class="severity-row animate-on-scroll">
+            <span class="severity-name">[!] High</span>
+            <span class="severity-count">7.0+</span>
+            <span class="severity-desc">Serious impact, but needs a precondition, a chain, or a
+              privileged position to reach.</span>
+            <span class="severity-sla">fix in 7d</span>
+          </div>
+          <div class="severity-row animate-on-scroll">
+            <span class="severity-name">[~] Medium</span>
+            <span class="severity-count">4.0+</span>
+            <span class="severity-desc">Weakens your posture and shows up in audits. Frequently
+              a configuration change rather than a code change.</span>
+            <span class="severity-sla">fix in 30d</span>
+          </div>
+          <div class="severity-row animate-on-scroll">
+            <span class="severity-name">[-] Low</span>
+            <span class="severity-count">0.1+</span>
+            <span class="severity-desc">Hardening and hygiene. Worth batching into your next
+              maintenance window rather than interrupting a sprint.</span>
+            <span class="severity-sla">next cycle</span>
+          </div>
+          <div class="severity-row animate-on-scroll">
+            <span class="severity-name">[ ] Info</span>
+            <span class="severity-count">0.0</span>
+            <span class="severity-desc">Not a vulnerability. Recorded in observations because
+              it may matter later or to your auditor.</span>
+            <span class="severity-sla">no action</span>
+          </div>
+        </div>
+
+        <figure class="figure-wide animate-on-scroll" style="margin: var(--space-xl) 0 0;">
+          <img src="images/severity-histogram.svg"
+               alt="Bar chart of median findings per engagement: 2 critical, 8 high, 15 medium, 10 low."
+               width="420" height="132" loading="lazy">
+          <figcaption class="chart-caption">
+            <strong>Fig 5.</strong> Median findings per web engagement, by severity.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="formats">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Formats you receive</h2>
+
+        <div class="list-rows animate-stagger">
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">PDF</span>
+            <span class="list-row-desc">The full report, signed, for distribution to your board
+              and your auditor.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Markdown</span>
+            <span class="list-row-desc">The same content as plain text, so it can live in your
+              repository or wiki alongside the fixes.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">JSON</span>
+            <span class="list-row-desc">Structured findings for import into Jira, Linear or
+              whatever your team actually uses.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">SARIF</span>
+            <span class="list-row-desc">Static Analysis Results Interchange Format, for loading
+              into GitHub code scanning or your existing pipeline.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Attestation letter</span>
+            <span class="list-row-desc">One signed page confirming the engagement took place and
+              what its outcome was. Safe to send to customers.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker marker-mute">[-]</span>
+            <span class="list-row-label">Raw evidence</span>
+            <span class="list-row-desc">Request captures, screenshots and scripts, delivered
+              encrypted and destroyed after the retest window.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p>
+            Every format ships at delivery, at no extra cost. You should not have
+            to pay a vendor to give you your own findings in a usable shape.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Want to read a full sample report?</h2>
+          <p>We will send a complete redacted engagement report &mdash; all findings, all appendices &mdash; under NDA. No call required first.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="reports-cta">Request the sample</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="methodology.html"><span class="label">[&lt;] previous</span>How an engagement runs</a>
+          <a href="advisories.html" style="text-align:right"><span class="label">next [&gt;]</span>Advisories</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

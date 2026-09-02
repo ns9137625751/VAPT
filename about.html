@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A small penetration testing team: OSCP and CREST certified, every finding exploited before it is reported, retest always included.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="About &mdash; VAPT Security">
+  <meta property="og:description" content="A small penetration testing team: OSCP and CREST certified, every finding exploited before it is reported, retest always included.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>About &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>about
+        </p>
+        <h1 class="animate-on-scroll">Small team. Verified findings. Nothing padded.</h1>
+        <p class="page-standfirst animate-on-scroll">Nine testers, two report editors, one rule &mdash; if we cannot demonstrate it, it does not go in the report as a vulnerability.</p>
+        <p class="page-meta animate-on-scroll">[+] Founded 2019 &nbsp; [+] 150+ assessments &nbsp; [+] OSCP / CREST certified</p>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Why we exist</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Most penetration test reports are scanner output with a logo on the
+            front. They arrive weeks late, list two hundred findings nobody has
+            verified, and get filed unread because the engineering team cannot
+            tell which three items actually matter.
+          </p>
+          <p>
+            We started in 2019 after enough years on the other side of that
+            transaction. The premise is narrow and we have not changed it: a
+            security assessment is only worth what your engineers can act on. So
+            every finding is exploited before it is written down, every finding
+            ships with a fix, and the retest is included rather than sold back
+            to you six months later.
+          </p>
+          <p>
+            We are a small team by choice. Every engagement is run by the people
+            who will write the report, and you talk to them directly for its
+            whole duration.
+          </p>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p>
+            If we think a VAPT is the wrong spend for your situation, we say so
+            on the scoping call. We have talked several teams out of an
+            engagement and into fixing their build pipeline instead.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">How we work</h2>
+
+        <div class="list-rows animate-stagger">
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Proof or it is not real</span>
+            <span class="list-row-desc">Nothing enters the report as a vulnerability without a
+              working proof-of-concept and retained evidence.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Two testers, always</span>
+            <span class="list-row-desc">A second tester peer-reviews the finding set before
+              delivery. It is how false positives and inflated severities die.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Fixed scope, fixed price</span>
+            <span class="list-row-desc">The quote you sign is the invoice you receive. Scope
+              changes require a signed amendment, not a surprise line item.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Findings arrive live</span>
+            <span class="list-row-desc">Criticals are reported the hour they are confirmed.
+              Waiting for the report to tell you the building is on fire is negligent.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Retest included</span>
+            <span class="list-row-desc">One full retest within 30 days of delivery, priced into
+              the engagement rather than sold as an upsell.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Your data stays yours</span>
+            <span class="list-row-desc">Evidence encrypted at rest, never used for marketing,
+              and destroyed on request with written confirmation.</span>
+          </div>
+          <div class="list-row animate-on-scroll">
+            <span class="marker marker-mute">[-]</span>
+            <span class="list-row-label">No resale, no referral fees</span>
+            <span class="list-row-desc">We do not sell tooling and we take no commission for
+              recommending one. The advice is not compromised.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">The team</h2>
+        <p class="section-intro animate-on-scroll">
+          Nine testers, two report editors, one operations lead. Everyone who
+          tests holds at least one hands-on practical certification &mdash;
+          multiple-choice qualifications do not count here.
+        </p>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">OSCP / OSWE / OSEP</span>
+            <span class="defdesc">Offensive Security practicals &mdash; held by every tester on
+              the web and network side.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">CREST CRT / CCT</span>
+            <span class="defdesc">Registered and Certified Tester, for engagements where the
+              client or regulator requires CREST-accredited personnel.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">GWAPT / GPEN / GMOB</span>
+            <span class="defdesc">GIAC web, network and mobile specialisations across the
+              respective service lines.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">CCSP / cloud practitioner</span>
+            <span class="defdesc">Provider-specific security certification for AWS, Azure and
+              GCP assessments.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Background checks</span>
+            <span class="defdesc">Every tester is DBS or equivalent checked and under a
+              standing NDA before joining an engagement.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="record">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Track record</h2>
+
+        <div class="figures animate-stagger">
+          <div class="chart-tile animate-on-scroll">
+            <img src="images/fig-1-apps-tested.svg"
+                 alt="Sparse line plot trending upward, representing applications tested over time."
+                 width="280" height="120" loading="lazy">
+            <p class="chart-caption"><strong>Fig 1.</strong> 500+ applications tested</p>
+          </div>
+          <div class="chart-tile animate-on-scroll">
+            <img src="images/fig-2-vulns-found.svg"
+                 alt="Dotted scatter plot thinning towards the right, representing findings closed out over time."
+                 width="280" height="120" loading="lazy">
+            <p class="chart-caption"><strong>Fig 2.</strong> 2,500+ findings reported</p>
+          </div>
+          <div class="chart-tile animate-on-scroll">
+            <img src="images/fig-3-retest-pass.svg"
+                 alt="Step plot climbing to a plateau, representing retest pass rate."
+                 width="280" height="120" loading="lazy">
+            <p class="chart-caption"><strong>Fig 3.</strong> 99.5% retest pass rate</p>
+          </div>
+        </div>
+
+        <div class="stats animate-stagger" style="margin-top: var(--space-xxl);">
+          <div class="stat animate-on-scroll">
+            <div class="stat-number"><span class="counter">500</span>+</div>
+            <div class="stat-label">applications tested</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat-number"><span class="counter">2500</span>+</div>
+            <div class="stat-label">vulnerabilities identified</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat-number"><span class="counter">150</span>+</div>
+            <div class="stat-label">assessments delivered</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat-number">99.5%</div>
+            <div class="stat-label">client satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voices">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">From the teams we tested</h2>
+
+        <div class="animate-stagger">
+          <div class="testimonial-row animate-on-scroll">
+            <div class="avatar" aria-hidden="true">PR</div>
+            <div>
+              <div class="testimonial-meta">P. Raval <span class="role">&mdash; Head of Engineering, fintech</span></div>
+              <p class="testimonial-quote">
+                &ldquo;The IDOR they found on our invoice API had been live for
+                fourteen months. The write-up was clear enough that we shipped
+                the fix before the report call.&rdquo;
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-row animate-on-scroll">
+            <div class="avatar" aria-hidden="true">SM</div>
+            <div>
+              <div class="testimonial-meta">S. Mehta <span class="role">&mdash; CTO, healthcare SaaS</span></div>
+              <p class="testimonial-quote">
+                &ldquo;Our auditor accepted the report as-is. That has never
+                happened with a pentest vendor before.&rdquo;
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-row animate-on-scroll">
+            <div class="avatar" aria-hidden="true">AK</div>
+            <div>
+              <div class="testimonial-meta">A. Kulkarni <span class="role">&mdash; Platform lead, logistics</span></div>
+              <p class="testimonial-quote">
+                &ldquo;Zero padding. Thirty-five findings, thirty-five
+                proof-of-concepts, one retest, done.&rdquo;
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-row animate-on-scroll">
+            <div class="avatar" aria-hidden="true">JD</div>
+            <div>
+              <div class="testimonial-meta">J. Doshi <span class="role">&mdash; Compliance manager, payments</span></div>
+              <p class="testimonial-quote">
+                &ldquo;They mapped every finding to the PCI requirement it
+                touched. Our QSA had no follow-up questions, which has genuinely
+                never happened.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="careers">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Working here</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            We hire slowly and rarely. When we do, we care about whether you can
+            find a real bug in a real application and then explain it to someone
+            who has to fix it &mdash; in that order, and the second half matters
+            as much as the first.
+          </p>
+
+          <h3>Open roles</h3>
+        </div>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Senior web tester</span>
+            <span class="defdesc">Remote, full-time. Five years of hands-on application
+              testing and a track record of findings you can talk through.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Cloud security engineer</span>
+            <span class="defdesc">Remote, full-time. Deep AWS or Azure, with real
+              privilege-escalation research behind you.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[-] Report editor</span>
+            <span class="defdesc">Not currently open. We keep the posting up because the role
+              opens roughly once a year and good candidates are rare.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[+]</span>
+          <p>
+            No CV screen. Send a write-up of a bug you are proud of &mdash; a
+            CTF chain, a disclosed finding, anything real &mdash; to
+            <a href="mailto:work@vapt-security.com">work@vapt-security.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="brand">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Brand and press</h2>
+        <p class="section-intro animate-on-scroll">
+          The wordmark is block-pixel ASCII and is never rendered as a vector
+          logo, recoloured, or set in a proportional typeface. Use it on the
+          cream canvas or the near-black surface, nothing else.
+        </p>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Wordmark (ink)</span>
+            <span class="defdesc"><a href="images/wordmark-vapt.svg">wordmark-vapt.svg</a>
+              &mdash; for light backgrounds. #201d1d on #fdfcfc.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Wordmark (cream)</span>
+            <span class="defdesc"><a href="images/wordmark-vapt-cream.svg">wordmark-vapt-cream.svg</a>
+              &mdash; for the near-black surface only.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Share image</span>
+            <span class="defdesc"><a href="images/og-cover.svg">og-cover.svg</a>
+              &mdash; 1200&times;630, for link previews.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Press enquiries</span>
+            <span class="defdesc"><a href="mailto:press@vapt-security.com">press@vapt-security.com</a>
+              &mdash; we respond within one business day.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Rather see the work than read about it?</h2>
+          <p>We will send a full redacted engagement report under NDA, so you can judge the output before you judge the pitch.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="about-cta">Request the sample</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="advisories.html"><span class="label">[&lt;] previous</span>Advisories</a>
+          <a href="contact.html" style="text-align:right"><span class="label">next [&gt;]</span>Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

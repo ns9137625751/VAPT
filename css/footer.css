@@ -1,0 +1,143 @@
+/* =====================================
+   FOOTER.CSS
+   5-up link grid separated by hairline vertical rules, collapsing 5 -> 2 -> 1.
+   Everything at caption-md (14px / 2.0) so rows stay ~44px tappable.
+   ===================================== */
+
+.site-footer {
+  background: var(--canvas);
+  border-top: 1px solid var(--hairline);
+  padding: var(--space-xxl) 0;
+}
+
+.footer-inner {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* --- Newsletter row --- */
+.footer-subscribe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-md);
+  padding-bottom: var(--space-xxl);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.footer-subscribe-copy {
+  flex: 1 1 320px;
+}
+
+.footer-subscribe-copy strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.footer-subscribe-copy span {
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+.footer-subscribe form {
+  display: flex;
+  gap: var(--space-sm);
+  flex: 0 1 380px;
+}
+
+.footer-subscribe .input {
+  flex: 1 1 auto;
+}
+
+/* --- 5-up link grid --- */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-bottom: 1px solid var(--hairline);
+}
+
+.footer-links-cell {
+  padding: var(--space-lg) var(--space-md);
+  border-left: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.footer-links-cell:first-child {
+  border-left: 0;
+}
+
+.footer-links-cell h4 {
+  font-size: var(--fs-caption-md);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links-cell li {
+  padding: var(--space-xxs) 0;
+}
+
+.footer-links-cell a {
+  display: inline-block;
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+}
+
+.footer-links-cell a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --- Bottom utility row --- */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  color: var(--mute);
+  font-size: var(--fs-caption-md);
+  line-height: var(--lh-button);
+}
+
+.footer-bottom-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.footer-bottom-brand img {
+  height: 14px;
+  width: auto;
+  opacity: 0.6;
+}
+
+.footer-utility {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.footer-utility a {
+  color: var(--mute);
+  text-decoration: none;
+}
+
+.footer-utility a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-utility .sep {
+  color: var(--ash);
+}

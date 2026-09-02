@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The eight-phase VAPT methodology: scoping, reconnaissance, assessment, manual testing, exploitation, validation, reporting and retest.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Methodology &mdash; VAPT Security">
+  <meta property="og:description" content="The eight-phase VAPT methodology: scoping, reconnaissance, assessment, manual testing, exploitation, validation, reporting and retest.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Methodology &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link" aria-current="page">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>methodology
+        </p>
+        <h1 class="animate-on-scroll">How an engagement actually runs.</h1>
+        <p class="page-standfirst animate-on-scroll">Eight phases, roughly eight working days, built on OWASP WSTG, ASVS and PTES. Nothing reaches your report without a proof-of-concept and a second tester's review.</p>
+        <p class="page-meta animate-on-scroll">[+] 8 phases &nbsp; [+] Peer-reviewed findings &nbsp; [+] Retest included</p>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">The eight phases</h2>
+        <p class="section-intro animate-on-scroll">
+          Roughly eight working days for a mid-size application. You get a
+          shared channel with the testers from day one &mdash; findings reach
+          you as they are confirmed, not in a document three weeks later.
+        </p>
+
+        <figure class="figure-wide animate-on-scroll" style="margin: 0 0 var(--space-xl);">
+          <img src="images/diagram-engagement-flow.svg"
+               alt="Engagement pipeline: scope, recon, scan, exploit, report, with day markers underneath."
+               width="430" height="100" loading="lazy">
+          <figcaption class="chart-caption">
+            <strong>Fig 4.</strong> The eight phases, drawn as a pipeline.
+          </figcaption>
+        </figure>
+
+        <div class="toc animate-on-scroll">
+          <p class="toc-label">Contents</p>
+          <ol>
+            <li><a href="#phase-01">Scoping</a></li>
+            <li><a href="#phase-02">Reconnaissance</a></li>
+            <li><a href="#phase-03">Vulnerability assessment</a></li>
+            <li><a href="#phase-04">Manual testing</a></li>
+            <li><a href="#phase-05">Exploitation</a></li>
+            <li><a href="#phase-06">Validation</a></li>
+            <li><a href="#phase-07">Reporting</a></li>
+            <li><a href="#phase-08">Retest</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="phase-01">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [01] Scoping
+          </h2>
+          <p class="meta">day 1</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">We agree targets, roles, credentials, testing windows and the rules of engagement in writing. Out-of-scope assets are named explicitly. You get a fixed price and a firm delivery date before anything is signed.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Asset inventory and ownership confirmed</li>
+            <li>Rules of engagement and escalation contacts agreed</li>
+            <li>Test accounts provisioned for every role</li>
+            <li>Emergency stop procedure and contact established</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-02">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [02] Reconnaissance
+          </h2>
+          <p class="meta">day 2</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Mapping the real attack surface, which is reliably larger than the one in the documentation. Passive collection first, then active enumeration within the agreed scope.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Subdomain, route and endpoint enumeration</li>
+            <li>Technology fingerprinting and version identification</li>
+            <li>Public exposure review: leaked credentials, repositories, buckets</li>
+            <li>Trust boundaries and data flows documented</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-03">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [03] Vulnerability assessment
+          </h2>
+          <p class="meta">day 3</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">An automated sweep tuned to your stack, used to establish a baseline and free up human time for the work that needs judgement. Nothing from this phase reaches your report unverified.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Authenticated and unauthenticated scanning</li>
+            <li>Dependency and known-CVE review</li>
+            <li>Configuration and TLS assessment</li>
+            <li>Baseline recorded for later comparison</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-04">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [04] Manual testing
+          </h2>
+          <p class="meta">day 4&ndash;6</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">The part that earns the engagement. Business logic, chained flaws and authorisation depth &mdash; the categories no scanner reaches, because they require understanding what your application is for.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Every role tested against every other role</li>
+            <li>Business-logic and workflow abuse</li>
+            <li>Chained low-severity issues escalated to real impact</li>
+            <li>Manual review of anything the scanner flagged as uncertain</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-05">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [05] Exploitation
+          </h2>
+          <p class="meta">day 6</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Every claimed finding gets a proof-of-concept. If we cannot demonstrate it, it does not go in the report as a vulnerability &mdash; it goes in the observations appendix.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Proof-of-concept per finding, with evidence retained</li>
+            <li>Impact established against real data, never destroyed</li>
+            <li>Post-exploitation only where explicitly authorised</li>
+            <li>Critical findings reported the day they are confirmed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-06">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [06] Validation
+          </h2>
+          <p class="meta">day 7</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">A second tester reviews the finding set. False positives are removed, severities are challenged, and duplicates are merged before anything reaches you.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Peer review by a tester not on the original engagement</li>
+            <li>False positives removed</li>
+            <li>Severity ratings challenged and adjusted</li>
+            <li>Reproduction steps re-run from a clean environment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-07">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [07] Reporting
+          </h2>
+          <p class="meta">day 8</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Two audiences, one document. An executive summary that a board can read without a translator, and a technical body an engineer can work straight from.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Executive summary with business-risk framing</li>
+            <li>Per-finding technical detail, evidence and remediation</li>
+            <li>Machine-readable export (JSON or SARIF) for your tracker</li>
+            <li>Report walkthrough call with the testers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="phase-08">
+      <div class="container">
+        <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
+          <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
+            [08] Retest
+          </h2>
+          <p class="meta">+30 days</p>
+        </div>
+
+        <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Once you have shipped fixes we re-run the full finding set and issue an updated report showing what closed. Included in the engagement price, not billed separately.</p>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Every finding re-tested, not just the ones you flagged as fixed</li>
+            <li>Regression check against the original baseline</li>
+            <li>Updated report and attestation letter issued</li>
+            <li>Findings that remain open are re-rated with current context</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="standards">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Standards we work to</h2>
+        <p class="section-intro animate-on-scroll">
+          The methodology above is ours. It is built on published frameworks so
+          that our coverage is auditable rather than something you have to take
+          on trust.
+        </p>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">OWASP WSTG</span>
+            <span class="defdesc">Web Security Testing Guide &mdash; the per-category test
+              coverage for web application engagements.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">OWASP ASVS</span>
+            <span class="defdesc">Application Security Verification Standard, levels 1&ndash;3,
+              used where you need verification depth stated per requirement.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">OWASP API Top 10</span>
+            <span class="defdesc">Category coverage for API-specific engagements, led by
+              broken object-level authorisation.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">OWASP MASVS</span>
+            <span class="defdesc">Mobile Application Security Verification Standard for
+              Android and iOS assessments.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">PTES</span>
+            <span class="defdesc">Penetration Testing Execution Standard &mdash; the overall
+              engagement structure and reporting expectations.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">NIST SP 800-115</span>
+            <span class="defdesc">Technical guide to information security testing, used as the
+              reference auditors most often recognise.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">CVSS v3.1</span>
+            <span class="defdesc">Base scoring for every finding, adjusted with environmental
+              context and stated alongside our own severity rating.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Rules of engagement</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Every engagement runs under a written set of rules agreed during
+            scoping. These are our defaults; they can be tightened, and some can
+            be relaxed with explicit written authorisation.
+          </p>
+
+          <h3>Excluded by default</h3>
+          <ul>
+            <li>Denial-of-service and resource-exhaustion testing</li>
+            <li>Social engineering, phishing and physical intrusion</li>
+            <li>Testing against third-party services you do not control</li>
+            <li>Any action that destroys, corrupts or exfiltrates real customer data</li>
+          </ul>
+
+          <h3>Always in force</h3>
+          <ul>
+            <li>Testing happens only within the agreed window and source addresses</li>
+            <li>Critical findings are reported immediately, not held for the report</li>
+            <li>An emergency stop contact can halt testing within fifteen minutes</li>
+            <li>Evidence is encrypted at rest and destroyed on request after the retest</li>
+          </ul>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[!]</span>
+          <p>
+            If we find evidence that you are <strong>already compromised</strong>,
+            testing stops and your escalation contact is called the same hour.
+            That has happened. It is not on the price list.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Want the long version?</h2>
+          <p>We will walk you through the methodology against your actual stack on a 30-minute call, before you commit to anything.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="method-cta">Book a scoping call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="services.html"><span class="label">[&lt;] previous</span>What we test</a>
+          <a href="reports.html" style="text-align:right"><span class="label">next [&gt;]</span>What a report looks like</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

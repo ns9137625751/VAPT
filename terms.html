@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Engagement terms: authorisation and scope, your responsibilities, the limits of testing, deliverables, fees, liability and data processing.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Terms of service &mdash; VAPT Security">
+  <meta property="og:description" content="Engagement terms: authorisation and scope, your responsibilities, the limits of testing, deliverables, fees, liability and data processing.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Terms of service &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>terms
+        </p>
+        <h1 class="animate-on-scroll">Terms of service.</h1>
+        <p class="page-standfirst animate-on-scroll">The terms every engagement runs under, including an honest statement of what a penetration test can and cannot promise.</p>
+        <p class="page-meta animate-on-scroll">Last updated 1 September 2026 &nbsp; [+] Fixed scope, fixed price &nbsp; [+] DPA available</p>
+      </div>
+    </section>
+
+    <section id="policy">
+      <div class="container">
+        <div class="toc animate-on-scroll">
+          <p class="toc-label">Contents</p>
+          <ol>
+            <li><a href="#engaging">Engaging us</a></li>
+            <li><a href="#authorisation">Authorisation and scope</a></li>
+            <li><a href="#responsibilities">Your responsibilities</a></li>
+            <li><a href="#limits">What testing cannot promise</a></li>
+            <li><a href="#deliverables">Deliverables and use</a></li>
+            <li><a href="#fees">Fees and cancellation</a></li>
+            <li><a href="#liability">Liability</a></li>
+            <li><a href="#dpa">Data processing</a></li>
+          </ol>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[!]</span>
+          <p>
+            <strong>Template notice.</strong> This page is a starting point
+            written for a security-testing practice. Have your own counsel review
+            it against your jurisdiction and contracts before you rely on it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="engaging">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Engaging us</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Each engagement is governed by a signed statement of work that names
+            the scope, dates, price and contacts. These terms apply alongside
+            it. Where they conflict, the statement of work wins.
+          </p>
+          <ul>
+            <li>Quotes are valid for 30 days from issue</li>
+            <li>Work begins when the statement of work is signed and dates are booked</li>
+            <li>Scope changes require a written amendment signed by both sides</li>
+            <li>Either party may sign an NDA before any scoping detail is exchanged</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="authorisation">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Authorisation and scope</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Penetration testing is only lawful with authorisation from the party
+            that owns the systems. By signing a statement of work you confirm
+            that you own the in-scope assets, or hold written permission from
+            whoever does.
+          </p>
+          <ul>
+            <li>We test only what the scope sheet names, and nothing outside it</li>
+            <li>If your systems sit on third-party infrastructure, you obtain that
+              provider's authorisation before testing begins</li>
+            <li>Testing occurs only inside the agreed window and from agreed addresses</li>
+            <li>Either side may invoke the emergency stop, halting testing within 15 minutes</li>
+          </ul>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[!]</span>
+          <p>
+            If we find we are testing an asset you do not in fact control, we
+            stop immediately and tell you. We do not continue on assurances
+            given verbally.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="responsibilities">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Your responsibilities</h2>
+
+        <div class="prose animate-on-scroll">
+          <ul>
+            <li>Provide accurate scope information and working test credentials for every role</li>
+            <li>Take a verified backup before testing begins</li>
+            <li>Nominate an escalation contact reachable during the testing window</li>
+            <li>Tell us about fragile components so we can adjust rather than break them</li>
+            <li>Notify any third parties whose authorisation the engagement requires</li>
+          </ul>
+          <p>
+            Delays caused by missing credentials or environments are the most
+            common reason an engagement slips. Where a booked window is lost to
+            them, we may need to rebook.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">What testing cannot promise</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            An honest statement of the limits, because a vendor who claims
+            otherwise is selling you something that does not exist.
+          </p>
+          <ul>
+            <li>A test is a point-in-time assessment of a defined scope, not a guarantee
+              that no vulnerabilities exist</li>
+            <li>Coverage is bounded by the time, access and scope agreed</li>
+            <li>Passing a test is not a warranty against future compromise, and code
+              changed after delivery is untested</li>
+            <li>Compliance mapping supports your audit; it is not itself a certification</li>
+            <li>Findings reflect the environment as configured at the time of testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Deliverables and use</h2>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Ownership</span>
+            <span class="defdesc">The report is yours on payment. Our methodology, tooling and
+              templates remain ours.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Internal use</span>
+            <span class="defdesc">Share the report freely inside your organisation and with
+              your auditors, insurers and regulators.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">External use</span>
+            <span class="defdesc">Share with customers and prospects under NDA. The attestation
+              letter exists for wider distribution.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Attribution</span>
+            <span class="defdesc">Do not publish extracts in a way that implies we endorse a
+              product or a security posture we did not assess.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Our references</span>
+            <span class="defdesc">We name you as a client only with written permission.
+              Advisories are always anonymised.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fees">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Fees and cancellation</h2>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Pricing</span>
+            <span class="defdesc">Fixed scope, fixed price. The quote you sign is the invoice
+              you receive.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Payment</span>
+            <span class="defdesc">Net 30 from delivery, unless the statement of work says
+              otherwise.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Retest</span>
+            <span class="defdesc">One full retest within 30 days of delivery, included in the
+              price. Further retests are quoted separately.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Cancellation</span>
+            <span class="defdesc">Free more than 10 business days before the booked window;
+              50% within 10 days; 100% once testing has begun.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Rebooking</span>
+            <span class="defdesc">One free reschedule with more than 5 business days'
+              notice.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="liability">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Liability</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            We carry professional indemnity and cyber liability insurance;
+            certificates are available on request. Our aggregate liability for
+            any engagement is limited to the fees paid for that engagement,
+            except where the law does not permit such a limit &mdash; including
+            death or personal injury caused by negligence, and fraud.
+          </p>
+          <p>
+            Neither party is liable for indirect or consequential loss,
+            including lost profit or lost data, however arising.
+          </p>
+          <p>
+            Testing carries inherent risk. We work to minimise it &mdash; agreed
+            windows, excluded techniques, an emergency stop &mdash; but you
+            should take a verified backup before any engagement begins.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dpa">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Data processing</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Where an engagement involves personal data, we act as
+            <strong>processor</strong> and you as <strong>controller</strong>. A
+            Data Processing Agreement is executed alongside the statement of
+            work. In summary, we:
+          </p>
+          <ul>
+            <li>Process personal data only on your documented instructions</li>
+            <li>Bind everyone with access to confidentiality</li>
+            <li>Apply encryption at rest and in transit to all evidence</li>
+            <li>Engage no sub-processor without your prior written authorisation</li>
+            <li>Assist with data-subject requests and with your Article 32 obligations</li>
+            <li>Notify you of any personal-data breach without undue delay, and within
+              24 hours of becoming aware</li>
+            <li>Delete or return all personal data at the end of the engagement</li>
+            <li>Submit to audit on reasonable notice</li>
+          </ul>
+          <p>
+            Request the full DPA from
+            <a href="mailto:privacy@vapt-security.com">privacy@vapt-security.com</a>.
+            Standard Contractual Clauses are available where transfers require
+            them. See also the <a href="privacy.html">privacy policy</a>.
+          </p>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p>
+            Most engagements can be scoped so that no real personal data is
+            touched at all &mdash; a seeded staging environment. Ask for it on
+            the scoping call; it is usually the better option.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="privacy.html"><span class="label">[&lt;] previous</span>Privacy policy</a>
+          <a href="contact.html" style="text-align:right"><span class="label">next [&gt;]</span>Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

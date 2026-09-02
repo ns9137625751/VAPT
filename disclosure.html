@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to report a vulnerability in our systems: scope, safe harbour, response targets, security.txt and our PGP key.">
+  <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#fdfcfc">
+
+  <meta property="og:title" content="Responsible disclosure &mdash; VAPT Security">
+  <meta property="og:description" content="How to report a vulnerability in our systems: scope, safe harbour, response targets, security.txt and our PGP key.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <title>Responsible disclosure &mdash; VAPT Security</title>
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
+       can actually reveal it again. -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
+        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
+        <span class="navbar-brand-suffix">security</span>
+      </a>
+
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+
+      <ul class="navbar-menu" id="nav-menu" data-menu>
+        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
+        <li><a href="methodology.html" class="nav-link">Method</a></li>
+        <li><a href="reports.html" class="nav-link">Reports</a></li>
+        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>disclosure
+        </p>
+        <h1 class="animate-on-scroll">Responsible disclosure policy.</h1>
+        <p class="page-standfirst animate-on-scroll">We run a security practice, so it would be embarrassing to make it hard to report a problem in our own systems. Report in good faith and we will treat your research as authorised.</p>
+        <p class="page-meta animate-on-scroll">[+] Ack in 1 business day &nbsp; [+] Safe harbour &nbsp; [+] RFC 9116 security.txt</p>
+      </div>
+    </section>
+
+    <section id="policy">
+      <div class="container">
+        <div class="toc animate-on-scroll">
+          <p class="toc-label">Contents</p>
+          <ol>
+            <li><a href="#scope-in">What is in scope</a></li>
+            <li><a href="#scope-out">What is out of scope</a></li>
+            <li><a href="#safe-harbour">Safe harbour</a></li>
+            <li><a href="#reporting">How to report</a></li>
+            <li><a href="#security-txt">security.txt</a></li>
+            <li><a href="#pgp">PGP key</a></li>
+            <li><a href="#thanks">Acknowledgements</a></li>
+          </ol>
+        </div>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            We run a security practice, so it would be embarrassing to make it
+            hard to report a problem in our own systems. If you have found
+            something, we want to hear about it and we will not come after you
+            for telling us.
+          </p>
+          <p>
+            We aim to acknowledge every report within <strong>one business
+            day</strong>, give an initial assessment within <strong>five</strong>,
+            and keep you updated until it is closed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope-in">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">What is in scope</h2>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] vapt-security.com</span>
+            <span class="defdesc">This site and every subdomain we operate.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Client portal</span>
+            <span class="defdesc">portal.vapt-security.com &mdash; report delivery and
+              evidence access.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Public API</span>
+            <span class="defdesc">api.vapt-security.com &mdash; findings export endpoints.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">[+] Email security</span>
+            <span class="defdesc">SPF, DKIM, DMARC and spoofing issues affecting our
+              domains.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope-out">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">What is out of scope</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            These are either not ours to fix, not vulnerabilities, or would harm
+            people who did not consent. Reports limited to the following will be
+            closed without an award.
+          </p>
+          <ul>
+            <li>Denial of service, volumetric testing or resource exhaustion</li>
+            <li>Social engineering or phishing of our staff, clients or suppliers</li>
+            <li>Physical attacks against our offices or personnel</li>
+            <li>Systems belonging to our clients &mdash; report those to the client</li>
+            <li>Third-party services we merely consume, unless our configuration is at fault</li>
+            <li>Missing security headers with no demonstrated impact</li>
+            <li>Scanner output submitted without a working proof-of-concept</li>
+            <li>Best-practice opinions, such as TLS cipher preferences with no exploit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="safe-harbour">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Safe harbour</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            If you make a good-faith effort to comply with this policy during
+            your research, we will consider it authorised, we will not pursue or
+            support legal action against you, and if a third party brings action
+            we will make clear that you were acting within our policy.
+          </p>
+          <p>Good faith means all of the following:</p>
+          <ul>
+            <li>You stay within the in-scope systems listed above</li>
+            <li>You stop at proof of concept and do not pivot further</li>
+            <li>You access only the minimum data needed to demonstrate the issue</li>
+            <li>You do not modify, exfiltrate, retain or destroy any data</li>
+            <li>You do not degrade service for anyone else</li>
+            <li>You report promptly and give us reasonable time to fix before disclosing</li>
+          </ul>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[!]</span>
+          <p>
+            If you access personal data by accident, stop, tell us immediately,
+            and delete your copy. Say so in the report &mdash; it will not count
+            against you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reporting">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">How to report</h2>
+
+        <div class="prose animate-on-scroll">
+          <p>
+            Email <a href="mailto:security@vapt-security.com">security@vapt-security.com</a>,
+            encrypted with the key below if the finding is sensitive. A useful
+            report contains:
+          </p>
+          <ul>
+            <li>The affected URL, endpoint or host</li>
+            <li>Reproduction steps precise enough for us to follow exactly</li>
+            <li>What an attacker could do with it, in one paragraph</li>
+            <li>Any request captures, screenshots or scripts you used</li>
+            <li>How you would like to be credited, or that you would rather not be</li>
+          </ul>
+        </div>
+
+        <div class="deflist animate-stagger">
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Acknowledgement</span>
+            <span class="defdesc">Within 1 business day.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Initial assessment</span>
+            <span class="defdesc">Within 5 business days, including our severity view.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Fix target</span>
+            <span class="defdesc">Critical 7 days &middot; high 30 days &middot; medium 90
+              days.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Public disclosure</span>
+            <span class="defdesc">Coordinated with you, normally 90 days after the report or
+              on fix, whichever comes first.</span>
+          </div>
+          <div class="defrow animate-on-scroll">
+            <span class="defterm">Reward</span>
+            <span class="defdesc">We do not run a paid bounty. We offer credit, a written
+              reference, and our genuine thanks.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security-txt">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">security.txt</h2>
+        <p class="section-intro animate-on-scroll">
+          Served at <code>/.well-known/security.txt</code> per RFC 9116.
+        </p>
+        <pre class="code-block animate-on-scroll">Contact: mailto:security@vapt-security.com
+Contact: https://vapt-security.com/disclosure.html
+Encryption: https://vapt-security.com/pgp.asc
+Preferred-Languages: en
+Canonical: https://vapt-security.com/.well-known/security.txt
+Policy: https://vapt-security.com/disclosure.html
+Acknowledgments: https://vapt-security.com/disclosure.html#thanks
+Expires: 2027-01-01T00:00:00.000Z</pre>
+      </div>
+    </section>
+
+    <section id="pgp">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">PGP key</h2>
+        <p class="section-intro animate-on-scroll">
+          Use this for anything you would not want read in transit. Verify the
+          fingerprint through a second channel before you trust it.
+        </p>
+        <pre class="code-block animate-on-scroll">-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+Fingerprint: 4A2E 9C31 77BD 0E58 12F4  6B90 D3C7 1A85 EE20 9F63
+Key type:    RSA 4096, created 2024-11-02, expires 2027-11-02
+Download:    https://vapt-security.com/pgp.asc
+
+[ the full armoured key is served at the URL above -- always verify the
+  fingerprint against a second channel before trusting a key you fetched ]
+
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+      </div>
+    </section>
+
+    <section id="thanks">
+      <div class="container">
+        <h2 class="section-label animate-on-scroll">Acknowledgements</h2>
+        <p class="section-intro animate-on-scroll">
+          People who reported an issue in our systems and let us name them.
+        </p>
+
+        <div class="post-list animate-stagger">
+          <div class="post-row animate-on-scroll">
+            <span class="post-date">2026-06-02</span>
+            <span class="post-id">resolved</span>
+            <div class="post-body">
+              <span class="post-title">M. Fernandes</span>
+              <p class="post-excerpt">Session fixation on the client portal login flow.</p>
+            </div>
+          </div>
+          <div class="post-row animate-on-scroll">
+            <span class="post-date">2026-03-19</span>
+            <span class="post-id">resolved</span>
+            <div class="post-body">
+              <span class="post-title">anonymous</span>
+              <p class="post-excerpt">Subdomain takeover on a retired staging host.</p>
+            </div>
+          </div>
+          <div class="post-row animate-on-scroll">
+            <span class="post-date">2025-11-30</span>
+            <span class="post-id">resolved</span>
+            <div class="post-body">
+              <span class="post-title">T. Okafor</span>
+              <p class="post-excerpt">Rate-limit bypass on the report export endpoint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="advisories.html"><span class="label">[&lt;] previous</span>Advisories</a>
+          <a href="privacy.html" style="text-align:right"><span class="label">next [&gt;]</span>Privacy policy</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-subscribe">
+        <div class="footer-subscribe-copy">
+          <strong>Advisories in your inbox</strong>
+          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
+        </div>
+        <form data-validate novalidate>
+          <label class="visually-hidden" for="subscribe-email">Email address</label>
+          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
+          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-links-cell">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#web">Web application</a></li>
+            <li><a href="services.html#api">API security</a></li>
+            <li><a href="services.html#mobile">Mobile</a></li>
+            <li><a href="services.html#network">Network</a></li>
+            <li><a href="services.html#cloud">Cloud</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Process</h4>
+          <ul>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample report</a></li>
+            <li><a href="about.html#record">Track record</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html#voices">Clients</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="advisories.html">Advisories</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="disclosure.html#security-txt">security.txt</a></li>
+            <li><a href="disclosure.html#pgp">PGP key</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-cell">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html#dpa">DPA</a></li>
+            <li><a href="privacy.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
+          <span>&copy;2026 VAPT Security</span>
+        </div>
+        <div class="footer-utility">
+          <a href="about.html#brand">Brand</a>
+          <span class="sep">&middot;</span>
+          <a href="privacy.html">Privacy</a>
+          <span class="sep">&middot;</span>
+          <a href="terms.html">Terms</a>
+          <span class="sep">&middot;</span>
+          <span>English</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

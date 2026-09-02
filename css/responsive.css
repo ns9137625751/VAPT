@@ -1,0 +1,325 @@
+/* =====================================
+   RESPONSIVE.CSS
+   Breakpoints per DESIGN-opencode.ai.md:
+   1280+ default · 1024 desktop · 850 tablet · 768 tablet-narrow · 640 mobile
+   ===================================== */
+
+/* ===============================
+   TABLET — 850px
+   Two-column splits stack; footer collapses 5-up -> 2-up.
+   =============================== */
+
+@media (max-width: 850px) {
+  :root {
+    --space-section: 64px;
+  }
+
+  .scope-grid,
+  .list-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xxl);
+  }
+
+  .figures {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-lg);
+  }
+
+  .stat:nth-child(odd) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-links-cell {
+    text-align: left;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .footer-links-cell:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .footer-links-cell:nth-child(-n + 2) {
+    border-top: 0;
+  }
+}
+
+/* ===============================
+   TABLET-NARROW — 768px
+   Nav collapses to a drawer. The CTA never leaves the bar.
+   =============================== */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+    order: 2;
+  }
+
+  .navbar-actions {
+    order: 3;
+  }
+
+  .navbar-menu {
+    display: none;
+    order: 4;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* Anchored to the bottom of the bar rather than a fixed 56px, so the
+       drawer follows if the bar grows a row on a narrow screen. */
+    top: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    background: var(--canvas);
+    border-bottom: 1px solid var(--hairline);
+    padding: var(--space-sm) var(--space-xl) var(--space-lg);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .navbar-menu li:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-md) 0;
+  }
+
+  /* The drawer anchors to .navbar (sticky is a containing block) so it spans
+     the full bar width rather than the padded container.
+
+     The bar keeps its 56px on one row, but grows rather than fixing its height
+     — a fixed 56px would let a wrapped CTA overlap the news strip below. */
+  .navbar-container {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    height: auto;
+    min-height: 56px;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+
+  /* Dropping the suffix buys the ~60px that keeps brand, toggle and CTA on
+     one row down to about 360px. */
+  .navbar-brand-suffix {
+    display: none;
+  }
+
+  /* Wrap rather than stack, so the bracket marker and the numeral stay on the
+     same line as their label instead of each taking a line of their own. The
+     description carries a flex-basis, so it sits inline where there is room
+     (contact's numbered steps) and drops to its own line where there is not
+     (the method table, which also carries a title and a day). */
+  .list-row,
+  .step {
+    flex-wrap: wrap;
+    row-gap: var(--space-xs);
+  }
+
+  .list-row-label {
+    flex: 1 1 auto;
+  }
+
+  .list-row-desc {
+    flex: 1 1 100%;
+  }
+
+  .step-number {
+    flex: 0 0 4ch;
+  }
+
+  .step-title {
+    flex: 1 1 auto;
+  }
+
+  .step-day {
+    flex: 0 0 auto;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .step-description {
+    flex: 1 1 12ch;
+  }
+
+  .defrow,
+  .post-row {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .defterm,
+  .post-date,
+  .post-id {
+    flex: 0 0 auto;
+    text-align: left;
+  }
+
+  .severity-row {
+    flex-wrap: wrap;
+  }
+
+  .severity-desc {
+    flex: 1 1 100%;
+  }
+
+  .severity-sla {
+    flex: 0 0 auto;
+    text-align: left;
+  }
+}
+
+/* ===============================
+   MOBILE — 640px
+   Single column everything; hero display 38px -> 28px, line-height holds.
+   =============================== */
+
+@media (max-width: 640px) {
+  :root {
+    --space-section: 48px;
+    --fs-display-xl: 28px;
+  }
+
+  .container,
+  .container-wide,
+  .navbar-container,
+  .footer-inner,
+  .news-strip-inner {
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .tui-mockup {
+    padding: var(--space-xxl) var(--space-lg);
+    font-size: var(--fs-caption-md);
+  }
+
+  .tui-wordmark {
+    height: 44px;
+    margin-bottom: var(--space-xl);
+  }
+
+  .tui-hints {
+    gap: var(--space-md);
+  }
+
+  .figures,
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stat {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--hairline);
+    padding-top: var(--space-sm);
+  }
+
+  .stat:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-links-cell {
+    border-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-links-cell:first-child {
+    border-top: 0;
+  }
+
+  .footer-subscribe form {
+    flex: 1 1 100%;
+  }
+
+  .hero-cta .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .cta-band {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .scope-block-head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .scroll-to-top {
+    right: var(--space-lg);
+    bottom: var(--space-lg);
+  }
+}
+
+/* ===============================
+   PRINT — the page already reads like a listing; keep it that way.
+   =============================== */
+
+@media print {
+  .navbar,
+  .news-strip,
+  .scroll-to-top,
+  .footer-subscribe {
+    display: none;
+  }
+
+  body {
+    color: #000;
+  }
+
+  .tui-mockup,
+  .cta-band {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+}
+
+/* ===============================
+   ADVISORY ROWS — the date/id prefix stacks above the title on narrow screens
+   =============================== */
+
+@media (max-width: 768px) {
+  .post-row-faq .faq-question {
+    flex-wrap: wrap;
+    row-gap: var(--space-xs);
+  }
+
+  .post-headline {
+    flex: 1 1 100%;
+  }
+
+  .post-row-faq .post-date,
+  .post-row-faq .post-id {
+    flex: 0 0 auto;
+  }
+}

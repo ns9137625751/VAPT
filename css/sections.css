@@ -51,6 +51,7 @@
 .tui-mockup {
   background: var(--surface-dark);
   color: var(--on-dark);
+  border: 1px solid var(--hairline);
   border-radius: var(--rounded-none);
   padding: 64px var(--space-xxl);
   font-size: var(--fs-body-md);
@@ -83,10 +84,10 @@
 }
 
 /* Semantic ramp lives here and nowhere else on the page. */
-.tui-keyword { color: var(--accent); }
-.tui-success { color: var(--success); }
-.tui-warning { color: var(--warning); }
-.tui-danger  { color: var(--danger); }
+.tui-keyword { color: var(--tui-keyword); }
+.tui-success { color: var(--tui-success); }
+.tui-warning { color: var(--tui-warning); }
+.tui-danger  { color: var(--tui-danger); }
 .tui-dim     { color: var(--ash); }
 
 .tui-prompt-row {
@@ -346,6 +347,14 @@
   font-weight: 500;
 }
 
+/* Tier colour is redundant with the bracket marker and the label, never the
+   sole carrier of severity. */
+.severity-row.is-critical .severity-name { color: var(--sev-critical); }
+.severity-row.is-high .severity-name     { color: var(--sev-high); }
+.severity-row.is-medium .severity-name   { color: var(--sev-medium); }
+.severity-row.is-low .severity-name      { color: var(--sev-low); }
+.severity-row.is-info .severity-name     { color: var(--sev-info); }
+
 .severity-count {
   flex: 0 0 4ch;
   color: var(--ink);
@@ -362,6 +371,20 @@
   text-align: right;
   color: var(--mute);
   font-size: var(--fs-caption-md);
+}
+
+/* Listing rows - the six services and the eight method phases - run tight:
+   this 32px plus the 16px above the next heading total 48px, exactly two lines
+   of body text at 16px/1.5. The first row in a list keeps the full 96px rhythm,
+   since it follows an intro rather than another row. */
+.listing-block + .listing-block {
+  padding-top: var(--space-xxl);
+}
+
+/* The intro is the last thing in a listing block now that the detail moved to
+   its own page; its trailing margin would push the pair past the 48px budget. */
+.listing-block .section-intro:last-child {
+  margin-bottom: 0;
 }
 
 /* ===============================
@@ -456,25 +479,26 @@
    =============================== */
 
 .cta-band {
-  background: var(--surface-dark);
-  color: var(--on-dark);
+  background: var(--surface-card);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
   border-radius: var(--rounded-sm);
   padding: var(--space-xxl);
 }
 
 .cta-band h2 {
-  color: var(--on-dark);
+  color: var(--ink);
   margin-bottom: var(--space-md);
 }
 
 .cta-band p {
-  color: var(--on-dark-mute);
+  color: var(--body);
   max-width: 62ch;
 }
 
 .cta-band .btn-primary {
-  background: var(--canvas);
-  color: var(--ink);
+  background: var(--primary);
+  color: var(--on-primary);
 }
 
 .cta-band .btn-primary:hover {
@@ -662,8 +686,13 @@
 
 .callout-marker {
   flex: 0 0 3ch;
-  color: var(--ink);
+  color: var(--accent);
   font-weight: 500;
+}
+
+/* An alert callout is the one place amber outranks teal. */
+.callout-marker.marker-alert {
+  color: var(--signal);
 }
 
 .callout p {
@@ -773,6 +802,8 @@
    NEXT/PREV — page-foot navigation between sub-pages
    =============================== */
 
+/* Always the only child of its own section, which already supplies the 96px
+   top rhythm -- a margin here would double it. */
 .page-nav {
   display: flex;
   flex-wrap: wrap;
@@ -780,7 +811,7 @@
   gap: var(--space-lg);
   border-top: 1px solid var(--hairline);
   padding-top: var(--space-lg);
-  margin-top: var(--space-section);
+  margin-top: 0;
 }
 
 .page-nav a {

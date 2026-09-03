@@ -5,6 +5,18 @@
    ===================================== */
 
 /* ===============================
+   DESKTOP-NARROW — 1024px
+   Five filled pills are far wider than five text links, so they tighten
+   before the bar runs out of room. The drawer still takes over at 768.
+   =============================== */
+
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+/* ===============================
    TABLET — 850px
    Two-column splits stack; footer collapses 5-up -> 2-up.
    =============================== */
@@ -82,8 +94,8 @@
        drawer follows if the bar grows a row on a narrow screen. */
     top: 100%;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0;
+    align-items: flex-start;
+    gap: var(--space-sm);
     margin: 0;
     background: var(--canvas);
     border-bottom: 1px solid var(--hairline);
@@ -94,17 +106,20 @@
     display: flex;
   }
 
+  /* The pill is the row divider now; a hairline under it would double up. */
   .navbar-menu li {
-    border-bottom: 1px solid var(--hairline);
-  }
-
-  .navbar-menu li:last-child {
     border-bottom: 0;
   }
 
+  /* A vertical rule means nothing once the links stack. */
+  .navbar-menu li.nav-sep::after {
+    display: none;
+  }
+
   .nav-link {
-    display: block;
-    padding: var(--space-md) 0;
+    display: inline-flex;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--fs-body-md);
   }
 
   /* The drawer anchors to .navbar (sticky is a containing block) so it spans
@@ -293,13 +308,26 @@
   }
 
   body {
+    background: #fff;
     color: #000;
   }
 
+  /* Force every dark surface and light-on-dark token back to print defaults. */
+  h1, h2, h3, h4, p, span, li, td, th, a,
+  .section-label, .section-intro, .page-standfirst, .meta,
+  .list-row-label, .list-row-desc, .severity-name, .severity-desc,
+  .severity-count, .severity-sla, .marker, .callout p, .callout-marker {
+    color: #000 !important;
+    background: transparent !important;
+  }
+
   .tui-mockup,
-  .cta-band {
-    background: #fff;
-    color: #000;
+  .cta-band,
+  .callout,
+  .badge,
+  .snippet {
+    background: #fff !important;
+    color: #000 !important;
     border: 1px solid #000;
   }
 }
@@ -321,5 +349,54 @@
   .post-row-faq .post-date,
   .post-row-faq .post-id {
     flex: 0 0 auto;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE — 480px & 375px
+   =============================== */
+
+@media (max-width: 480px) {
+  .tabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-xs);
+  }
+
+  .tab {
+    flex: 0 0 auto;
+  }
+
+  .input,
+  .select,
+  .textarea,
+  .btn {
+    min-height: 44px;
+    font-size: var(--fs-body-md);
+  }
+
+  .tui-mockup,
+  .snippet,
+  .code-block {
+    font-size: clamp(0.72rem, 3.2vw, 0.85rem);
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar-container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-cta {
+    gap: var(--space-sm);
   }
 }

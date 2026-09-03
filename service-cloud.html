@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#f7fafc">
+
+        
+  <title>Cloud Security Assessment & AWS/Azure VAPT | VAPT Security</title>
+  <meta name="description" content="Cloud infrastructure security reviews for AWS, Azure, and GCP focusing on IAM policies, misconfigurations, and container security.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vapt.example.com/service-cloud.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vapt.example.com/service-cloud.html">
+  <meta property="og:title" content="Cloud Security Assessment & AWS/Azure VAPT | VAPT Security">
+  <meta property="og:description" content="Cloud infrastructure security reviews for AWS, Azure, and GCP focusing on IAM policies, misconfigurations, and container security.">
+  <meta property="og:image" content="https://vapt.example.com/images/vapt_svc_cloud.jpg">
+  <meta property="og:site_name" content="VAPT Security">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vapt.example.com/service-cloud.html">
+  <meta name="twitter:title" content="Cloud Security Assessment & AWS/Azure VAPT | VAPT Security">
+  <meta name="twitter:description" content="Cloud infrastructure security reviews for AWS, Azure, and GCP focusing on IAM policies, misconfigurations, and container security.">
+  <meta name="twitter:image" content="https://vapt.example.com/images/vapt_svc_cloud.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/compat.css">
+  <link rel="stylesheet" href="css/vapt-assistant.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CyberSecurityService",
+    "name": "Cloud Security Assessment & AWS/Azure VAPT | VAPT Security",
+    "description": "Cloud infrastructure security reviews for AWS, Azure, and GCP focusing on IAM policies, misconfigurations, and container security.",
+    "url": "https://vapt.example.com/service-cloud.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "VAPT Security",
+      "url": "https://vapt.example.com",
+      "logo": "https://vapt.example.com/images/favicon.svg"
+    }
+  }
+  </script>
+  <script src="js/seo-config.js"></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      VAPT <span class="brand-sub">security</span>
+    </a>
+
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="nav-links" id="nav-links" data-nav-links aria-label="Main">
+      <div class="has-menu">
+        <button class="nav-link" data-menu-trigger aria-expanded="false" aria-controls="menu-services">
+          Services
+          <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-menu" id="menu-services" hidden>
+          <a href="service-web.html">Web Application VAPT <small>Websites and web apps</small></a>
+          <a href="service-mobile.html">Mobile Application VAPT <small>Android and iOS</small></a>
+          <a href="service-api.html">API Security Testing <small>REST, GraphQL, gRPC</small></a>
+          <a href="service-network.html">Network VAPT <small>Servers and network devices</small></a>
+          <a href="service-cloud.html">Cloud Security Assessment <small>AWS, Azure, GCP</small></a>
+          <a href="service-compliance.html">Compliance Support <small>Evidence for your auditor</small></a>
+          <a href="services.html">All services</a>
+        </div>
+      </div>
+      <a class="nav-link" href="methodology.html">How it works</a>
+      <a class="nav-link" href="reports.html">Reports</a>
+      <a class="nav-link" href="advisories.html">Research</a>
+      <a class="nav-link" href="about.html">About</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="#quote">Get VAPT Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main id="main">
+
+        <nav class="breadcrumb-nav wrap" aria-label="Breadcrumb" style="padding-top:16px;padding-bottom:8px;font-size:0.8rem;color:var(--on-dark-muted);">
+          <ol style="display:flex;gap:8px;list-style:none;padding:0;margin:0;">
+            <li><a href="index.html" style="color:var(--accent);text-decoration:none;">Home</a></li>
+            <li>/</li>
+            <li><a href="services.html" style="color:var(--accent);text-decoration:none;">Services</a></li>
+            <li>/</li>
+            <li aria-current="page" style="color:var(--on-dark);">Cloud</li>
+          </ol>
+        </nav>
+        
+
+    <!-- ============================================================
+         PAGE HEAD
+         ============================================================ -->
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span><a href="services.html">services</a><span class="sep">/</span>cloud
+        </p>
+        <h1 class="animate-on-scroll">Cloud security assessment</h1>
+        <p class="page-standfirst animate-on-scroll">Configuration reviewed against the provider benchmark, then tested rather than assumed. A policy that looks correct and a policy that holds are different.ngs.</p>
+        <p class="page-meta animate-on-scroll">[05] &nbsp; AWS, Azure, GCP &middot; 4&ndash;10 days</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <figure class="media media--wide animate-on-scroll">
+          <img src="images/svc-cloud.jpg" width="1600" height="900" alt="Cloud security assessment visual" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         COVERAGE
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="scope-block-head animate-on-scroll">
+          <div>
+            <h2 class="section-label" style="border: 0; margin: 0; padding: 0;">What we test</h2>
+            <p class="meta">Every item below is tested by hand, not just scanned.</p>
+          </div>
+          <img class="scope-glyph" src="images/svc-cloud.svg" alt="" width="120" height="84" loading="lazy">
+        </div>
+
+        <div class="list-rows animate-stagger">
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Identity</span>
+            <span class="list-row-desc">Over-permissive roles, wildcard policies, unused privileged principals and the escalation paths between them.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Storage</span>
+            <span class="list-row-desc">Public buckets, over-shared snapshots, unencrypted volumes and presigned URLs with no expiry.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Network</span>
+            <span class="list-row-desc">Security groups, peering, exposed management planes and services listening wider than intended.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Secrets</span>
+            <span class="list-row-desc">Keys in environment variables, build logs, images and repositories, plus rotation practice.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Workloads</span>
+            <span class="list-row-desc">Container and serverless configuration, image provenance and runtime privileges.</span>
+          </div>
+          <div class="list-row">
+            <span class="marker">[+]</span>
+            <span class="list-row-label">Logging</span>
+            <span class="list-row-desc">Whether the trail needed to investigate an incident actually exists and is retained.</span>
+          </div>
+        </div>
+
+        <div class="callout animate-on-scroll">
+          <span class="callout-marker">[x]</span>
+          <p><strong>You receive:</strong> Benchmark mapping (CIS or provider equivalent) with each deviation rated by real exploitability, not just compliance status.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section>
+      <div class="container">
+        <div class="cta-band animate-on-scroll">
+          <img src="images/wordmark-vapt.svg" alt="" width="115" height="25"
+               style="margin-bottom: var(--space-lg);" loading="lazy">
+          <h2>Scope a cloud security assessment engagement</h2>
+          <p>Send us what you have &mdash; a URL, a repo, an architecture diagram, or just a deadline. You get a fixed price and a firm delivery date before anything is signed.</p>
+          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
+            <a href="contact.html" class="btn btn-primary" data-track="service-cloud-cta">Get a fixed quote</a>
+            <a href="services.html" class="btn btn-secondary">All six service lines</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="page-nav animate-on-scroll">
+          <a href="service-network.html"><span class="label">[&lt;] prev</span>Network penetration testing</a>
+          <a href="service-compliance.html" style="text-align:right"><span class="label">next [&gt;]</span>Compliance and audit support</a>
+        </div>
+      </div>
+    </section>
+
+  
+        <section class="silo-crosslinks wrap" style="padding:32px 0;border-top:1px solid rgba(199,211,224,0.12);margin-top:32px;">
+          <h4 style="color:var(--on-dark);margin-bottom:12px;">Related Cybersecurity &amp; VAPT Offerings</h4>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="service-web.html" class="btn btn-ghost btn-sm">Web Application VAPT</a>
+            <a href="service-api.html" class="btn btn-ghost btn-sm">API Security Audit</a>
+            <a href="service-network.html" class="btn btn-ghost btn-sm">Network VAPT</a>
+            <a href="service-cloud.html" class="btn btn-ghost btn-sm">Cloud Security Review</a>
+            <a href="service-mobile.html" class="btn btn-ghost btn-sm">Mobile App VAPT</a>
+            <a href="service-compliance.html" class="btn btn-ghost btn-sm">Compliance VAPT</a>
+            <a href="methodology.html" class="btn btn-ghost btn-sm">Testing Methodology</a>
+            <a href="reports.html" class="btn btn-ghost btn-sm">Sample Reports</a>
+          </div>
+        </section>
+        
+</main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="color:var(--on-dark)">
+          <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          VAPT <span class="brand-sub" style="color:var(--on-dark-muted)">security</span>
+        </a>
+        <p style="margin-top:var(--s3);max-width:38ch;font-size:var(--fs-sm);color:var(--on-dark-body)">
+          Security testing made simple, clear and actionable.
+        </p>
+        <p style="margin-top:var(--s4)"><span class="placeholder">[OFFICE ADDRESS]</span></p>
+        <p style="margin-top:var(--s2)"><span class="placeholder">[PHONE]</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="service-web.html">Web Application VAPT</a></li>
+          <li><a href="service-mobile.html">Mobile App VAPT</a></li>
+          <li><a href="service-api.html">API Security Testing</a></li>
+          <li><a href="service-network.html">Network VAPT</a></li>
+          <li><a href="service-cloud.html">Cloud Security</a></li>
+          <li><a href="service-compliance.html">Compliance Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="methodology.html">How it works</a></li>
+          <li><a href="reports.html">Sample report</a></li>
+          <li><a href="advisories.html">Security research</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html">Responsible disclosure</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> VAPT Security. All rights reserved.</span>
+      <span><span class="placeholder">[CIN / GST]</span></span>
+    </div>
+  </div>
+</footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+
+<button class="to-top" data-to-top aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+    <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<script src="js/app.js" defer></script>
+<script src="js/vapt-assistant.js"></script>
+</body>
+</html>

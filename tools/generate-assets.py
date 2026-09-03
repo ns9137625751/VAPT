@@ -1,17 +1,19 @@
 # -*- coding: utf-8 -*-
-"""Generate the monochrome, terminal-native SVG asset set for the VAPT site.
+"""Generate the terminal-native SVG asset set for the VAPT site.
 Every asset is type-or-lineart only: no photography, no gradients, no shadows."""
 import os, random
 
 OUT = os.path.join(os.getcwd(), "images")
 os.makedirs(OUT, exist_ok=True)
 
-INK   = "#201d1d"
-BODY  = "#424245"
-MUTE  = "#646262"
-ASH   = "#9a9898"
-CREAM = "#fdfcfc"
-CARD  = "#f1eeee"
+# Light: dark marks on the off-white page. BG is the dark share-card ground.
+INK   = "#1e293b"
+BODY  = "#334155"
+MUTE  = "#64748b"
+ASH   = "#7c8899"
+CREAM = "#f8f9fa"
+CARD  = "#e9ecef"
+BG    = "#0f172a"
 
 
 def write(name, body):
@@ -189,7 +191,7 @@ write("og-cover.svg",
       '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" '
       'viewBox="0 0 1200 630">\n<rect width="1200" height="630" fill="%s"/>\n'
       '<g transform="translate(370 236)">%s</g>\n%s\n%s\n%s\n</svg>\n'
-      % (INK, og_rects,
+      % (BG, og_rects,
          mono(370, 400, "the security assessment that reads like a manpage", ASH, 22),
          mono(370, 452, "[+] web  [+] api  [+] mobile  [+] network  [+] cloud", CREAM, 22),
          mono(370, 540, "tab switch scope   ctrl-p commands", MUTE, 18)))
@@ -197,4 +199,4 @@ write("og-cover.svg",
 write("favicon.svg",
       '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" '
       'viewBox="0 0 64 64">\n<rect width="64" height="64" fill="%s"/>\n%s\n</svg>\n'
-      % (INK, mono(9, 44, "[+]", CREAM, 26, 700)))
+      % (BG, mono(9, 44, "[+]", CREAM, 26, 700)))

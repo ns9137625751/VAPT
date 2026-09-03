@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#201d1d"/>
-<g transform="translate(370 236)"><g fill="#fdfcfc" shape-rendering="crispEdges">
+<rect width="1200" height="630" fill="#0f172a"/>
+<g transform="translate(370 236)"><g fill="#f8f9fa" shape-rendering="crispEdges">
 <rect x="0" y="0" width="22" height="22"/>
 <rect x="88" y="0" width="22" height="22"/>
 <rect x="0" y="22" width="22" height="22"/>
@@ -47,7 +47,7 @@
 <rect x="440" y="88" width="22" height="22"/>
 </g>
 </g>
-<text x="370" y="400" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="400" fill="#9a9898" xml:space="preserve">the security assessment that reads like a manpage</text>
-<text x="370" y="452" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="400" fill="#fdfcfc" xml:space="preserve">[+] web  [+] api  [+] mobile  [+] network  [+] cloud</text>
-<text x="370" y="540" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#646262" xml:space="preserve">tab switch scope   ctrl-p commands</text>
+<text x="370" y="400" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="400" fill="#7c8899" xml:space="preserve">the security assessment that reads like a manpage</text>
+<text x="370" y="452" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="22" font-weight="400" fill="#f8f9fa" xml:space="preserve">[+] web  [+] api  [+] mobile  [+] network  [+] cloud</text>
+<text x="370" y="540" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#64748b" xml:space="preserve">tab switch scope   ctrl-p commands</text>
 </svg>

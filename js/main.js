@@ -127,12 +127,14 @@ class MobileMenu {
 
   open() {
     this.menu.classList.add('active');
+    document.body.classList.add('menu-open');
     this.button.setAttribute('aria-expanded', 'true');
     this.button.textContent = '[x]';
   }
 
   close() {
     this.menu.classList.remove('active');
+    document.body.classList.remove('menu-open');
     this.button.setAttribute('aria-expanded', 'false');
     this.button.textContent = '[=]';
   }

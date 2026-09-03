@@ -8,18 +8,28 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--canvas);
+  background: var(--nav-bar);
   border-bottom: 1px solid var(--hairline);
 }
 
+/* Full-bleed, so the right-hand group reaches the screen edge. The left
+   padding reproduces the old centred-container offset exactly — at 1440px both
+   resolve to 194px — so the wordmark does not move. max() collapses it to a
+   plain gutter once the viewport is narrower than the container. */
 .navbar-container {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--nav-gap);
   height: 56px;
-  max-width: var(--container-wide);
-  margin: 0 auto;
-  padding: 0 var(--space-xl);
+  max-width: none;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: max(
+    var(--space-xl),
+    calc((100% - var(--container-wide)) / 2 + var(--space-xl))
+  );
+  padding-right: var(--space-lg);
 }
 
 /* --- Wordmark: block-pixel ASCII, never a vector logo --- */
@@ -46,28 +56,64 @@
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--nav-gap);
   margin: 0 0 0 auto;
 }
 
+/* The row item is a flex box so a divider can sit beside its link and be
+   centred by align-items rather than by a hand-tuned offset. */
+.navbar-menu li {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+}
+
+/* Group boundary. 18px against a ~31px pill, so it reads as a divider
+   rather than a border, and it never carries meaning on its own. */
+.navbar-menu li.nav-sep::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 1px;
+  height: 18px;
+  background: var(--nav-divider);
+}
+
+/* Each link is its own capsule. inline-flex keeps the pill hugging its label
+   rather than stretching, which matters once the drawer stacks them. */
 .nav-link {
-  color: var(--ink);
-  font-size: var(--fs-body-md);
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--nav-pill);
+  color: var(--nav-pill-ink);
+  /* At 1.12:1 the fill alone is too quiet to define an edge, so a hairline
+     gives the capsule a boundary without darkening it. */
+  border: 1px solid var(--nav-pill-edge);
+  font-size: var(--fs-caption-md);
+  font-weight: 700;
+  text-transform: uppercase;
   line-height: var(--lh-body);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--rounded-full);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: var(--nav-pill-hover);
+  color: var(--nav-pill-ink-hover);
   text-decoration: none;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
+/* The count sits a step below the label so the [6] reads as an annotation. */
+.nav-link .count {
+  color: var(--nav-pill-ink-mute);
+  font-weight: 400;
 }
 
-.nav-link .count {
-  color: var(--mute);
-  font-weight: 400;
+.nav-link[aria-current="page"] .count,
+.nav-link.active .count {
+  color: var(--on-dark-mute);
 }
 
 .navbar-actions {
@@ -91,7 +137,8 @@
   font-family: var(--font-mono);
   font-size: var(--fs-body-md);
   line-height: var(--lh-tight);
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  min-height: 44px;
   cursor: pointer;
   margin-left: auto;
 }
@@ -100,9 +147,23 @@
   background: var(--surface-card);
 }
 
+@media (max-width: 768px) {
+  .navbar-menu {
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* --- News strip: sits directly under the nav, above the hero --- */
 .news-strip {
-  background: var(--canvas);
+  background: var(--nav-bar);
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -123,10 +184,28 @@
   color: var(--ink);
 }
 
-/* Current page in a multi-page nav — same affordance as the in-page active
-   state, so the bar reads identically on every page. */
-.nav-link[aria-current="page"] {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
+/* Current page in a multi-page nav. Every resting label is already black and
+   bold, so weight is no longer available as a cue - the pill inverts to a dark
+   fill with an off-white label instead. Two cues, neither of them colour on its
+   own: the fill flips and the label flips with it. */
+.nav-link[aria-current="page"],
+.nav-link.active {
+  background: var(--nav-pill-active);
+  color: var(--nav-pill-ink-active);
+  text-decoration: none;
+}
+
+/* The one white element in the bar, and the only one asking to be clicked.
+   Scoped to the navbar so the cyan --primary still governs every other CTA. */
+.navbar-actions .btn-primary {
+  background: var(--nav-cta);
+  color: var(--nav-cta-ink);
+}
+
+.navbar-actions .btn-primary:hover {
+  background: var(--nav-cta-hover);
+}
+
+.navbar-actions .btn-primary:active {
+  background: var(--nav-cta-hover);
 }

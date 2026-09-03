@@ -5,39 +5,84 @@
    ===================================== */
 
 :root {
-  /* --- Brand & ink --- */
-  --primary: #201d1d;
-  --on-primary: #fdfcfc;
-  --ink: #201d1d;
-  --ink-deep: #0f0000;
-  --charcoal: #302c2c;
-  --body: #424245;
-  --mute: #646262;
-  --stone: #6e6e73;
-  --ash: #9a9898;
+  /* --- Brand & ink ---
+     Light. Off-white ground, charcoal-slate text, one deep blue accent.
+     Cyan carries every interactive affordance; amber is reserved for [!] and
+     the medium severity tier so the two never compete. */
+  --primary: #1e293b;
+  --primary-hover: #0f172a;
+  --primary-active: #020617;
+  --on-primary: #f8f9fa;
+  --ink: #0f172a;
+  --ink-deep: #020617;
+  --charcoal: #1e293b;
+  --body: #1e293b;
+  --mute: #64748b;
+  --stone: #475569;
+  --ash: #7c8899;
 
-  /* --- Surface --- */
-  --canvas: #fdfcfc;
-  --surface-soft: #f8f7f7;
-  --surface-card: #f1eeee;
-  --surface-dark: #201d1d;
-  --surface-dark-elevated: #302c2c;
-  --hairline: rgba(15, 0, 0, 0.12);
-  --hairline-strong: #646262;
-  --on-dark: #fdfcfc;
-  --on-dark-mute: #9a9898;
+  /* --- Interaction: links, focus, active nav, verified marks --- */
+  --accent: #0369a1;
+  --accent-hover: #025280;
+  --accent-active: #013e63;
 
-  /* --- Semantic ramp (reserved for the TUI mockup, never marketing CTAs) --- */
-  --accent: #007aff;
-  --accent-hover: #0056b3;
-  --accent-active: #004085;
-  --warning: #ff9f0a;
-  --warning-hover: #cc7f08;
-  --warning-active: #995f06;
-  --danger: #ff3b30;
-  --danger-hover: #d70015;
-  --danger-active: #a50011;
-  --success: #30d158;
+  /* --- Attention: [!] callouts and anything the reader must not skip --- */
+  --signal: #b45309;
+  --signal-hover: #92400e;
+
+  --nav-gap: 4px;
+
+  /* --- Nav bar ---
+     Monochrome by intent: the bar recedes into the page and the dark CTA is
+     the only thing in it that asks to be clicked. The pill fills are quiet, so
+     the label - not the capsule edge - is what carries meaning. */
+  --nav-bar: #f8f9fa;
+  --nav-pill: #e9ecef;
+  --nav-pill-hover: #dee2e6;
+  --nav-pill-active: #1e293b;
+  --nav-pill-edge: rgba(15, 23, 42, 0.10);
+  --nav-divider: rgba(15, 23, 42, 0.20);
+  --nav-pill-ink: #000000;
+  --nav-pill-ink-hover: #000000;
+  --nav-pill-ink-active: #f8f9fa;
+  --nav-pill-ink-mute: #576373;
+  --nav-cta: #1e293b;
+  --nav-cta-hover: #0f172a;
+  --nav-cta-ink: #f8f9fa;
+
+  /* --- Surface ---
+     Off-white ground with two quiet steps above it. The terminal mockup is
+     once again the single dark surface in the system, and the only place the
+     syntax ramp is allowed to appear. */
+  --canvas: #f8f9fa;
+  --surface-soft: #f1f3f5;
+  --surface-card: #e9ecef;
+  --surface-dark: #0f172a;
+  --surface-dark-elevated: #1e293b;
+  --hairline: rgba(15, 23, 42, 0.12);
+  --hairline-strong: #64748b;
+  --on-dark: #f8f9fa;
+  --on-dark-mute: #94a3b8;
+
+  /* --- Severity ramp ---
+     Retuned for the dark ground; every tier clears 6:1. Low stays blue rather
+     than green so no two adjacent tiers depend on red-green discrimination. */
+  --sev-critical: #a32b1e;
+  --sev-high: #b04a16;
+  --sev-medium: #8a5a0b;
+  --sev-low: #2a5c8a;
+  --sev-info: #5c6167;
+
+  /* --- Syntax ramp: inside .tui-mockup only --- */
+  --tui-keyword: #56c7f5;
+  --tui-success: #5fd39b;
+  --tui-warning: #f0c14c;
+  --tui-danger: #ff8073;
+
+  /* Back-compat aliases for the old semantic names. */
+  --danger: var(--tui-danger);
+  --warning: var(--tui-warning);
+  --success: var(--tui-success);
 
   /* --- Typography: Berkeley Mono, substituted by JetBrains Mono --- */
   --font-mono: "Berkeley Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace,
@@ -84,6 +129,7 @@
 }
 
 html {
+  color-scheme: light;
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
@@ -159,16 +205,21 @@ small,
   color: var(--mute);
 }
 
-/* link-inline — ink + underline. Apple Blue belongs to the in-product TUI. */
+/* link-inline — teal + underline. Teal is the interaction colour system-wide. */
 a {
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
 
 a:hover {
+  color: var(--accent-hover);
   text-decoration-thickness: 2px;
+}
+
+a:active {
+  color: var(--accent-active);
 }
 
 ul,
@@ -216,10 +267,20 @@ kbd {
   padding: 0 var(--space-xl);
 }
 
-/* Universal 96px rhythm. No surface alternation between sections. */
+/* Universal 96px rhythm. No surface alternation between sections.
+
+   Top padding only: two adjacent sections would otherwise contribute 96px each
+   and render a 192px gap, which is twice the documented rhythm. .hero and
+   .page-head already follow this pattern; this brings the generic rule in line
+   with them. The last section restores a bottom edge, since .site-footer only
+   carries 32px of its own. */
 section {
-  padding: var(--space-section) 0;
+  padding: var(--space-section) 0 0;
   background: var(--canvas);
+}
+
+main > section:last-child {
+  padding-bottom: var(--space-section);
 }
 
 .rule {
@@ -284,11 +345,11 @@ section {
 }
 
 .btn-primary:hover {
-  background: var(--charcoal);
+  background: var(--primary-hover);
 }
 
 .btn-primary:active {
-  background: var(--ink-deep);
+  background: var(--primary-active);
 }
 
 .btn-secondary {
@@ -324,7 +385,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -334,8 +395,8 @@ button:focus-visible {
 
 .badge {
   display: inline-block;
-  background: var(--surface-dark);
-  color: var(--on-dark);
+  background: var(--surface-card);
+  color: var(--ink);
   font-size: var(--fs-caption-md);
   line-height: var(--lh-button);
   padding: 2px var(--space-sm);
@@ -426,6 +487,16 @@ button:focus-visible {
 
 .marker-mute {
   color: var(--ash);
+}
+
+/* [x] confirms something is done or included. */
+.marker-ok {
+  color: var(--accent);
+}
+
+/* [!] is the only marker allowed to raise its voice. */
+.marker-alert {
+  color: var(--signal);
 }
 
 /* ===============================

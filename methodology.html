@@ -3,34 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The eight-phase VAPT methodology: scoping, reconnaissance, assessment, manual testing, exploitation, validation, reporting and retest.">
-  <meta name="author" content="VAPT Security">
-  <meta name="theme-color" content="#fdfcfc">
+    <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#f7fafc">
 
-  <meta property="og:title" content="Methodology &mdash; VAPT Security">
-  <meta property="og:description" content="The eight-phase VAPT methodology: scoping, reconnaissance, assessment, manual testing, exploitation, validation, reporting and retest.">
+        
+  <title>VAPT Testing Methodology & Assessment Process | VAPT Security</title>
+  <meta name="description" content="Learn about our 5-phase structured penetration testing methodology: Reconnaissance, Mapping, Vulnerability Analysis, Exploitation, and Reporting.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vapt.example.com/methodology.html">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/og-cover.svg">
+  <meta property="og:url" content="https://vapt.example.com/methodology.html">
+  <meta property="og:title" content="VAPT Testing Methodology & Assessment Process | VAPT Security">
+  <meta property="og:description" content="Learn about our 5-phase structured penetration testing methodology: Reconnaissance, Mapping, Vulnerability Analysis, Exploitation, and Reporting.">
+  <meta property="og:image" content="https://vapt.example.com/images/vapt_process.jpg">
+  <meta property="og:site_name" content="VAPT Security">
 
-  <title>Methodology &mdash; VAPT Security</title>
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vapt.example.com/methodology.html">
+  <meta name="twitter:title" content="VAPT Testing Methodology & Assessment Process | VAPT Security">
+  <meta name="twitter:description" content="Learn about our 5-phase structured penetration testing methodology: Reconnaissance, Mapping, Vulnerability Analysis, Exploitation, and Reporting.">
+  <meta name="twitter:image" content="https://vapt.example.com/images/vapt_process.jpg">
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-
-  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
-       can actually reveal it again. -->
-  <script>document.documentElement.classList.add('js');</script>
-
-  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/compat.css">
+  <link rel="stylesheet" href="css/vapt-assistant.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "name": "VAPT Testing Methodology & Assessment Process | VAPT Security",
+    "description": "Learn about our 5-phase structured penetration testing methodology: Reconnaissance, Mapping, Vulnerability Analysis, Exploitation, and Reporting.",
+    "url": "https://vapt.example.com/methodology.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "VAPT Security",
+      "url": "https://vapt.example.com",
+      "logo": "https://vapt.example.com/images/favicon.svg"
+    }
+  }
+  </script>
+  <script src="js/seo-config.js"></script>
 </head>
 <body>
 
@@ -39,30 +61,63 @@
   <!-- ============================================================
        PRIMARY NAV
        ============================================================ -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
-        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
-        <span class="navbar-brand-suffix">security</span>
-      </a>
+  <header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      VAPT <span class="brand-sub">security</span>
+    </a>
 
-      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
 
-      <ul class="navbar-menu" id="nav-menu" data-menu>
-        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
-        <li><a href="methodology.html" class="nav-link" aria-current="page">Method</a></li>
-        <li><a href="reports.html" class="nav-link">Reports</a></li>
-        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-      </ul>
-
-      <div class="navbar-actions">
-        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+    <nav class="nav-links" id="nav-links" data-nav-links aria-label="Main">
+      <div class="has-menu">
+        <button class="nav-link" data-menu-trigger aria-expanded="false" aria-controls="menu-services">
+          Services
+          <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-menu" id="menu-services" hidden>
+          <a href="service-web.html">Web Application VAPT <small>Websites and web apps</small></a>
+          <a href="service-mobile.html">Mobile Application VAPT <small>Android and iOS</small></a>
+          <a href="service-api.html">API Security Testing <small>REST, GraphQL, gRPC</small></a>
+          <a href="service-network.html">Network VAPT <small>Servers and network devices</small></a>
+          <a href="service-cloud.html">Cloud Security Assessment <small>AWS, Azure, GCP</small></a>
+          <a href="service-compliance.html">Compliance Support <small>Evidence for your auditor</small></a>
+          <a href="services.html">All services</a>
+        </div>
       </div>
-    </div>
-  </nav>
+      <a class="nav-link" href="methodology.html" aria-current="page">How it works</a>
+      <a class="nav-link" href="reports.html">Reports</a>
+      <a class="nav-link" href="advisories.html">Research</a>
+      <a class="nav-link" href="about.html">About</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="#quote">Get VAPT Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <main id="main">
+
+        <nav class="breadcrumb-nav wrap" aria-label="Breadcrumb" style="padding-top:16px;padding-bottom:8px;font-size:0.8rem;color:var(--on-dark-muted);">
+          <ol style="display:flex;gap:8px;list-style:none;padding:0;margin:0;">
+            <li><a href="index.html" style="color:var(--accent);text-decoration:none;">Home</a></li>
+            <li>/</li>
+            <li><a href="services.html" style="color:var(--accent);text-decoration:none;">Services</a></li>
+            <li>/</li>
+            <li aria-current="page" style="color:var(--on-dark);">Methodology</li>
+          </ol>
+        </nav>
+        
 
     <!-- ============================================================
          PAGE HEAD
@@ -78,6 +133,15 @@
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <figure class="media media--wide animate-on-scroll">
+          <img src="images/process-vapt.jpg" width="1600" height="900" alt="Penetration testing methodology banner" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+
     <section id="overview">
       <div class="container">
         <h2 class="section-label animate-on-scroll">The eight phases</h2>
@@ -88,8 +152,7 @@
         </p>
 
         <figure class="figure-wide animate-on-scroll" style="margin: 0 0 var(--space-xl);">
-          <img src="images/diagram-engagement-flow.svg"
-               alt="Engagement pipeline: scope, recon, scan, exploit, report, with day markers underneath."
+          <img src="images/diagram-engagement-flow.svg" width="1600" height="900" alt="VAPT Security illustration"  alt="Engagement pipeline: scope, recon, scan, exploit, report, with day markers underneath."
                width="430" height="100" loading="lazy">
           <figcaption class="chart-caption">
             <strong>Fig 4.</strong> The eight phases, drawn as a pipeline.
@@ -99,185 +162,113 @@
         <div class="toc animate-on-scroll">
           <p class="toc-label">Contents</p>
           <ol>
-            <li><a href="#phase-01">Scoping</a></li>
-            <li><a href="#phase-02">Reconnaissance</a></li>
-            <li><a href="#phase-03">Vulnerability assessment</a></li>
-            <li><a href="#phase-04">Manual testing</a></li>
-            <li><a href="#phase-05">Exploitation</a></li>
-            <li><a href="#phase-06">Validation</a></li>
-            <li><a href="#phase-07">Reporting</a></li>
-            <li><a href="#phase-08">Retest</a></li>
+            <li><a href="phase-01.html">Scoping</a></li>
+            <li><a href="phase-02.html">Reconnaissance</a></li>
+            <li><a href="phase-03.html">Vulnerability assessment</a></li>
+            <li><a href="phase-04.html">Manual testing</a></li>
+            <li><a href="phase-05.html">Exploitation</a></li>
+            <li><a href="phase-06.html">Validation</a></li>
+            <li><a href="phase-07.html">Reporting</a></li>
+            <li><a href="phase-08.html">Retest</a></li>
           </ol>
         </div>
       </div>
     </section>
 
-    <section id="phase-01">
+    <section id="phase-01" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [01] Scoping
+            <a href="phase-01.html">[01] Scoping</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 1</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">We agree targets, roles, credentials, testing windows and the rules of engagement in writing. Out-of-scope assets are named explicitly. You get a fixed price and a firm delivery date before anything is signed.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Asset inventory and ownership confirmed</li>
-            <li>Rules of engagement and escalation contacts agreed</li>
-            <li>Test accounts provisioned for every role</li>
-            <li>Emergency stop procedure and contact established</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-02">
+    <section id="phase-02" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [02] Reconnaissance
+            <a href="phase-02.html">[02] Reconnaissance</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 2</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Mapping the real attack surface, which is reliably larger than the one in the documentation. Passive collection first, then active enumeration within the agreed scope.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Subdomain, route and endpoint enumeration</li>
-            <li>Technology fingerprinting and version identification</li>
-            <li>Public exposure review: leaked credentials, repositories, buckets</li>
-            <li>Trust boundaries and data flows documented</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-03">
+    <section id="phase-03" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [03] Vulnerability assessment
+            <a href="phase-03.html">[03] Vulnerability assessment</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 3</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">An automated sweep tuned to your stack, used to establish a baseline and free up human time for the work that needs judgement. Nothing from this phase reaches your report unverified.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Authenticated and unauthenticated scanning</li>
-            <li>Dependency and known-CVE review</li>
-            <li>Configuration and TLS assessment</li>
-            <li>Baseline recorded for later comparison</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-04">
+    <section id="phase-04" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [04] Manual testing
+            <a href="phase-04.html">[04] Manual testing</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 4&ndash;6</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">The part that earns the engagement. Business logic, chained flaws and authorisation depth &mdash; the categories no scanner reaches, because they require understanding what your application is for.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Every role tested against every other role</li>
-            <li>Business-logic and workflow abuse</li>
-            <li>Chained low-severity issues escalated to real impact</li>
-            <li>Manual review of anything the scanner flagged as uncertain</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-05">
+    <section id="phase-05" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [05] Exploitation
+            <a href="phase-05.html">[05] Exploitation</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 6</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Every claimed finding gets a proof-of-concept. If we cannot demonstrate it, it does not go in the report as a vulnerability &mdash; it goes in the observations appendix.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Proof-of-concept per finding, with evidence retained</li>
-            <li>Impact established against real data, never destroyed</li>
-            <li>Post-exploitation only where explicitly authorised</li>
-            <li>Critical findings reported the day they are confirmed</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-06">
+    <section id="phase-06" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [06] Validation
+            <a href="phase-06.html">[06] Validation</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 7</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">A second tester reviews the finding set. False positives are removed, severities are challenged, and duplicates are merged before anything reaches you.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Peer review by a tester not on the original engagement</li>
-            <li>False positives removed</li>
-            <li>Severity ratings challenged and adjusted</li>
-            <li>Reproduction steps re-run from a clean environment</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-07">
+    <section id="phase-07" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [07] Reporting
+            <a href="phase-07.html">[07] Reporting</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">day 8</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Two audiences, one document. An executive summary that a board can read without a translator, and a technical body an engineer can work straight from.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Executive summary with business-risk framing</li>
-            <li>Per-finding technical detail, evidence and remediation</li>
-            <li>Machine-readable export (JSON or SARIF) for your tracker</li>
-            <li>Report walkthrough call with the testers</li>
-          </ul>
-        </div>
       </div>
     </section>
-    <section id="phase-08">
+    <section id="phase-08" class="listing-block">
       <div class="container">
         <div class="animate-on-scroll" style="border-top: 1px solid var(--hairline); padding-top: var(--space-lg);">
           <h2 class="section-label" style="border: 0; margin: 0 0 var(--space-xs); padding: 0;">
-            [08] Retest
+            <a href="phase-08.html">[08] Retest</a> <span class="meta">[&gt;]</span>
           </h2>
           <p class="meta">+30 days</p>
         </div>
 
         <p class="section-intro animate-on-scroll" style="margin-top: var(--space-lg);">Once you have shipped fixes we re-run the full finding set and issue an updated report showing what closed. Included in the engagement price, not billed separately.</p>
-
-        <div class="prose animate-on-scroll">
-          <ul>
-            <li>Every finding re-tested, not just the ones you flagged as fixed</li>
-            <li>Regression check against the original baseline</li>
-            <li>Updated report and attestation letter issued</li>
-            <li>Findings that remain open are re-rated with current context</li>
-          </ul>
-        </div>
       </div>
     </section>
     <section id="standards">
@@ -358,7 +349,7 @@
         </div>
 
         <div class="callout animate-on-scroll">
-          <span class="callout-marker">[!]</span>
+          <span class="callout-marker marker-alert">[!]</span>
           <p>
             If we find evidence that you are <strong>already compromised</strong>,
             testing stops and your escalation contact is called the same hour.
@@ -370,7 +361,7 @@
     <section>
       <div class="container">
         <div class="cta-band animate-on-scroll">
-          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
+          <img src="images/wordmark-vapt.svg" alt="" width="115" height="25"
                style="margin-bottom: var(--space-lg);" loading="lazy">
           <h2>Want the long version?</h2>
           <p>We will walk you through the methodology against your actual stack on a 30-minute call, before you commit to anything.</p>
@@ -396,90 +387,78 @@
        FOOTER
        ============================================================ -->
   <footer class="site-footer">
-    <div class="footer-inner">
-
-      <div class="footer-subscribe">
-        <div class="footer-subscribe-copy">
-          <strong>Advisories in your inbox</strong>
-          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
-        </div>
-        <form data-validate novalidate>
-          <label class="visually-hidden" for="subscribe-email">Email address</label>
-          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
-          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
-        </form>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="color:var(--on-dark)">
+          <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          VAPT <span class="brand-sub" style="color:var(--on-dark-muted)">security</span>
+        </a>
+        <p style="margin-top:var(--s3);max-width:38ch;font-size:var(--fs-sm);color:var(--on-dark-body)">
+          Security testing made simple, clear and actionable.
+        </p>
+        <p style="margin-top:var(--s4)"><span class="placeholder">[OFFICE ADDRESS]</span></p>
+        <p style="margin-top:var(--s2)"><span class="placeholder">[PHONE]</span></p>
       </div>
 
-      <div class="footer-links-grid">
-        <div class="footer-links-cell">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html#web">Web application</a></li>
-            <li><a href="services.html#api">API security</a></li>
-            <li><a href="services.html#mobile">Mobile</a></li>
-            <li><a href="services.html#network">Network</a></li>
-            <li><a href="services.html#cloud">Cloud</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Process</h4>
-          <ul>
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="reports.html">Sample report</a></li>
-            <li><a href="about.html#record">Track record</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html#voices">Clients</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html#careers">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="advisories.html">Advisories</a></li>
-            <li><a href="disclosure.html">Responsible disclosure</a></li>
-            <li><a href="disclosure.html#security-txt">security.txt</a></li>
-            <li><a href="disclosure.html#pgp">PGP key</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="terms.html#dpa">DPA</a></li>
-            <li><a href="privacy.html#cookies">Cookies</a></li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="service-web.html">Web Application VAPT</a></li>
+          <li><a href="service-mobile.html">Mobile App VAPT</a></li>
+          <li><a href="service-api.html">API Security Testing</a></li>
+          <li><a href="service-network.html">Network VAPT</a></li>
+          <li><a href="service-cloud.html">Cloud Security</a></li>
+          <li><a href="service-compliance.html">Compliance Support</a></li>
+        </ul>
       </div>
 
-      <div class="footer-bottom">
-        <div class="footer-bottom-brand">
-          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
-          <span>&copy;2026 VAPT Security</span>
-        </div>
-        <div class="footer-utility">
-          <a href="about.html#brand">Brand</a>
-          <span class="sep">&middot;</span>
-          <a href="privacy.html">Privacy</a>
-          <span class="sep">&middot;</span>
-          <a href="terms.html">Terms</a>
-          <span class="sep">&middot;</span>
-          <span>English</span>
-        </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="methodology.html">How it works</a></li>
+          <li><a href="reports.html">Sample report</a></li>
+          <li><a href="advisories.html">Security research</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
       </div>
 
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html">Responsible disclosure</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> VAPT Security. All rights reserved.</span>
+      <span><span class="placeholder">[CIN / GST]</span></span>
+    </div>
+  </div>
+</footer>
 
   <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
 
-  <script src="js/main.js"></script>
+<button class="to-top" data-to-top aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+    <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<script src="js/app.js" defer></script>
+<script src="js/vapt-assistant.js"></script>
 </body>
 </html>

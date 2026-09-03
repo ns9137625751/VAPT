@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="VAPT Security">
+  <meta name="theme-color" content="#07111f">
+
+  <title>SOC Security Operations Center Dashboard | VAPT Security</title>
+  <meta name="description" content="VAPT SOC Dashboard for managing active vulnerability findings, security header status, and remediation verification.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://vapt.example.com/dashboard.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vapt.example.com/dashboard.html">
+  <meta property="og:title" content="SOC Security Operations Center Dashboard | VAPT Security">
+  <meta property="og:description" content="VAPT SOC Dashboard for managing active vulnerability findings, security header status, and remediation verification.">
+  <meta property="og:image" content="https://vapt.example.com/images/vapt_hero_bg.jpg">
+  <meta property="og:site_name" content="VAPT Security">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vapt.example.com/dashboard.html">
+  <meta name="twitter:title" content="SOC Security Operations Center Dashboard | VAPT Security">
+  <meta name="twitter:description" content="VAPT SOC Dashboard for managing active vulnerability findings, security header status, and remediation verification.">
+  <meta name="twitter:image" content="https://vapt.example.com/images/vapt_hero_bg.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/ui.css">
+  <link rel="stylesheet" href="css/vapt-assistant.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SOC Security Operations Center Dashboard | VAPT Security",
+    "description": "VAPT SOC Dashboard for managing active vulnerability findings, security header status, and remediation verification.",
+    "url": "https://vapt.example.com/dashboard.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "VAPT Security",
+      "url": "https://vapt.example.com",
+      "logo": "https://vapt.example.com/images/favicon.svg"
+    }
+  }
+  </script>
+  <script src="js/seo-config.js"></script>
+</head>
+<body class="section-dark">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============================================================
+       PRIMARY NAV
+       ============================================================ -->
+  <header class="site-nav">
+    <div class="nav-inner wrap">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">VAPT<span class="brand-sub">Security</span></span>
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <svg viewBox="0 0 24 24" fill="none" width="22" height="22" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <nav class="nav-links" data-nav-links>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="dashboard.html" aria-current="page">SOC Dashboard</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="methodology.html">How It Works</a>
+        <a class="nav-link" href="reports.html">Reports</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+
+        <div class="nav-actions">
+          <a class="btn btn-primary btn-sm" href="contact.html">Request VAPT Assessment</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+        <nav class="breadcrumb-nav wrap" aria-label="Breadcrumb" style="padding-top:16px;padding-bottom:8px;font-size:0.8rem;color:var(--on-dark-muted);">
+          <ol style="display:flex;gap:8px;list-style:none;padding:0;margin:0;">
+            <li><a href="index.html" style="color:var(--accent);text-decoration:none;">Home</a></li>
+            <li>/</li>
+            <li><a href="services.html" style="color:var(--accent);text-decoration:none;">Services</a></li>
+            <li>/</li>
+            <li aria-current="page" style="color:var(--on-dark);">Dashboard</li>
+          </ol>
+        </nav>
+        
+    <!-- ============================================================
+         SOC DASHBOARD HEAD
+         ============================================================ -->
+    <section class="page-head" style="padding-bottom: 24px;">
+      <div class="wrap">
+        <p class="breadcrumb animate-on-scroll">
+          <a href="index.html">home</a><span class="sep">/</span>security operations center
+        </p>
+        <h1 class="animate-on-scroll">SOC Vulnerability &amp; Risk Dashboard</h1>
+        <p class="page-standfirst animate-on-scroll">Real-time vulnerability tracking, OWASP controls, security headers audit, remediation verification, and automated compliance report generation.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOC METRICS GRID
+         ============================================================ -->
+    <section>
+      <div class="wrap soc-container">
+        <div class="soc-metrics-grid animate-on-scroll">
+          <div class="soc-metric-card">
+            <span class="soc-metric-value" id="socMetricTotal">0</span>
+            <span class="soc-metric-label">Total Findings</span>
+          </div>
+          <div class="soc-metric-card is-critical">
+            <span class="soc-metric-value" id="socMetricCritical" style="color:var(--sev-critical)">0</span>
+            <span class="soc-metric-label">Critical Risks</span>
+          </div>
+          <div class="soc-metric-card is-high">
+            <span class="soc-metric-value" id="socMetricHigh" style="color:var(--sev-high)">0</span>
+            <span class="soc-metric-label">High Severity</span>
+          </div>
+          <div class="soc-metric-card is-medium">
+            <span class="soc-metric-value" id="socMetricMedium" style="color:var(--sev-medium)">0</span>
+            <span class="soc-metric-label">Medium Severity</span>
+          </div>
+          <div class="soc-metric-card is-low">
+            <span class="soc-metric-value" id="socMetricLow" style="color:var(--sev-low)">0</span>
+            <span class="soc-metric-label">Low &amp; Informational</span>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             FINDINGS TABLE & FILTERS
+             ============================================================ -->
+        <div class="section-head reveal" style="margin-bottom: 16px;">
+          <h2>Vulnerability Findings Register</h2>
+          <p class="muted">Filter and inspect authorized penetration testing findings and remediation status.</p>
+        </div>
+
+        <div class="soc-filter-bar reveal">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+            <input type="text" id="socSearchInput" class="soc-search-input" placeholder="Search by ID, title, endpoint..." />
+            <select id="socSelectSeverity" class="soc-select">
+              <option value="ALL">All Severities</option>
+              <option value="CRITICAL">Critical</option>
+              <option value="HIGH">High</option>
+              <option value="MEDIUM">Medium</option>
+              <option value="LOW">Low</option>
+              <option value="INFO">Informational</option>
+            </select>
+            <select id="socSelectStatus" class="soc-select">
+              <option value="ALL">All Statuses</option>
+              <option value="Open">Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Fixed">Fixed</option>
+              <option value="Verified">Verified</option>
+            </select>
+          </div>
+
+          <button id="socExportReportBtn" class="btn btn-primary btn-sm">📥 Export VAPT Report (JSON)</button>
+        </div>
+
+        <div class="table-scroll reveal" style="margin-bottom: 48px;">
+          <table class="soc-table">
+            <thead>
+              <tr>
+                <th>Finding ID</th>
+                <th>Vulnerability &amp; CVSS</th>
+                <th>Severity</th>
+                <th>Affected Asset / Endpoint</th>
+                <th>Status</th>
+                <th>Date Logged</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="socTableBody">
+              <!-- Dynamically populated by js/vapt-dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============================================================
+             SECURITY HEADERS CHECKER MODULE
+             ============================================================ -->
+        <div class="section-head reveal" style="margin-bottom: 16px;">
+          <h2>Security Headers Audit</h2>
+          <p class="muted">Live response header posture verification for web applications and API gateways.</p>
+        </div>
+
+        <div id="socHeadersContainer" class="grid grid-3 reveal" style="margin-bottom: 48px;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- ============================================================
+             OWASP TOP 10 DEFENSIVE GUIDANCE
+             ============================================================ -->
+        <div class="section-head reveal" style="margin-bottom: 16px;">
+          <h2>OWASP Top 10 Defensive Control Matrix</h2>
+          <p class="muted">Standardized security controls mapped to OWASP A01:2021 through A10:2021.</p>
+        </div>
+
+        <div class="grid grid-2 reveal" style="margin-bottom: 48px;">
+          <div class="card card-dark">
+            <h3>A01:2021 &mdash; Broken Access Control</h3>
+            <p>Verify tenant isolation and server-side authorization checks on all ID parameters.</p>
+            <span class="vapt-badge vapt-badge-info">PASS &middot; Verified</span>
+          </div>
+          <div class="card card-dark">
+            <h3>A02:2021 &mdash; Cryptographic Failures</h3>
+            <p>Enforce TLS 1.3, AES-256-GCM data encryption at rest, and bcrypt password hashing.</p>
+            <span class="vapt-badge vapt-badge-info">PASS &middot; Verified</span>
+          </div>
+          <div class="card card-dark">
+            <h3>A03:2021 &mdash; Injection (SQLi / Command / XSS)</h3>
+            <p>Use parameterized query bindings and HTML output encoding across all input vectors.</p>
+            <span class="vapt-badge vapt-badge-high">ACTION REQUIRED &middot; 1 Finding Open</span>
+          </div>
+          <div class="card card-dark">
+            <h3>A05:2021 &mdash; Security Misconfiguration</h3>
+            <p>Disable server version banners and default credentials; configure security headers.</p>
+        <!-- ============================================================
+             INTERNAL SEO & HEALTH AUDIT SCORECARD (PRIVATE)
+             ============================================================ -->
+        <div class="section-head reveal" style="margin-bottom: 16px;">
+          <h2>Platform Technical SEO &amp; Indexation Audit</h2>
+          <p class="muted">Internal engineering quality metrics tracking crawlers, metadata coverage, canonicals, and structured data health.</p>
+        </div>
+
+        <div class="grid grid-4 reveal" style="margin-bottom: 48px;">
+          <div class="card card-dark" style="border-top:3px solid var(--mint)">
+            <h4 style="margin:0 0 6px;color:var(--on-dark)">Technical SEO Coverage</h4>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--mint);margin-bottom:4px;">100%</div>
+            <p style="font-size:0.78rem;color:var(--on-dark-muted)">25 / 25 pages indexed with unique titles, meta descriptions, and self-referencing canonicals.</p>
+          </div>
+          <div class="card card-dark" style="border-top:3px solid var(--accent)">
+            <h4 style="margin:0 0 6px;color:var(--on-dark)">Structured Data (JSON-LD)</h4>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--accent);margin-bottom:4px;">PASS</div>
+            <p style="font-size:0.78rem;color:var(--on-dark-muted)">Organization, WebSite, CyberSecurityService, BreadcrumbList, and FAQPage schemas active.</p>
+          </div>
+          <div class="card card-dark" style="border-top:3px solid var(--sev-medium)">
+            <h4 style="margin:0 0 6px;color:var(--on-dark)">Crawlability &amp; Sitemap</h4>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--sev-medium);margin-bottom:4px;">ACTIVE</div>
+            <p style="font-size:0.78rem;color:var(--on-dark-muted)">robots.txt linked to sitemap.xml listing 24 public URLs. Dashboard protected via noindex.</p>
+          </div>
+          <div class="card card-dark" style="border-top:3px solid var(--mint)">
+            <h4 style="margin:0 0 6px;color:var(--on-dark)">Performance &amp; CLS</h4>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--mint);margin-bottom:4px;">0.00 CLS</div>
+            <p style="font-size:0.78rem;color:var(--on-dark-muted)">Image dimensions declared, font-display: swap active, zero layout shift.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Finding Detail Modal Drawer -->
+  <div id="socModalOverlay" class="soc-modal-overlay">
+    <div id="socModalCard" class="soc-modal-card">
+      <!-- Dynamically populated by js/vapt-dashboard.js -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SITE FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-name">VAPT<span class="brand-sub">Security</span></span>
+        </a>
+        <p class="footer-desc">Independent vulnerability assessment, penetration testing, and security posture monitoring.</p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="service-web.html">Web Application VAPT</a></li>
+            <li><a href="service-api.html">API Security Testing</a></li>
+            <li><a href="service-mobile.html">Mobile App VAPT</a></li>
+            <li><a href="service-network.html">Network VAPT</a></li>
+            <li><a href="service-cloud.html">Cloud Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="dashboard.html">SOC Dashboard</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="reports.html">Sample Reports</a></li>
+            <li><a href="contact.html">Request Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal &amp; Trust</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="disclosure.html">Vulnerability Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vapt-dashboard.js"></script>
+  <script src="js/vapt-assistant.js"></script>
+</body>
+</html>

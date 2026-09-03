@@ -1,0 +1,12 @@
+# Production Robots.txt for VAPT Security Platform
+User-agent: *
+Allow: /
+
+# Disallow private operational dashboards, account tools, and backend APIs
+Disallow: /dashboard.html
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/private/
+
+# Sitemap location
+Sitemap: https://vapt.example.com/sitemap.xml

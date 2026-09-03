@@ -7,7 +7,7 @@ JavaScript — no build step, no dependencies.
 
 The design is one decision carried all the way through: **every word on the site
 is monospaced**. Each page reads like a manpage or a README rendered at modern
-resolutions — warm cream canvas, near-black ink, hairline rules, bracketed
+resolutions — off-white canvas, charcoal-slate text, hairline rules, bracketed
 `[+]` / `[-]` / `[x]` markers instead of icons, and exactly one dark surface
 (the hero TUI mockup) per page.
 
@@ -59,23 +59,33 @@ Full token reference in [DESIGN_TOKENS.md](DESIGN_TOKENS.md). The short version:
 
 | | |
 |---|---|
-| Canvas | `#fdfcfc` — the only body background. No alternating section bands. |
-| Ink | `#201d1d` — headlines, body, CTA fill. The brand's only colour. |
+| Canvas | `#f8f9fa` — the only body background. No alternating section bands. |
+| Ink | `#1e293b` charcoal — body copy. `#0f172a` for headings; the CTA fills charcoal. |
 | Type | Berkeley Mono, substituted by JetBrains Mono. One face, weights 400/500/700. |
 | Radius | `4px` on interactive elements, `0px` on every container. Nothing else. |
-| Rhythm | 96px between sections, separated only by a 1px hairline. |
+| Rhythm | 96px between sections, separated only by a 1px hairline. Sections carry top padding only, so the gap never doubles. Consecutive `.service-block` sections run tight at 48px — two lines of body text. |
 | Elevation | No shadows anywhere. The dark TUI mockup is the only "raised" surface. |
 | Icons | ASCII brackets. `[+]`, `[-]`, `[x]`, `[~]`, `[!]`, `+` / `−`. |
 
-The Apple-derived semantic ramp (blue / amber / red / green) is loaded but used
-**only inside the hero terminal mockup**. Putting it on a marketing CTA would
-break the identity — see the Do's and Don'ts in the design doc.
+The page is light. Charcoal `#1e293b` fills the primary button and carries body
+copy; deep blue `#0369a1` carries every interactive affordance — links, focus
+rings, active nav, `[x]` confirmations. Amber `#b45309` is held back for `[!]`
+callouts so it never competes with the accent. `color-scheme: light` is set on
+`html` so native controls follow the page.
+
+The severity ramp is no longer confined to the terminal mockup — it now carries
+meaning on the marketing pages too. Low is blue rather than green so no two
+adjacent tiers depend on red–green discrimination, and every tier clears AA on
+the canvas. The syntax ramp stays **inside the hero mockup only**.
+
+A `@media print` block forces the whole system back to black-on-white, so a
+report or an invoice prints exactly as it reads on screen.
 
 ---
 
 ## Imagery
 
-There is no photography. All 17 assets in [images/](images/) are monochrome type
+There is no photography. All 17 assets in [images/](images/) are type
 or line art, generated from one script so they stay consistent with the palette:
 
 ```powershell
@@ -104,8 +114,10 @@ every page — copy it from any one of them when you add another.
 | Page | What is on it |
 |---|---|
 | `index.html` | Hero + dark TUI mockup, quick start, scope summary, method summary, track record, severity table, why-us, testimonials, FAQ, contact |
-| `services.html` | Six service lines, each with a coverage list and a deliverable callout; engagement shapes; scope-sheet figure |
-| `methodology.html` | The eight phases in full, standards mapping (WSTG, ASVS, PTES, NIST, CVSS), rules of engagement |
+| `services.html` | Listing only &mdash; six service lines as title, meta and intro; each title links to its own page. Engagement shapes; scope-sheet figure |
+| `service-*.html` (6) | One page per service line: full coverage list, deliverable callout, CTA and prev/next through the six |
+| `methodology.html` | Listing only &mdash; the eight phases as title, day and description; each links to its own page. Standards mapping (WSTG, ASVS, PTES, NIST, CVSS), rules of engagement |
+| `phase-0*.html` (8) | One page per phase: what it produces, CTA and prev/next through the eight |
 | `reports.html` | Report contents, a real redacted finding in the dark TUI, the severity model, delivery formats |
 | `advisories.html` | Expandable advisory archive, plus how we publish |
 | `about.html` | Why we exist, principles, team and certifications, track record, testimonials, careers, brand assets |

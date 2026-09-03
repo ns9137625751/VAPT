@@ -1,852 +1,956 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vulnerability Assessment and Penetration Testing for web applications, APIs, mobile, network and cloud. Manual testing, OWASP methodology, free retesting.">
-  <meta name="keywords" content="VAPT, penetration testing, vulnerability assessment, web security, API security, cybersecurity">
-  <meta name="author" content="VAPT Security">
-  <meta name="theme-color" content="#fdfcfc">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <meta property="og:title" content="VAPT Security — find vulnerabilities before attackers do">
-  <meta property="og:description" content="Manual penetration testing for web, API, mobile, network and cloud. Reports you can hand straight to engineering.">
+<title>VAPT Security Testing & Penetration Testing Services | VAPT Security</title>
+  <meta name="description" content="Enterprise Vulnerability Assessment and Penetration Testing (VAPT) services for web applications, APIs, cloud environments, and mobile apps with actionable remediation.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vapt.example.com/">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/og-cover.svg">
+  <meta property="og:url" content="https://vapt.example.com/">
+  <meta property="og:title" content="VAPT Security Testing & Penetration Testing Services | VAPT Security">
+  <meta property="og:description" content="Enterprise Vulnerability Assessment and Penetration Testing (VAPT) services for web applications, APIs, cloud environments, and mobile apps with actionable remediation.">
+  <meta property="og:image" content="https://vapt.example.com/images/vapt_hero_bg.jpg">
+  <meta property="og:site_name" content="VAPT Security">
 
-  <title>VAPT Security — Penetration Testing &amp; Vulnerability Assessment</title>
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vapt.example.com/">
+  <meta name="twitter:title" content="VAPT Security Testing & Penetration Testing Services | VAPT Security">
+  <meta name="twitter:description" content="Enterprise Vulnerability Assessment and Penetration Testing (VAPT) services for web applications, APIs, cloud environments, and mobile apps with actionable remediation.">
+  <meta name="twitter:image" content="https://vapt.example.com/images/vapt_hero_bg.jpg">
 
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
-  <!-- Set before the stylesheets so scroll-reveal only hides content when JS
-       can actually reveal it again. -->
-  <script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Berkeley Mono is commercial; JetBrains Mono is the documented substitute. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/vapt-assistant.css">
+  <script src="js/seo-config.js"></script>
 </head>
 <body>
 
-  <a href="#main" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ============================================================
-       PRIMARY NAV — block-pixel ASCII wordmark, hairline bottom rule
-       ============================================================ -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-brand" aria-label="VAPT Security, home">
-        <img src="images/wordmark-vapt.svg" alt="VAPT" width="115" height="25">
-        <span class="navbar-brand-suffix">security</span>
-      </a>
+<!-- ==========================================================
+     NAV
+     ========================================================== -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      VAPT <span class="brand-sub">security</span>
+    </a>
 
-      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="nav-menu">[=]</button>
+    <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
 
-      <ul class="navbar-menu" id="nav-menu" data-menu>
-        <li><a href="services.html" class="nav-link">Services <span class="count">[6]</span></a></li>
-        <li><a href="methodology.html" class="nav-link">Method</a></li>
-        <li><a href="reports.html" class="nav-link">Reports</a></li>
-        <li><a href="advisories.html" class="nav-link">Advisories</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-      </ul>
-
-      <div class="navbar-actions">
-        <a href="contact.html" class="btn btn-primary" data-track="navbar-cta">Request VAPT</a>
+    <nav class="nav-links" id="nav-links" data-nav-links aria-label="Main">
+      <div class="has-menu">
+        <button class="nav-link" data-menu-trigger aria-expanded="false" aria-controls="menu-services">
+          Services
+          <svg class="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-menu" id="menu-services" hidden>
+          <a href="service-web.html">Web Application VAPT <small>Websites and web apps</small></a>
+          <a href="service-mobile.html">Mobile Application VAPT <small>Android and iOS</small></a>
+          <a href="service-api.html">API Security Testing <small>REST, GraphQL, gRPC</small></a>
+          <a href="service-network.html">Network VAPT <small>Servers and network devices</small></a>
+          <a href="service-cloud.html">Cloud Security Assessment <small>AWS, Azure, GCP</small></a>
+          <a href="service-compliance.html">Compliance Support <small>Evidence for your auditor</small></a>
+          <a href="services.html">All services</a>
+        </div>
       </div>
-    </div>
-  </nav>
+      <a class="nav-link" href="dashboard.html">SOC Dashboard</a>
+      <a class="nav-link" href="methodology.html">How it works</a>
+      <a class="nav-link" href="reports.html">Reports</a>
+      <a class="nav-link" href="advisories.html">Research</a>
+      <a class="nav-link" href="about.html">About</a>
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="#quote">Get VAPT Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-  <!-- News strip -->
-  <div class="news-strip">
-    <div class="news-strip-inner">
-      <span class="badge">News</span>
-      <span>OWASP Top 10 (2025 revision) coverage is live across every web and API engagement.</span>
-      <a href="advisories.html">Read the changelog</a>
+<main id="main">
+
+<!-- ==========================================================
+     HERO
+     ========================================================== -->
+<!-- To switch the hero art on, add to the tag below:
+     style="--hero-art:url(images/hero-vapt.avif)"  -->
+<section class="hero section-dark" style="--hero-art:url(images/hero-vapt.jpg)">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="stack stack-5">
+        <span class="eyebrow">Vulnerability Assessment &amp; Penetration Testing</span>
+        <h1>Find security weaknesses before hackers do.</h1>
+        <p class="hero-sub">We test your website, applications, APIs, network and cloud for security problems &mdash; then show you exactly what to fix, in plain English.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#quote">Get Your Security Assessment</a>
+          <a class="btn btn-ghost" href="contact.html">Talk to a Security Expert</a>
+        </div>
+        <div class="hero-strip">
+          <span><i class="dot"></i>Manual + automated testing</span>
+          <span><i class="dot"></i>Reports in plain English</span>
+          <span><i class="dot"></i>Help fixing what we find</span>
+          <span><i class="dot"></i>Free retest afterwards</span>
+        </div>
+      </div>
+
+      <!-- Illustrative risk summary. Not a scan of the visitor. -->
+      <div class="report reveal" aria-label="Example of a security summary we deliver">
+        <div class="report-bar">
+          <strong style="color:var(--on-dark);font-family:var(--font-display)">Example summary</strong>
+          <span class="demo-flag">SAMPLE DATA</span>
+        </div>
+        <div class="report-side" style="border-right:0;border-bottom:1px solid var(--line-dark)">
+          <p class="muted" style="margin-bottom:var(--s2)">Issues found in one assessment</p>
+          <div class="score">27<small> total</small></div>
+          <ul class="sev-list">
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-critical)"></i><span>Critical</span><span class="sev-n">2</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-high)"></i><span>High</span><span class="sev-n">5</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-medium)"></i><span>Medium</span><span class="sev-n">12</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-low)"></i><span>Low</span><span class="sev-n">8</span></li>
+          </ul>
+        </div>
+        <div class="findings" style="padding-top:var(--s4)">
+          <p class="muted">Every issue comes with proof it is real, what it means for your business, and how to fix it.</p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <main id="main">
-
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="hero-text animate-on-scroll">
-          <h1>Find vulnerabilities<br>before attackers do.</h1>
-          <p class="hero-subtitle">
-            Manual penetration testing for web, API, mobile, network and cloud.
-            You get a report engineering can act on the same day &mdash; every
-            finding reproduced, rated and paired with a fix.
-          </p>
-          <div class="hero-cta">
-            <a href="contact.html" class="btn btn-primary" data-track="hero-request">Request a VAPT</a>
-            <a href="services.html" class="btn btn-secondary" data-track="hero-scope">See what we test</a>
-          </div>
-          <p class="hero-note">
-            <span>[+] Fixed-scope quote in 24h</span>
-            <span>[+] Free retest included</span>
-            <span>[+] NDA on request</span>
-          </p>
-        </div>
+<!-- ==========================================================
+     TRUST
+     ========================================================== -->
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 3 7.7 7 8.5 4-.8 7-4.3 7-8.5V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span>Certified security professionals<br><span class="placeholder">[CERTIFICATIONS]</span></span>
       </div>
-
-      <!-- The system's single dark surface: a faux terminal, text only. -->
-      <div class="container-wide">
-        <div class="tui-mockup animate-on-scroll">
-          <img class="tui-wordmark" src="images/wordmark-vapt-hero.svg" alt="VAPT"
-               width="284" height="68">
-
-          <div class="tui-body">
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-keyword">$</span> vapt scan --target app.example.com --profile owasp-2025</div>
-<div class="tui-line"><span class="pipe">|</span></div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-dim">-&gt;</span> recon .......... 42 routes, 118 api paths, 3 origins</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-dim">-&gt;</span> authz .......... 214 object references probed</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-dim">-&gt;</span> injection ...... 1,908 payloads, 6 sinks reached</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-dim">-&gt;</span> crypto ......... tls 1.3, 2 weak jwt configs</div>
-<div class="tui-line"><span class="pipe">|</span></div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-danger">[!] critical</span>  02  idor on /api/v2/invoices/:id</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-warning">[!] high</span>      08  stored xss, jwt alg confusion, ssrf</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-dim">[~] medium</span>    15  headers, rate limits, verbose errors</div>
-<div class="tui-line"><span class="pipe">|</span> <span class="tui-success">[x] verified</span>  35  reproduced with proof-of-concept</div>
-<div class="tui-line"><span class="pipe">|</span></div>
-          </div>
-
-          <div class="tui-prompt-row">
-            <span class="tui-dim">|</span>
-            <span>Report</span>
-            <span class="tui-dim">[ severity-ranked ]</span>
-            <span class="tui-dim">[ retest in 30 days ]</span>
-            <span class="caret">_</span>
-          </div>
-
-          <div class="tui-hints">
-            <span>tab switch scope</span>
-            <span>ctrl-p commands</span>
-            <span>enter export pdf</span>
-          </div>
-        </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.7"/></svg>
+        <span>Confidential testing under NDA</span>
       </div>
-    </section>
-
-    <!-- ============================================================
-         QUICK START
-         ============================================================ -->
-    <section id="start">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">Start an assessment</h2>
-        <div class="install-block animate-on-scroll">
-          <p class="section-intro">
-            Pick how you want to kick things off. Every route ends in the same
-            place: a scoping call, a fixed quote, and a signed statement of work.
-          </p>
-
-          <div class="tabs" role="tablist" data-tabs>
-            <button class="tab active" role="tab" aria-selected="true" data-snippet="mail -s &quot;VAPT request&quot; hello@vapt-security.com">email</button>
-            <button class="tab" role="tab" aria-selected="false" data-snippet="curl -fsSL https://vapt-security.com/scope | sh">scope-cli</button>
-            <button class="tab" role="tab" aria-selected="false" data-snippet="gh issue create --repo you/app --label vapt --title &quot;Request VAPT&quot;">github</button>
-            <button class="tab" role="tab" aria-selected="false" data-snippet="slack invite security@vapt-security.com #appsec">slack</button>
-          </div>
-
-          <div class="snippet">
-            <code class="snippet-code" data-snippet-target>mail -s "VAPT request" hello@vapt-security.com</code>
-            <button class="snippet-copy" data-copy>copy</button>
-          </div>
-        </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span>Reports your team can act on</span>
       </div>
-    </section>
-
-    <!-- ============================================================
-         WHAT IS A VAPT
-         ============================================================ -->
-    <section id="what">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">What is a VAPT?</h2>
-
-        <div class="animate-on-scroll">
-          <p class="section-intro">
-            A Vulnerability Assessment finds what is weak. A Penetration Test
-            proves what an attacker can actually do with it. We run both against
-            the same scope, so you never have to guess whether a scanner hit is
-            real &mdash; if it is in the report, we exploited it and kept the evidence.
-          </p>
-        </div>
-
-        <figure class="figure-wide animate-on-scroll" style="margin: 0;">
-          <img src="images/diagram-attack-surface.svg"
-               alt="Scope diagram listing web, API, mobile, network and cloud targets marked in scope, with third-party SaaS marked excluded."
-               width="430" height="200" loading="lazy">
-          <figcaption class="chart-caption">
-            <strong>Fig 0.</strong> A typical scope sheet, agreed before day one.
-          </figcaption>
-        </figure>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Manual + automated testing</span>
       </div>
-    </section>
-
-    <!-- ============================================================
-         SCOPE / SERVICES
-         ============================================================ -->
-    <section id="scope">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">What we test</h2>
-
-        <div class="scope-grid animate-stagger">
-
-          <div class="scope-block animate-on-scroll" style="--i:0">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] Web applications</h3>
-                <p class="meta">SPA, server-rendered, legacy</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-web.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              Business-logic abuse, injection, session handling and access
-              control tested by hand against every authenticated role.
-            </p>
-            <div class="scope-checks">
-              [x] sql / nosql injection<br>
-              [x] stored + reflected xss<br>
-              [x] csrf and idor<br>
-              [x] authn / authz bypass
-            </div>
-          </div>
-
-          <div class="scope-block animate-on-scroll" style="--i:1">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] APIs</h3>
-                <p class="meta">REST, GraphQL, gRPC</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-api.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              Every documented path plus the ones that are not documented.
-              We diff your spec against what the service actually answers.
-            </p>
-            <div class="scope-checks">
-              [x] broken object-level authz<br>
-              [x] jwt and oauth flaws<br>
-              [x] rate limiting and quotas<br>
-              [x] mass assignment
-            </div>
-          </div>
-
-          <div class="scope-block animate-on-scroll" style="--i:2">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] Mobile apps</h3>
-                <p class="meta">Android, iOS</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-mobile.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              Static and dynamic analysis on real devices, including the backend
-              the app talks to &mdash; most mobile findings live server-side.
-            </p>
-            <div class="scope-checks">
-              [x] insecure local storage<br>
-              [x] certificate pinning bypass<br>
-              [x] hardcoded secrets<br>
-              [x] deep-link abuse
-            </div>
-          </div>
-
-          <div class="scope-block animate-on-scroll" style="--i:3">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] Network</h3>
-                <p class="meta">Internal and external</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-network.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              Discovery, enumeration and exploitation across your perimeter and,
-              where authorised, lateral movement from an assumed-breach foothold.
-            </p>
-            <div class="scope-checks">
-              [x] exposed services<br>
-              [x] default and reused creds<br>
-              [x] patch and config drift<br>
-              [x] segmentation checks
-            </div>
-          </div>
-
-          <div class="scope-block animate-on-scroll" style="--i:4">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] Cloud</h3>
-                <p class="meta">AWS, Azure, GCP</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-cloud.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              IAM paths, storage exposure and network posture reviewed against
-              the provider benchmark, then tested rather than assumed.
-            </p>
-            <div class="scope-checks">
-              [x] over-permissive iam roles<br>
-              [x] public buckets and snapshots<br>
-              [x] key and secret handling<br>
-              [x] privilege-escalation paths
-            </div>
-          </div>
-
-          <div class="scope-block animate-on-scroll" style="--i:5">
-            <div class="scope-block-head">
-              <div>
-                <h3>[+] Compliance</h3>
-                <p class="meta">Evidence, not checkboxes</p>
-              </div>
-              <img class="scope-glyph" src="images/svc-compliance.svg" alt="" width="120" height="84" loading="lazy">
-            </div>
-            <p>
-              Findings mapped to the control set your auditor asks about, with
-              the artefacts they need attached to each one.
-            </p>
-            <div class="scope-checks">
-              [x] owasp top 10 / asvs<br>
-              [x] pci-dss 11.3<br>
-              [x] gdpr art. 32<br>
-              [x] hipaa security rule
-            </div>
-          </div>
-
-        </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v13H4z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7l8-4 8 4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span>Compliance evidence support</span>
       </div>
-    </section>
-
-    <!-- ============================================================
-         METHODOLOGY
-         ============================================================ -->
-    <section id="method">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">How an engagement runs</h2>
-        <p class="section-intro animate-on-scroll">
-          Eight phases, roughly eight working days for a mid-size application.
-          You get a channel with the testers from day one, not a report at the end.
-        </p>
-
-        <div class="steps animate-stagger">
-          <div class="step animate-on-scroll" style="--i:0">
-            <span class="step-number">01</span>
-            <span class="step-title">Scoping</span>
-            <p class="step-description">Targets, roles, rules of engagement and out-of-scope assets agreed in writing.</p>
-            <span class="step-day">day 1</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:1">
-            <span class="step-number">02</span>
-            <span class="step-title">Reconnaissance</span>
-            <p class="step-description">Mapping routes, endpoints, hosts and the trust boundaries between them.</p>
-            <span class="step-day">day 2</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:2">
-            <span class="step-number">03</span>
-            <span class="step-title">Assessment</span>
-            <p class="step-description">Automated coverage sweep to establish a baseline, tuned to your stack.</p>
-            <span class="step-day">day 3</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:3">
-            <span class="step-number">04</span>
-            <span class="step-title">Manual testing</span>
-            <p class="step-description">The part that matters &mdash; business logic, chained flaws, authorisation depth.</p>
-            <span class="step-day">day 4&ndash;6</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:4">
-            <span class="step-number">05</span>
-            <span class="step-title">Exploitation</span>
-            <p class="step-description">Proof-of-concept for every claimed finding. No theoretical severities.</p>
-            <span class="step-day">day 6</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:5">
-            <span class="step-number">06</span>
-            <span class="step-title">Validation</span>
-            <p class="step-description">False positives stripped out before anything reaches your inbox.</p>
-            <span class="step-day">day 7</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:6">
-            <span class="step-number">07</span>
-            <span class="step-title">Reporting</span>
-            <p class="step-description">Executive summary, technical detail, reproduction steps and a fix per issue.</p>
-            <span class="step-day">day 8</span>
-          </div>
-          <div class="step animate-on-scroll" style="--i:7">
-            <span class="step-number">08</span>
-            <span class="step-title">Retest</span>
-            <p class="step-description">Once you have shipped fixes we re-run the whole set. Included, not billed.</p>
-            <span class="step-day">+30 days</span>
-          </div>
-        </div>
-
-        <figure class="figure-wide animate-on-scroll" style="margin: var(--space-xl) 0 0;">
-          <img src="images/diagram-engagement-flow.svg"
-               alt="Engagement pipeline: scope, recon, scan, exploit, report, with day markers underneath."
-               width="430" height="100" loading="lazy">
-          <figcaption class="chart-caption">
-            <strong>Fig 4.</strong> The same eight phases, drawn as a pipeline.
-          </figcaption>
-        </figure>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M20 4v5h-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Free retest after you fix</span>
       </div>
-    </section>
-
-    <!-- ============================================================
-         FIGURES / TRACK RECORD
-         ============================================================ -->
-    <section id="record">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">Track record</h2>
-
-        <div class="figures animate-stagger">
-          <div class="chart-tile animate-on-scroll" style="--i:0">
-            <img src="images/fig-1-apps-tested.svg"
-                 alt="Sparse line plot trending upward, representing applications tested over time."
-                 width="280" height="120" loading="lazy">
-            <p class="chart-caption"><strong>Fig 1.</strong> 500+ applications tested</p>
-          </div>
-          <div class="chart-tile animate-on-scroll" style="--i:1">
-            <img src="images/fig-2-vulns-found.svg"
-                 alt="Dotted scatter plot thinning towards the right, representing findings closed out over time."
-                 width="280" height="120" loading="lazy">
-            <p class="chart-caption"><strong>Fig 2.</strong> 2,500+ findings reported</p>
-          </div>
-          <div class="chart-tile animate-on-scroll" style="--i:2">
-            <img src="images/fig-3-retest-pass.svg"
-                 alt="Step plot climbing to a plateau, representing retest pass rate."
-                 width="280" height="120" loading="lazy">
-            <p class="chart-caption"><strong>Fig 3.</strong> 99.5% retest pass rate</p>
-          </div>
-        </div>
-
-        <div class="stats animate-stagger" style="margin-top: var(--space-xxl);">
-          <div class="stat animate-on-scroll" style="--i:0">
-            <div class="stat-number"><span class="counter">500</span>+</div>
-            <div class="stat-label">applications tested</div>
-          </div>
-          <div class="stat animate-on-scroll" style="--i:1">
-            <div class="stat-number"><span class="counter">2500</span>+</div>
-            <div class="stat-label">vulnerabilities identified</div>
-          </div>
-          <div class="stat animate-on-scroll" style="--i:2">
-            <div class="stat-number"><span class="counter">150</span>+</div>
-            <div class="stat-label">assessments delivered</div>
-          </div>
-          <div class="stat animate-on-scroll" style="--i:3">
-            <div class="stat-number">99.5%</div>
-            <div class="stat-label">client satisfaction</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FINDINGS / SEVERITY
-         ============================================================ -->
-    <section id="findings">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">What a report looks like</h2>
-        <p class="section-intro animate-on-scroll">
-          The numbers below are the median distribution across our last hundred
-          web engagements. Yours will differ &mdash; the shape rarely does.
-        </p>
-
-        <div class="severity-table animate-stagger">
-          <div class="severity-row animate-on-scroll" style="--i:0">
-            <span class="severity-name">[!] Critical</span>
-            <span class="severity-count">02</span>
-            <span class="severity-desc">Direct path to data or account takeover. Reported the day we find it.</span>
-            <span class="severity-sla">fix in 24h</span>
-          </div>
-          <div class="severity-row animate-on-scroll" style="--i:1">
-            <span class="severity-name">[!] High</span>
-            <span class="severity-count">08</span>
-            <span class="severity-desc">Exploitable with meaningful impact, but needs a precondition to chain.</span>
-            <span class="severity-sla">fix in 7d</span>
-          </div>
-          <div class="severity-row animate-on-scroll" style="--i:2">
-            <span class="severity-name">[~] Medium</span>
-            <span class="severity-count">15</span>
-            <span class="severity-desc">Weakens your posture and shows up in audits. Usually a config change.</span>
-            <span class="severity-sla">fix in 30d</span>
-          </div>
-          <div class="severity-row animate-on-scroll" style="--i:3">
-            <span class="severity-name">[-] Low</span>
-            <span class="severity-count">10</span>
-            <span class="severity-desc">Hardening and hygiene. Worth batching into your next maintenance window.</span>
-            <span class="severity-sla">next cycle</span>
-          </div>
-        </div>
-
-        <figure class="figure-wide animate-on-scroll" style="margin: var(--space-xl) 0 0;">
-          <img src="images/severity-histogram.svg"
-               alt="Bar chart of median findings per engagement: 2 critical, 8 high, 15 medium, 10 low."
-               width="420" height="132" loading="lazy">
-          <figcaption class="chart-caption">
-            <strong>Fig 5.</strong> Median findings per web engagement, by severity.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         WHY US
-         ============================================================ -->
-    <section id="why-us">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">Why teams pick us</h2>
-
-        <div class="list-rows animate-stagger">
-          <div class="list-row animate-on-scroll" style="--i:0">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Humans, not scanners</span>
-            <span class="list-row-desc">OSCP- and CREST-certified testers. Tooling sets the baseline; people find the logic flaws.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:1">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Zero false positives</span>
-            <span class="list-row-desc">Every finding is reproduced and evidenced before it reaches the report.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:2">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Fixes, not findings</span>
-            <span class="list-row-desc">Each issue ships with a remediation and, where useful, a patch in your language.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:3">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Retest included</span>
-            <span class="list-row-desc">One full retest within 30 days of delivery, at no extra cost.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:4">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Live channel</span>
-            <span class="list-row-desc">A shared Slack or Teams channel with the testers for the length of the engagement.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:5">
-            <span class="marker">[+]</span>
-            <span class="list-row-label">Confidentiality</span>
-            <span class="list-row-desc">NDA before scoping. Evidence encrypted at rest and destroyed on request.</span>
-          </div>
-          <div class="list-row animate-on-scroll" style="--i:6">
-            <span class="marker marker-mute">[-]</span>
-            <span class="list-row-label">No retainers required</span>
-            <span class="list-row-desc">Fixed-scope engagements. Move to a programme only if it earns its place.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         TESTIMONIALS
-         ============================================================ -->
-    <section id="voices">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">From the teams we tested</h2>
-
-        <div class="animate-stagger">
-          <div class="testimonial-row animate-on-scroll" style="--i:0">
-            <div class="avatar" aria-hidden="true">PR</div>
-            <div>
-              <div class="testimonial-meta">P. Raval <span class="role">&mdash; Head of Engineering, fintech</span></div>
-              <p class="testimonial-quote">
-                &ldquo;The IDOR they found on our invoice API had been live for
-                fourteen months. The write-up was clear enough that we shipped
-                the fix before the report call.&rdquo;
-              </p>
-            </div>
-          </div>
-          <div class="testimonial-row animate-on-scroll" style="--i:1">
-            <div class="avatar" aria-hidden="true">SM</div>
-            <div>
-              <div class="testimonial-meta">S. Mehta <span class="role">&mdash; CTO, healthcare SaaS</span></div>
-              <p class="testimonial-quote">
-                &ldquo;Our auditor accepted the report as-is. That has never
-                happened with a pentest vendor before.&rdquo;
-              </p>
-            </div>
-          </div>
-          <div class="testimonial-row animate-on-scroll" style="--i:2">
-            <div class="avatar" aria-hidden="true">AK</div>
-            <div>
-              <div class="testimonial-meta">A. Kulkarni <span class="role">&mdash; Platform lead, logistics</span></div>
-              <p class="testimonial-quote">
-                &ldquo;Zero padding. Thirty-five findings, thirty-five
-                proof-of-concepts, one retest, done.&rdquo;
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ — bracket toggles, no chevrons
-         ============================================================ -->
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-label animate-on-scroll">FAQ</h2>
-
-        <div class="faq animate-on-scroll" data-faq>
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>How long does an assessment take?</span>
-            </button>
-            <div class="faq-answer">
-              A mid-size web application runs about eight working days from
-              kickoff to report. APIs are usually faster; a full network or
-              cloud estate can run two to three weeks. You get a firm timeline
-              with the quote, before anything is signed.
-            </div>
-          </div>
-
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>Will testing take our production system down?</span>
-            </button>
-            <div class="faq-answer">
-              No. Destructive and denial-of-service techniques are excluded by
-              default and only ever run against a staging environment with
-              written authorisation. Rate limits and testing windows are agreed
-              during scoping.
-            </div>
-          </div>
-
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>Do you need access to our source code?</span>
-            </button>
-            <div class="faq-answer">
-              Not required, but it helps. Black-box testing finds what an
-              external attacker finds; grey-box with credentials and source
-              typically surfaces 30&ndash;40% more, especially in authorisation
-              logic. Most clients start black-box and open up access mid-engagement.
-            </div>
-          </div>
-
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>What do we actually receive?</span>
-            </button>
-            <div class="faq-answer">
-              An executive summary for the board, a technical report with
-              reproduction steps and evidence per finding, a remediation plan
-              ranked by severity, and a machine-readable export (JSON or SARIF)
-              you can load straight into your tracker. Plus a signed attestation
-              letter for your customers and auditors.
-            </div>
-          </div>
-
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>How often should we test?</span>
-            </button>
-            <div class="faq-answer">
-              Annually as a floor, and after any change to authentication,
-              authorisation, payment flows or your cloud perimeter. Most
-              regulated teams land on twice a year plus a retest after major releases.
-            </div>
-          </div>
-
-          <div class="faq-row">
-            <button class="faq-question" aria-expanded="false">
-              <span class="faq-toggle">+</span>
-              <span>What happens to our data afterwards?</span>
-            </button>
-            <div class="faq-answer">
-              Evidence is encrypted at rest for the retest window, then destroyed
-              on request with a written confirmation. We never retain
-              credentials, customer records or exported datasets beyond the engagement.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CTA BAND
-         ============================================================ -->
-    <section id="cta">
-      <div class="container">
-        <div class="cta-band animate-on-scroll">
-          <img src="images/wordmark-vapt-cream.svg" alt="" width="115" height="25"
-               style="margin-bottom: var(--space-lg);" loading="lazy">
-          <h2>Ready to see what an attacker sees?</h2>
-          <p>
-            Send us a scope and we will come back within 24 hours with a fixed
-            quote, a timeline and the testers who will be on it.
-          </p>
-          <div class="hero-cta" style="margin-top: var(--space-xl); margin-bottom: 0;">
-            <a href="contact.html" class="btn btn-primary" data-track="cta-request">Request your VAPT</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         CONTACT — two-column split
-         ============================================================ -->
-    <section id="contact">
-      <div class="container-wide">
-        <h2 class="section-label animate-on-scroll">Get in touch</h2>
-
-        <div class="contact-split">
-          <div class="animate-on-scroll">
-            <p>
-              Tell us what you want tested and by when. If VAPT is not the right
-              answer for your problem, we will say so.
-            </p>
-
-            <div class="contact-facts">
-              <div class="contact-fact">
-                <div class="contact-fact-label">email</div>
-                <div class="contact-fact-value"><a href="mailto:hello@vapt-security.com">hello@vapt-security.com</a></div>
-              </div>
-              <div class="contact-fact">
-                <div class="contact-fact-label">phone</div>
-                <div class="contact-fact-value">+1 (555) 123-4567</div>
-              </div>
-              <div class="contact-fact">
-                <div class="contact-fact-label">hours</div>
-                <div class="contact-fact-value">Mon&ndash;Fri, 09:00&ndash;18:00 EST</div>
-              </div>
-              <div class="contact-fact">
-                <div class="contact-fact-label">disclosure</div>
-                <div class="contact-fact-value"><a href="disclosure.html#security-txt">security.txt</a> &middot; <a href="disclosure.html#pgp">PGP key</a></div>
-              </div>
-            </div>
-          </div>
-
-          <form class="animate-on-scroll" data-validate novalidate>
-            <div class="field">
-              <label class="field-label" for="name">Full name *</label>
-              <input class="input" type="text" id="name" name="name" required placeholder="Jane Doe">
-            </div>
-            <div class="field">
-              <label class="field-label" for="email">Company email *</label>
-              <input class="input" type="email" id="email" name="email" required placeholder="jane@company.com">
-            </div>
-            <div class="field">
-              <label class="field-label" for="company">Company</label>
-              <input class="input" type="text" id="company" name="company" placeholder="Company Ltd.">
-            </div>
-            <div class="field">
-              <label class="field-label" for="target">What needs testing?</label>
-              <input class="input" type="text" id="target" name="target" placeholder="web app + api, ~40 routes">
-            </div>
-            <div class="field">
-              <label class="field-label" for="message">What problem are you trying to solve? *</label>
-              <textarea class="textarea" id="message" name="message" required rows="5"
-                        placeholder="Compliance deadline, customer security review, post-incident..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block" data-track="contact-submit">Send</button>
-            <p class="meta" style="margin-top: var(--space-md);">
-              [x] We reply within one business day. [x] Nothing is shared with third parties.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-
-      <div class="footer-subscribe">
-        <div class="footer-subscribe-copy">
-          <strong>Advisories in your inbox</strong>
-          <span>One mail a month: new classes of bug we are seeing in the field. No sales.</span>
-        </div>
-        <form data-validate novalidate>
-          <label class="visually-hidden" for="subscribe-email">Email address</label>
-          <input class="input" type="email" id="subscribe-email" name="email" required placeholder="you@company.com">
-          <button type="submit" class="btn btn-primary" data-track="footer-subscribe">Subscribe</button>
-        </form>
-      </div>
-
-      <div class="footer-links-grid">
-        <div class="footer-links-cell">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="services.html#web">Web application</a></li>
-            <li><a href="services.html#api">API security</a></li>
-            <li><a href="services.html#mobile">Mobile</a></li>
-            <li><a href="services.html#network">Network</a></li>
-            <li><a href="services.html#cloud">Cloud</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Process</h4>
-          <ul>
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="reports.html">Sample report</a></li>
-            <li><a href="about.html#record">Track record</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="about.html#voices">Clients</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="about.html#careers">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="advisories.html">Advisories</a></li>
-            <li><a href="disclosure.html">Responsible disclosure</a></li>
-            <li><a href="disclosure.html#security-txt">security.txt</a></li>
-            <li><a href="disclosure.html#pgp">PGP key</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-cell">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="terms.html#dpa">DPA</a></li>
-            <li><a href="privacy.html#cookies">Cookies</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-bottom-brand">
-          <img src="images/wordmark-vapt.svg" alt="" width="69" height="15">
-          <span>&copy;2026 VAPT Security</span>
-        </div>
-        <div class="footer-utility">
-          <a href="about.html#brand">Brand</a>
-          <span class="sep">&middot;</span>
-          <a href="privacy.html">Privacy</a>
-          <span class="sep">&middot;</span>
-          <a href="terms.html">Terms</a>
-          <span class="sep">&middot;</span>
-          <span>English</span>
-        </div>
-      </div>
-
     </div>
-  </footer>
+  </div>
+</section>
 
-  <button class="scroll-to-top" id="scrollToTop" aria-label="Back to top">[^] top</button>
+<!-- ==========================================================
+     WHAT IS VAPT
+     ========================================================== -->
+<section class="section" id="what-is-vapt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The basics</span>
+      <h2>What is VAPT?</h2>
+      <p class="lead">VAPT stands for Vulnerability Assessment and Penetration Testing. It is a security check that finds weaknesses in your technology before attackers do. It is two jobs, not one.</p>
+    </div>
 
-  <script src="js/main.js"></script>
+    <div class="grid grid-2">
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Vulnerability Assessment &mdash; find the weaknesses</h3>
+        <p>We scan your systems and applications to build a list of known security weaknesses and possible risks. This tells you <strong>what could go wrong</strong>.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 3 7.7 7 8.5 4-.8 7-4.3 7-8.5V6l-7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="15.8" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3>Penetration Testing &mdash; safely simulate a real attack</h3>
+        <p>Our security experts try to use those weaknesses the way a real attacker would, with your written permission. This tells you <strong>what would actually happen</strong>.</p>
+      </div>
+    </div>
+
+
+
+    <ul class="flow reveal">
+      <li>Find</li><li>Test</li><li>Understand risk</li><li>Fix</li><li>Retest</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==========================================================
+     SERVICES
+     ========================================================== -->
+<section class="section section-sub" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>What can we test?</h2>
+    </div>
+
+    <div class="reveal" style="margin-bottom:var(--s7)">
+      <figure class="media media--wide">
+        <img src="images/process-vapt.jpg" width="1600" height="900" alt="Vulnerability assessment and penetration testing process" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+
+
+    <div class="grid grid-3">
+      <a class="card reveal" href="service-web.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Web Application Testing</h3>
+        <p>Test websites and web apps for weaknesses like login flaws, data leaks and injection problems.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="service-mobile.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Mobile App Testing</h3>
+        <p>Test Android and iOS apps, plus the servers they talk to. Most mobile issues are actually server-side.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="service-api.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7 4 12l5 5M15 7l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>API Security Testing</h3>
+        <p>Check whether your APIs let the wrong person read or change data they should not be able to.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="service-network.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Network Testing</h3>
+        <p>Assess servers, firewalls, network devices and exposed services for weak points.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="service-cloud.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11.2 3.4 3.4 0 0 0 7 18Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Cloud Security Assessment</h3>
+        <p>Review AWS, Azure or GCP settings for risky configuration and over-generous permissions.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="service-compliance.html">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 13 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Compliance Support</h3>
+        <p>Map findings to the controls your auditor asks about, with the evidence attached.</p>
+        <span class="link-arrow">See what we test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 12h17M12 3.5c2.2 2.4 3.3 5.3 3.3 8.5S14.2 18.1 12 20.5c-2.2-2.4-3.3-5.3-3.3-8.5S9.8 5.9 12 3.5Z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>External Assessment</h3>
+        <p>Find what an attacker can see and reach from the public internet.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Internal Assessment</h3>
+        <p>Check what someone could do if they were already inside your network.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 9a13 13 0 0 1 17 0M6.8 12.4a8.4 8.4 0 0 1 10.4 0M10 15.7a3.6 3.6 0 0 1 4 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="19" r="1.2" fill="currentColor"/></svg></div>
+        <h3>Wireless Testing</h3>
+        <p>Assess your Wi-Fi setup and the controls protecting it.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 7 4 12l5 5M15 7l5 5-5 5M13 5l-2 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Source Code Review</h3>
+        <p>Read the code itself for security problems, where you can share access.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="9" cy="8" r="2.3" stroke="currentColor" stroke-width="1.7"/><circle cx="15" cy="16" r="2.3" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3>Configuration Review</h3>
+        <p>Find insecure settings on systems, servers and security tools.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+      <a class="card reveal" href="#quote">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M20 4v5h-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Retesting</h3>
+        <p>Confirm that the problems we reported are genuinely fixed.</p>
+        <span class="link-arrow">Ask about this test</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     CONTINUOUS THREAT MONITORING (NEW SECTION 1)
+     ========================================================== -->
+<section class="section section-dark" id="threat-monitoring">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Real-Time Protection</span>
+      <h2>Continuous Threat Intelligence &amp; Attack Surface Monitoring</h2>
+      <p class="lead">Security threats do not wait for an annual audit. We continuously monitor your external perimeter, discover new assets, track emerging CVEs, and alert your team in real time.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:var(--s6)">
+      <figure class="media media--wide">
+        <img src="images/sec-monitoring.jpg" width="1600" height="900" alt="Continuous threat intelligence and SOC monitoring visual" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card card-dark reveal">
+        <h3>24/7 Attack Surface Recon</h3>
+        <p>Automatic discovery of subdomains, exposed cloud buckets, and open ports as your infrastructure evolves.</p>
+      </div>
+      <div class="card card-dark reveal">
+        <h3>Zero-Day Vulnerability Alerts</h3>
+        <p>Immediate notifications when newly disclosed vulnerabilities (CVEs) impact your specific tech stack.</p>
+      </div>
+      <div class="card card-dark reveal">
+        <h3>Human-Verified Intelligence</h3>
+        <p>Every alert is reviewed by our security analysts before reaching your inbox &mdash; zero false alarms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     WIZARD
+     ========================================================== -->
+<section class="section" id="which-test">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Free tool</span>
+      <h2>Not sure which security test you need?</h2>
+      <p class="lead">Answer four questions and we will suggest a starting scope. This is a guide only &mdash; it does not scan anything or look at your systems.</p>
+    </div>
+
+    <form class="wizard reveal" data-wizard>
+      <fieldset>
+        <legend>1. What do you want to protect?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="asset" value="website"><span>Website</span></label>
+          <label class="opt"><input type="radio" name="asset" value="mobile"><span>Mobile app</span></label>
+          <label class="opt"><input type="radio" name="asset" value="api"><span>API</span></label>
+          <label class="opt"><input type="radio" name="asset" value="network"><span>Network</span></label>
+          <label class="opt"><input type="radio" name="asset" value="cloud"><span>Cloud</span></label>
+          <label class="opt"><input type="radio" name="asset" value="multiple"><span>Several systems</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Do users log in?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="login" value="yes"><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="login" value="no"><span>No</span></label>
+          <label class="opt"><input type="radio" name="login" value="unsure"><span>Not sure</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Can anyone reach it from the internet?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="public" value="yes"><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="public" value="no"><span>No</span></label>
+          <label class="opt"><input type="radio" name="public" value="unsure"><span>Not sure</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset style="margin-bottom:var(--s5)">
+        <legend>4. Do you need a report for an auditor or customer?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="compliance" value="yes"><span>Yes</span></label>
+          <label class="opt"><input type="radio" name="compliance" value="no"><span>No</span></label>
+          <label class="opt"><input type="radio" name="compliance" value="unsure"><span>Not sure</span></label>
+        </div>
+      </fieldset>
+
+      <div class="wizard-out" data-wizard-out hidden aria-live="polite">
+        <h3>Suggested starting scope</h3>
+        <ul data-wizard-list></ul>
+        <p class="muted" data-wizard-note></p>
+        <p style="margin-top:var(--s4)"><a class="btn btn-dark btn-sm" href="#quote">Discuss my requirements</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ==========================================================
+     PROCESS
+     ========================================================== -->
+<section class="section section-sub" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Our VAPT process</h2>
+      <p class="lead">Seven steps, agreed in writing before we start. You always know what is being tested, when, and by whom.</p>
+    </div>
+
+    <svg class="pipe reveal" viewBox="0 0 1120 122" role="img"
+         aria-label="The seven phases: understand, plan, assess, validate, report, fix, retest. Assess and validate are the testing phases.">
+      <text class="pipe-group" x="168" y="14" text-anchor="middle">AGREED IN WRITING</text>
+      <text class="pipe-group" x="481" y="14" text-anchor="middle">WHERE THE TESTING HAPPENS</text>
+      <text class="pipe-group" x="873" y="14" text-anchor="middle">UNTIL IT IS CLOSED</text>
+      <line class="pipe-rail" x1="90" y1="52" x2="403" y2="52"/>
+      <line class="pipe-rail-hot" x1="403" y1="52" x2="560" y2="52"/>
+      <line class="pipe-rail" x1="560" y1="52" x2="1030" y2="52"/>
+      <circle class="pipe-node" cx="90" cy="52" r="17"/>
+      <text class="pipe-num" x="90" y="57" text-anchor="middle">1</text>
+      <text class="pipe-label" x="90" y="96" text-anchor="middle">Understand</text>
+      <circle class="pipe-node" cx="246" cy="52" r="17"/>
+      <text class="pipe-num" x="246" y="57" text-anchor="middle">2</text>
+      <text class="pipe-label" x="246" y="96" text-anchor="middle">Plan</text>
+      <circle class="pipe-node pipe-node-hot" cx="403" cy="52" r="17"/>
+      <text class="pipe-num" x="403" y="57" text-anchor="middle">3</text>
+      <text class="pipe-label" x="403" y="96" text-anchor="middle">Assess</text>
+      <circle class="pipe-node pipe-node-hot" cx="560" cy="52" r="17"/>
+      <text class="pipe-num" x="560" y="57" text-anchor="middle">4</text>
+      <text class="pipe-label" x="560" y="96" text-anchor="middle">Validate</text>
+      <circle class="pipe-node" cx="716" cy="52" r="17"/>
+      <text class="pipe-num" x="716" y="57" text-anchor="middle">5</text>
+      <text class="pipe-label" x="716" y="96" text-anchor="middle">Report</text>
+      <circle class="pipe-node" cx="873" cy="52" r="17"/>
+      <text class="pipe-num" x="873" y="57" text-anchor="middle">6</text>
+      <text class="pipe-label" x="873" y="96" text-anchor="middle">Fix</text>
+      <circle class="pipe-node" cx="1030" cy="52" r="17"/>
+      <text class="pipe-num" x="1030" y="57" text-anchor="middle">7</text>
+      <text class="pipe-label" x="1030" y="96" text-anchor="middle">Retest</text>
+    </svg>
+
+    <div class="steps">
+      <div class="step reveal"><span class="step-n">1</span><h3>Understand</h3><p>We learn what your systems do, who uses them, and what matters most to your business.</p></div>
+      <div class="step reveal"><span class="step-n">2</span><h3>Plan</h3><p>We agree the scope, rules, timing and contact people, in writing, before anything starts.</p></div>
+      <div class="step reveal"><span class="step-n">3</span><h3>Assess</h3><p>Our team runs automated scans and then tests by hand for the problems tools cannot find.</p></div>
+      <div class="step reveal"><span class="step-n">4</span><h3>Validate</h3><p>We prove each issue is real and remove false alarms, so you do not waste time on noise.</p></div>
+      <div class="step reveal"><span class="step-n">5</span><h3>Report</h3><p>You get a clear report: what we found, why it matters, the evidence, and how to fix it.</p></div>
+      <div class="step reveal"><span class="step-n">6</span><h3>Fix</h3><p>We support your developers while they fix things, and answer questions as they go.</p></div>
+      <div class="step reveal"><span class="step-n">7</span><h3>Retest</h3><p>We test everything again to confirm the fixes worked, and issue an updated report.</p></div>
+        <a class="step step-end reveal" href="methodology.html">
+        <h3>The full method</h3>
+        <p>Eight phases, day by day, with the rules we test under.</p>
+        <span class="link-arrow">Read how it works</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     SAMPLE REPORT
+     ========================================================== -->
+<section class="section section-dark" id="sample-report">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What you receive</span>
+      <h2>A report you can actually use</h2>
+      <p class="lead">Written for two readers: a summary your management can follow, and technical detail your developers can work from.</p>
+    </div>
+
+    <div class="report reveal">
+      <div class="report-bar">
+        <strong style="color:var(--on-dark);font-family:var(--font-display)">Sample Security Report</strong>
+        <span class="demo-flag">DEMO DATA &mdash; NOT A REAL ASSESSMENT</span>
+      </div>
+
+      <div class="report-body">
+        <div class="report-side">
+          <p class="muted">Example risk summary</p>
+          <div class="score">72<small>/100</small></div>
+          <ul class="sev-list">
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-critical)"></i><span>Critical</span><span class="sev-n">2</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-high)"></i><span>High</span><span class="sev-n">5</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-medium)"></i><span>Medium</span><span class="sev-n">12</span></li>
+            <li class="sev-row"><i class="sev-dot" style="background:var(--sev-low)"></i><span>Low</span><span class="sev-n">8</span></li>
+          </ul>
+          <p class="muted" style="margin-top:var(--s5)">These numbers are an illustration. They are not a measurement of your systems.</p>
+        </div>
+
+        <div class="findings">
+          <div class="finding">
+            <div class="finding-head"><strong>SQL Injection</strong><span class="pill pill-critical">CRITICAL</span></div>
+            <dl>
+              <dt>What it is</dt><dd>A search box passes text straight to the database.</dd>
+              <dt>Business impact</dt><dd>Customer records could be read or deleted.</dd>
+              <dt>Fix</dt><dd>Use parameterised queries on the affected endpoint.</dd>
+              <dt>Retest</dt><dd>Closed and verified.</dd>
+            </dl>
+          </div>
+          <div class="finding">
+            <div class="finding-head"><strong>Broken Access Control</strong><span class="pill pill-high">HIGH</span></div>
+            <dl>
+              <dt>What it is</dt><dd>One customer can open another customer's invoice by changing a number in the address bar.</dd>
+              <dt>Business impact</dt><dd>Private billing data exposed across accounts.</dd>
+              <dt>Fix</dt><dd>Check ownership on the server before returning the record.</dd>
+              <dt>Retest</dt><dd>Closed and verified.</dd>
+            </dl>
+          </div>
+          <div class="finding">
+            <div class="finding-head"><strong>Missing Security Headers</strong><span class="pill pill-medium">MEDIUM</span></div>
+            <dl>
+              <dt>What it is</dt><dd>The site does not tell browsers to switch on built-in protections.</dd>
+              <dt>Business impact</dt><dd>Makes other attacks easier to pull off.</dd>
+              <dt>Fix</dt><dd>Add the recommended response headers at the web server.</dd>
+              <dt>Retest</dt><dd>Closed and verified.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cta reveal" style="margin-top:var(--s5)">
+      <a class="btn btn-primary" href="#quote">Request Sample Report</a>
+      <a class="btn btn-ghost" href="reports.html">What is inside a full report</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     COMPARISON
+     ========================================================== -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Compare</span>
+      <h2>Which service fits which problem</h2>
+    </div>
+
+    <div class="table-scroll reveal">
+      <table>
+        <caption class="visually-hidden">VAPT services, what each one tests, and who it suits</caption>
+        <thead><tr><th scope="col">Service</th><th scope="col">What we test</th><th scope="col">Best for</th></tr></thead>
+        <tbody>
+          <tr><td>Web VAPT</td><td>Websites and web apps</td><td>Any business with a customer-facing site</td></tr>
+          <tr><td>API Testing</td><td>REST, GraphQL and gRPC APIs</td><td>SaaS and connected apps</td></tr>
+          <tr><td>Mobile VAPT</td><td>Android and iOS apps</td><td>Companies shipping a mobile app</td></tr>
+          <tr><td>Network VAPT</td><td>Servers, firewalls, network devices</td><td>Corporate infrastructure</td></tr>
+          <tr><td>Cloud Assessment</td><td>AWS, Azure and GCP configuration</td><td>Teams running in the cloud</td></tr>
+          <tr><td>External Assessment</td><td>Everything visible from the internet</td><td>Public-facing infrastructure</td></tr>
+          <tr><td>Internal Assessment</td><td>Your internal network</td><td>Offices and corporate environments</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     COMPLIANCE
+     ========================================================== -->
+<section class="section section-sub" id="compliance">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Compliance</span>
+      <h2>Security testing that supports compliance</h2>
+      <p class="lead">VAPT does not make you compliant on its own. What it does is find the weaknesses and give you the evidence and remediation record that auditors ask to see.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card reveal"><h3>ISO 27001</h3><p>Evidence for technical testing controls.</p></div>
+      <div class="card reveal"><h3>PCI DSS</h3><p>Findings mapped to the relevant requirements.</p></div>
+      <div class="card reveal"><h3>SOC 2</h3><p>Testing evidence for the common criteria.</p></div>
+      <div class="card reveal"><h3>DPDP Act</h3><p>Support for protecting personal data.</p></div>
+    </div>
+
+    <h3 class="reveal" style="margin-top:var(--s7)">Standards we test against</h3>
+    <p class="muted reveal" style="margin-top:var(--s2);max-width:70ch">These are the published methodologies our coverage is built on, so what we did is auditable rather than something you take on trust.</p>
+    <ul class="standards reveal">
+      <li>OWASP WSTG</li>
+      <li>OWASP ASVS</li>
+      <li>OWASP API Top 10</li>
+      <li>OWASP MASVS</li>
+      <li>PTES</li>
+      <li>NIST SP 800-115</li>
+      <li>CVSS v3.1</li>
+      <li>CIS Benchmarks</li>
+    </ul>
+
+    <p class="muted reveal" style="margin-top:var(--s5);max-width:70ch">
+      Frameworks we support are listed above. If you need <span class="placeholder">[CERT-IN]</span>,
+      <span class="placeholder">[RBI]</span>, <span class="placeholder">[SEBI]</span> or
+      <span class="placeholder">[HIPAA]</span> coverage, confirm with us first &mdash; we only claim what we can genuinely deliver.
+    </p>
+  </div>
+</section>
+
+<!-- ==========================================================
+     AUDIT-READY REPORTING & EVIDENCING (NEW SECTION 2)
+     ========================================================== -->
+<section class="section" id="compliance-reporting">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Audit &amp; Remediation</span>
+      <h2>Audit-Ready Security Reports &amp; Code-Level Patch Guidance</h2>
+      <p class="lead">Bridge the gap between C-suite compliance requirements and engineering workloads. Our reports deliver executive risk scores for auditors and exact code patches for developers.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:var(--s6)">
+      <figure class="media media--wide">
+        <img src="images/sec-reporting.jpg" width="1600" height="900" alt="Executive compliance report and developer remediation guidance" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <h3>Executive Risk Summaries</h3>
+        <p>Clear, high-level dashboards and severity metrics that C-suite leaders and board members can understand.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Developer Code Patches</h3>
+        <p>Line-by-line reproduction steps, proof-of-concept exploits, and exact code fixes ready for your pull requests.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Signed Attestation Letters</h3>
+        <p>Official, verified security attestation certificates to share with enterprise clients and regulatory auditors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     INDUSTRIES
+     ========================================================== -->
+<section class="section" id="industries">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Industries</span>
+      <h2>What matters most in your sector</h2>
+    </div>
+
+    <div class="tabs" role="tablist" data-tabs aria-label="Industries">
+      <button class="tab" role="tab" id="t-fin" aria-controls="p-fin" aria-selected="true">Banking &amp; Finance</button>
+      <button class="tab" role="tab" id="t-health" aria-controls="p-health" aria-selected="false" tabindex="-1">Healthcare</button>
+      <button class="tab" role="tab" id="t-ecom" aria-controls="p-ecom" aria-selected="false" tabindex="-1">E-commerce</button>
+      <button class="tab" role="tab" id="t-saas" aria-controls="p-saas" aria-selected="false" tabindex="-1">SaaS</button>
+      <button class="tab" role="tab" id="t-mfg" aria-controls="p-mfg" aria-selected="false" tabindex="-1">Manufacturing</button>
+      <button class="tab" role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false" tabindex="-1">Education</button>
+    </div>
+
+    <div class="tab-panel reveal" role="tabpanel" id="p-fin" aria-labelledby="t-fin">
+      <h3>Banking &amp; Financial Services</h3>
+      <p>Find the weaknesses that could expose account data, payment flows or customer records &mdash; and produce the testing evidence your regulator and your board expect to see.</p>
+    </div>
+    <div class="tab-panel reveal" role="tabpanel" id="p-health" aria-labelledby="t-health" hidden>
+      <h3>Healthcare</h3>
+      <p>Protect patient data across your applications, APIs and connected systems, including the third-party integrations that often sit outside normal review.</p>
+    </div>
+    <div class="tab-panel reveal" role="tabpanel" id="p-ecom" aria-labelledby="t-ecom" hidden>
+      <h3>E-commerce</h3>
+      <p>Test checkout, pricing, discounts and account features for logic problems that let people pay less than they should or see other customers' orders.</p>
+    </div>
+    <div class="tab-panel reveal" role="tabpanel" id="p-saas" aria-labelledby="t-saas" hidden>
+      <h3>SaaS</h3>
+      <p>Confirm one customer cannot reach another customer's data, and get the report your enterprise buyers ask for during procurement.</p>
+    </div>
+    <div class="tab-panel reveal" role="tabpanel" id="p-mfg" aria-labelledby="t-mfg" hidden>
+      <h3>Manufacturing</h3>
+      <p>Review the office network, remote access and internet-facing systems that connect to production, without touching operational equipment.</p>
+    </div>
+    <div class="tab-panel reveal" role="tabpanel" id="p-edu" aria-labelledby="t-edu" hidden>
+      <h3>Education</h3>
+      <p>Protect student records and learning platforms, which often run older software and have many people with different levels of access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     WHY US
+     ========================================================== -->
+<section class="section section-sub" id="why-us">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why choose us</span>
+      <h2>Testing done by people, explained in plain English</h2>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.6 19.6a5.4 5.4 0 0 1 10.8 0"/><path d="M16.3 5.5a3.2 3.2 0 0 1 0 5"/><path d="M17.5 13.9a5.4 5.4 0 0 1 2.9 5.7"/></svg></div><h3>Experienced security team</h3><p>Testing is done by trained security professionals, not by a tool running on its own.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 3.2H6.4a1.2 1.2 0 0 0-1.2 1.2v15.2a1.2 1.2 0 0 0 1.2 1.2h4.2"/><path d="M13.4 3.2 18.2 8v3.1"/><path d="M8.4 9.2h5.2M8.4 12.8h3.4"/><circle cx="16.4" cy="16.4" r="3.5"/><path d="m19 19 2.2 2.2"/></svg></div><h3>Manual + automated</h3><p>Scanners find the common problems fast. People find the ones that actually cost you money.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.2" y="3.2" width="15.6" height="17.6" rx="2"/><rect x="7.4" y="7" width="2.6" height="2.6" rx=".7"/><path d="M12.8 8.3h4"/><rect x="7.4" y="11.2" width="2.6" height="2.6" rx=".7"/><path d="M12.8 12.5h4"/><rect x="7.4" y="15.4" width="2.6" height="2.6" rx=".7"/><path d="M12.8 16.7h2.4"/></svg></div><h3>Clear reports</h3><p>Every issue explains what the problem is, why it matters, and how to fix it.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.6 17.8a8.4 8.4 0 1 1 16.8 0"/><path d="M12 17.8l4.3-5.1"/><circle cx="12" cy="17.8" r="1.4" fill="currentColor" stroke="none"/><path d="M6.1 11.8l1.3.8M12 8.4v1.5"/></svg></div><h3>Business-focused risk</h3><p>We describe impact in terms of your customers and your data, not just technical severity.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 12.3a7.5 7.5 0 0 1-10.8 6.8l-5 1.2 1.2-5A7.5 7.5 0 1 1 20.4 12.3Z"/><path d="m9.2 12.1 2 2 3.9-4.3"/></svg></div><h3>Remediation support</h3><p>Your developers can ask us questions while they fix the findings.</p></div>
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 5.2 6.2v5.3c0 4.1 2.9 7.5 6.8 8.3 3.9-.8 6.8-4.2 6.8-8.3V6.2L12 3.2Z"/><path d="M15.2 12.3a3.2 3.2 0 1 1-.9-2.3"/><path d="M15 7.7v2.3h-2.3"/></svg></div><h3>Retesting included</h3><p>We check the fixes and confirm in writing what is now closed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     FAQ
+     ========================================================== -->
+<section class="section" id="faq">
+  <div class="wrap" style="max-width:var(--wrap-narrow)">
+    <div class="section-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a1">What is the difference between a vulnerability assessment and a penetration test?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a1" hidden><p>An assessment lists the weaknesses. A penetration test proves which of them a real attacker could actually use, and how far they could get. Most businesses need both, which is why they are usually sold together as VAPT.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a2">How long does an assessment take?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a2" hidden><p>Most engagements run between four and fifteen working days, depending on how big the system is and how many user roles it has. You get a firm date before we start.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a3">Will testing break my live website?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a3" hidden><p>Testing is designed to avoid disruption. We agree the time window in advance, avoid anything destructive by default, and give you a contact who can stop the test immediately if you ask.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a4">What do you need from us before testing?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a4" hidden><p>Usually a list of what should be tested, a test login for each type of user, and a technical contact. For APIs, documentation helps. We never ask for production passwords through this website.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a5">Do you help us fix what you find?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a5" hidden><p>Yes. Every finding comes with a specific recommended fix, and your developers can ask us questions while they work through them.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a6">Is retesting included?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a6" hidden><p>Yes. Once you have fixed the findings we test them again and issue an updated report showing what is now closed.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a7">How often should we do VAPT?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a7" hidden><p>At least once a year, and again after any major change &mdash; a new payment flow, a new app, a move to a different cloud provider. Teams that ship weekly often move to a regular schedule.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="a8">Will this make us compliant?
+          <svg class="faq-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        <div class="faq-a" id="a8" hidden><p>Not on its own. Compliance covers policies, process and people as well as technology. VAPT supports it by finding the weaknesses and giving you documented evidence that they were found and fixed.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     LEAD FORM
+     ========================================================== -->
+<section class="section section-dark" id="quote">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get started</span>
+      <h2>Get a VAPT quote</h2>
+      <p class="lead">Tell us what you want tested. We will come back with a scope, a fixed price and a start date. No obligation.</p>
+    </div>
+
+    <form class="wizard reveal" data-lead-form data-endpoint="" novalidate>
+      <div class="hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-name">Full name <span class="req">*</span></label>
+          <input class="input" id="f-name" name="name" type="text" autocomplete="name" required>
+          <span class="field-error" data-error-for="name" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="f-email">Work email <span class="req">*</span></label>
+          <input class="input" id="f-email" name="email" type="email" autocomplete="email" required>
+          <span class="field-error" data-error-for="email" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="f-company">Company <span class="req">*</span></label>
+          <input class="input" id="f-company" name="company" type="text" autocomplete="organization" required>
+          <span class="field-error" data-error-for="company" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel">
+          <span class="field-error" data-error-for="phone" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="f-url">Website or application address</label>
+          <input class="input" id="f-url" name="url" type="text" inputmode="url" placeholder="example.com">
+          <span class="field-error" data-error-for="url" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="f-service">Service required <span class="req">*</span></label>
+          <select class="select" id="f-service" name="service" required>
+            <option value="">Please choose</option>
+            <option>Web Application VAPT</option>
+            <option>Mobile Application VAPT</option>
+            <option>API Security Testing</option>
+            <option>Network VAPT</option>
+            <option>Cloud Security Assessment</option>
+            <option>External or Internal Assessment</option>
+            <option>Compliance support</option>
+            <option>Not sure yet</option>
+          </select>
+          <span class="field-error" data-error-for="service" role="alert"></span>
+        </div>
+        <div class="field field-full">
+          <label for="f-scope">Roughly how big is it?</label>
+          <input class="input" id="f-scope" name="scope" type="text" placeholder="e.g. one website, 3 user roles, about 40 API endpoints">
+          <span class="field-error" data-error-for="scope" role="alert"></span>
+        </div>
+        <div class="field field-full">
+          <label for="f-msg">Anything else we should know?</label>
+          <textarea class="textarea" id="f-msg" name="message"></textarea>
+          <span class="field-error" data-error-for="message" role="alert"></span>
+        </div>
+      </div>
+
+      <p class="form-note" style="margin:var(--s5) 0">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.7"/></svg>
+        <span>Your information is handled confidentially and used only to prepare your quote. <strong>Never send passwords, API keys or production credentials through this form.</strong></span>
+      </p>
+
+      <button class="btn btn-primary btn-block" type="submit">Request my quote</button>
+      <p class="form-status" data-form-status role="status" style="margin-top:var(--s4)"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="color:var(--on-dark)">
+          <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2 3.5 5.5v6c0 5 3.6 9.2 8.5 10.5 4.9-1.3 8.5-5.5 8.5-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m8.4 12 2.5 2.5 4.7-4.9" stroke="#00c2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          VAPT <span class="brand-sub" style="color:var(--on-dark-muted)">security</span>
+        </a>
+        <p style="margin-top:var(--s3);max-width:38ch;font-size:var(--fs-sm);color:var(--on-dark-body)">
+          Security testing made simple, clear and actionable.
+        </p>
+        <p style="margin-top:var(--s4)"><span class="placeholder">[OFFICE ADDRESS]</span></p>
+        <p style="margin-top:var(--s2)"><span class="placeholder">[PHONE]</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="service-web.html">Web Application VAPT</a></li>
+          <li><a href="service-mobile.html">Mobile App VAPT</a></li>
+          <li><a href="service-api.html">API Security Testing</a></li>
+          <li><a href="service-network.html">Network VAPT</a></li>
+          <li><a href="service-cloud.html">Cloud Security</a></li>
+          <li><a href="service-compliance.html">Compliance Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="methodology.html">How it works</a></li>
+          <li><a href="reports.html">Sample report</a></li>
+          <li><a href="advisories.html">Security research</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html">Responsible disclosure</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> VAPT Security. All rights reserved.</span>
+      <span><span class="placeholder">[CIN / GST]</span></span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" data-to-top aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+    <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script src="js/app.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "VAPT Security",
+      "description": "Vulnerability Assessment and Penetration Testing services for websites, applications, APIs, networks and cloud environments."
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Vulnerability Assessment and Penetration Testing",
+      "name": "VAPT Services",
+      "description": "Manual and automated security testing for web applications, mobile apps, APIs, networks and cloud, with a clear report and a free retest.",
+      "provider": { "@type": "Organization", "name": "VAPT Security" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "VAPT services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Application VAPT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Application VAPT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API Security Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Network VAPT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Security Assessment" } }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the difference between a vulnerability assessment and a penetration test?", "acceptedAnswer": { "@type": "Answer", "text": "An assessment lists the weaknesses. A penetration test proves which of them a real attacker could actually use, and how far they could get. Most businesses need both, which is why they are usually sold together as VAPT." } },
+        { "@type": "Question", "name": "How long does a VAPT assessment take?", "acceptedAnswer": { "@type": "Answer", "text": "Most engagements run between four and fifteen working days, depending on the size of the system and how many user roles it has." } },
+        { "@type": "Question", "name": "Will testing break my live website?", "acceptedAnswer": { "@type": "Answer", "text": "Testing is designed to avoid disruption. The time window is agreed in advance, destructive testing is excluded by default, and a named contact can stop the test immediately." } },
+        { "@type": "Question", "name": "Is retesting included?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once findings are fixed we test them again and issue an updated report showing what is now closed." } },
+        { "@type": "Question", "name": "Will VAPT make us compliant?", "acceptedAnswer": { "@type": "Answer", "text": "Not on its own. Compliance covers policies, process and people as well as technology. VAPT supports it by finding weaknesses and providing documented evidence that they were found and fixed." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="js/vapt-assistant.js"></script>
 </body>
 </html>
